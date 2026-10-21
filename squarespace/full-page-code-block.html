@@ -1,13 +1,11 @@
 <!-- ==========================================================================
-     SQUARESPACE 7.1 FULL-PAGE CODE BLOCK
-     USS LCS(L)(3)-102 "YANKEE DOLLAR" — LANDING CRAFT SUPPORT MUSEUM
-     HOW TO USE:
-     1. Add a Blank Section on your Squarespace page (Full-Bleed / Fluid Engine)
-     2. Add a single "Code" Block and stretch it edge-to-edge
-     3. Paste this entire file into the Code Block (Mode: HTML, Display Source: OFF)
+     USS LCS-102 ("YANKEE DOLLAR") — SQUARESPACE FULL-PAGE CODE BLOCK
+     Includes: Optical HD SVG Filters + ThingLink 360 Virtual Museum + Intrepid Animations
      ========================================================================== -->
 <div class="lcs-site" id="top">
-<!-- Optical HD Unsharp-Mask Convolution Filters for Video & Archival Photography -->
+
+
+  <!-- Optical HD Unsharp-Mask Convolution Filters for Video & Archival Photography -->
   <svg class="lcs-hd-filters" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden;pointer-events:none;" aria-hidden="true">
     <defs>
       <filter id="lcs-video-sharpen" color-interpolation-filters="sRGB">
@@ -39,7 +37,7 @@
         </span>
       </div>
       <div class="lcs-utility-right">
-        <a href="#virtual-museum" class="lcs-utility-link highlight">🌐 Virtual Museum (New)</a>
+        <a href="#virtual-museum" class="lcs-utility-link highlight">🌐 Live 360° Virtual Museum (2 Tours)</a>
         <a href="#visit" class="lcs-utility-link">Overnight Group Stays</a>
         <a href="#community" class="lcs-utility-link">Newsletters</a>
         <a href="https://www.facebook.com/theyankeedollar" target="_blank" rel="noopener" class="lcs-utility-link">Facebook Community ↗</a>
@@ -75,7 +73,11 @@
       <div class="lcs-header-actions">
         <a href="#virtual-museum" data-page-link="virtual-museum" class="lcs-btn lcs-btn-sm lcs-btn-cyan">Explore Virtual Tour</a>
         <a href="#donate" data-page-link="donate" class="lcs-btn lcs-btn-sm lcs-btn-crimson">Donate (501c3)</a>
-        <button class="lcs-mobile-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+        <button class="lcs-mobile-toggle" aria-label="Toggle Menu" aria-expanded="false">
+          <span class="lcs-menu-slice"></span>
+          <span class="lcs-menu-slice"></span>
+          <span class="lcs-menu-slice"></span>
+        </button>
       </div>
     </div>
   </header>
@@ -105,7 +107,6 @@
   <section class="lcs-hero">
     <div class="lcs-hero-media">
       <video autoplay loop muted playsinline class="lcs-hero-video" poster="https://usslcs102.org/img/restoration/RD_Lowering04.jpg">
-        <source src="https://usslcs102.org/img/LCS.mp4" type="video/mp4" />
         <source src="https://usslcs102.org/img/LCS.mp4" type="video/mp4" />
       </video>
     </div>
@@ -142,7 +143,6 @@
           <div class="lcs-ribbons-box">
             <img
               src="https://usslcs102.org/img/lcsribbons.png"
-              onerror="this.src='https://usslcs102.org/img/lcsribbons.png'"
               alt="WWII Campaign Ribbons of the USS LCS-102"
               class="lcs-ribbons-img"
             />
@@ -156,27 +156,29 @@
         <!-- Right Column: Virtual Museum Online Experience Spotlight -->
         <aside class="lcs-hero-spotlight" aria-label="Virtual Museum Feature">
           <div class="lcs-spotlight-tag">
-            <span>●</span> NEW DIGITAL INITIATIVE • ONLINE ACCESS
+            <span>●</span> LIVE NOW • 2 INTERACTIVE 360° THINGLINK TOURS
           </div>
           <div class="lcs-spotlight-img-wrap">
             <img
               src="https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg"
-              onerror="this.src='https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg'"
               alt="Bow and gun mounts of USS LCS-102 Yankee Dollar"
             />
-            <span class="lcs-spotlight-overlay-badge">360° DIGITAL DECK TOUR</span>
+            <span class="lcs-spotlight-overlay-badge">11-STOP STORY TOUR + 62-SCENE DIGITAL TWIN</span>
           </div>
-          <h2 class="lcs-spotlight-title">Introducing the USS LCS-102 Virtual Museum</h2>
+          <h2 class="lcs-spotlight-title">Step Aboard the Live 360° Virtual Museum</h2>
           <p class="lcs-spotlight-desc">
-            A dedicated virtual museum team is building an interactive online version of the <em>Yankee Dollar</em>. Walk the steel decks, inspect the 3-inch and twin 40mm gun mounts, enter the armored conning tower, and tour the engine room from anywhere in the world.
+            Explore <strong>two complete 360° digital experiences</strong> of the <em>Yankee Dollar</em>: follow our 11-stop guided narrative tour (<strong>"The Ships That Cleared the Way"</strong>) or roam freely across <strong>62 interior &amp; exterior compartments</strong> with an interactive 4K ship deck plan.
           </p>
-          <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
-            <a href="#virtual-museum" data-page-link="virtual-museum" class="lcs-btn lcs-btn-sm lcs-btn-cyan" style="flex: 1;">
-              Explore Virtual Tour →
+          <div style="display: flex; gap: 0.55rem; flex-wrap: wrap;">
+            <a href="#lcs-thinglink-theater" class="lcs-btn lcs-btn-sm lcs-btn-cyan" style="flex: 1 1 100%;">
+              🌐 Explore Live Embedded 360° Theater ↓
             </a>
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-outline" style="flex: 1;">
-              Preview Online Portal
-            </button>
+            <a href="https://www.thinglink.com/view/scene/2161138540841279141" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-gold" style="flex: 1;">
+              🎬 Guided Story Tour ↗
+            </a>
+            <a href="https://www.thinglink.com/view/scene/2151393301209547620" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline" style="flex: 1;">
+              🧭 62-Scene Free-Roam ↗
+            </a>
           </div>
         </aside>
       </div>
@@ -215,13 +217,21 @@
             <div>
               <div class="lcs-strip-label">Digital Experience</div>
               <div class="lcs-strip-value">Virtual Online Museum</div>
-              <div class="lcs-strip-sub"><a href="#virtual-museum" style="color: var(--cyan-400); text-decoration: underline;">Step aboard the digital twin online →</a></div>
+              <div class="lcs-strip-sub"><a href="#virtual-museum" class="lcs-intrepid-cta" style="color: var(--cyan-400);">Step aboard the digital twin online</a></div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Intrepid Museum Signature Scroll-Scrubbed Ship Bow Silhouette Wipe (#aircraftHeadContainer) -->
+  <div id="lcs-bow-scroll-wipe" class="lcs-bow-wipe" aria-hidden="true">
+    <svg class="lcs-bow-svg" viewBox="0 0 1280 180" preserveAspectRatio="none">
+      <path id="lcs-bow-path-accent" d="M 0,180 L 340,92 L 640,8 L 940,92 L 1280,180 L 1280,180 L 0,180 Z" fill="#fbb300" fill-opacity="0.7" />
+      <path id="lcs-bow-path-main" d="M 0,180 L 340,98 L 640,16 L 940,98 L 1280,180 L 1280,180 L 0,180 Z" fill="#091526" />
+    </svg>
+  </div>
 
   <!-- ========================================================================
        4. VIRTUAL MUSEUM FEATURE SECTION (Core Objective: Introduce Online Version)
@@ -281,12 +291,15 @@
             </div>
           </div>
 
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-gold">
-              🚀 Enter Virtual Museum Portal
-            </button>
-            <a href="#donate" class="lcs-btn lcs-btn-outline">
-              Support Physical &amp; Digital Preservation
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+            <a href="https://www.thinglink.com/view/scene/2161138540841279141" target="_blank" rel="noopener" class="lcs-btn lcs-btn-gold">
+              🎬 Launch Guided Story Tour (11 Stops) ↗
+            </a>
+            <a href="https://www.thinglink.com/view/scene/2151393301209547620" target="_blank" rel="noopener" class="lcs-btn lcs-btn-cyan">
+              🧭 Launch 62-Compartment Free-Roam 360° ↗
+            </a>
+            <a href="https://youtu.be/n87M2tm7GRk" target="_blank" rel="noopener" class="lcs-btn lcs-btn-outline">
+              ▶️ Watch Tour Documentary Video ↗
             </a>
           </div>
         </div>
@@ -295,17 +308,135 @@
           <div style="background: rgba(5, 12, 22, 0.75); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: var(--radius-lg); padding: 1.25rem;">
             <img
               src="https://usslcs102.org/img/restoration/RD_Predeparture.jpg"
-              onerror="this.src='https://usslcs102.org/img/restoration/RD_Predeparture.jpg'"
               alt="USS LCS-102 berthed at Mare Island Naval Shipyard"
               style="border-radius: var(--radius-md); width: 100%; aspect-ratio: 16/10; object-fit: cover; margin-bottom: 1rem;"
             />
             <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.85rem;">
               <div>
-                <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--cyan-400); text-transform: uppercase;">VIRTUAL TOUR PREVIEW</div>
-                <div style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; text-transform: uppercase; color: var(--white);">5 Interactive Ship Stations Below</div>
+                <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--cyan-400); text-transform: uppercase;">2 LIVE THINGLINK 360° EXPERIENCES</div>
+                <div style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; text-transform: uppercase; color: var(--white);">130 Ships Built • ~10,000 Sailors • 1 Survivor</div>
               </div>
               <span style="font-family: var(--font-mono); font-size: 0.75rem; background: rgba(229,169,60,0.15); color: var(--gold-400); padding: 0.3rem 0.6rem; border-radius: 4px;">HULL #102</span>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           LIVE EMBEDDED THINGLINK 360° VIRTUAL MUSEUM THEATER (2 TOURS + DECK PLAN)
+           ==================================================================== -->
+      <div id="lcs-thinglink-theater" class="lcs-thinglink-theater" aria-label="Interactive ThingLink 360 Virtual Museum Player">
+        <div class="lcs-theater-header">
+          <div>
+            <span class="lcs-spotlight-tag" style="margin-bottom: 0.25rem;">🟢 LIVE INTERACTIVE 360° THINGLINK PLAYER • CLICK &amp; DRAG TO LOOK AROUND</span>
+            <h3 id="lcs-active-tour-title" style="font-family: var(--font-display); font-size: clamp(1.55rem, 2.5vw, 2.1rem); text-transform: uppercase; margin: 0; color: var(--white);">
+              Guided Story Tour: "The Ships That Cleared the Way" (11 Narrative Stops)
+            </h3>
+            <p id="lcs-active-tour-desc" style="color: var(--slate-300); font-size: 0.92rem; margin: 0.25rem 0 0;">
+              Follow the combat journey of the WWII "Mighty Midgets" across 11 guided 360° stations—or switch tabs below to roam freely through all 62 ship compartments and the interactive 4K deck blueprint.
+            </p>
+          </div>
+          <div class="lcs-theater-actions">
+            <a id="lcs-thinglink-external-btn" href="https://www.thinglink.com/view/scene/2161138540841279141" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-gold">
+              ⛶ Open Fullscreen in ThingLink ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Primary Tour Mode Switcher Tabs (Both Client Links + 4K Deck Plan) -->
+        <div class="lcs-tour-mode-tabs" role="tablist" aria-label="Select Virtual Museum Tour Mode">
+          <button
+            type="button"
+            class="lcs-tour-mode-btn active"
+            data-thinglink-scene="2161138540841279141"
+            data-tour-title="Guided Story Tour: &quot;The Ships That Cleared the Way&quot; (11 Narrative Stops)"
+            data-tour-desc="Follow the planned 11-stop historical narrative tour from the 3&quot;/50 bow gun and Okinawa Radar Picket #18 to the Galley (A-111-L), Mess Hall (A-208-L), and Aft Berthing (A-208-1L)."
+          >
+            <span class="mode-badge">TOUR 01 • PLANNED GUIDED TOUR</span>
+            <strong>🎬 "The Ships That Cleared the Way" (11-Stop Story Tour)</strong>
+          </button>
+
+          <button
+            type="button"
+            class="lcs-tour-mode-btn"
+            data-thinglink-scene="2151393301209547620"
+            data-tour-title="62-Compartment Free-Roam 360° Digital Twin &amp; Ship Explorer"
+            data-tour-desc="Self-guided 360° exploration across 62 high-resolution panoramic stations covering every gun tub, bridge level, magazine, berthing compartment, and engine room aboard USS LCS-102."
+          >
+            <span class="mode-badge">TOUR 02 • COMPLETE 62-SCENE DIGITAL TWIN</span>
+            <strong>🧭 62-Compartment Free-Roam 360° Ship Explorer</strong>
+          </button>
+
+          <button
+            type="button"
+            class="lcs-tour-mode-btn"
+            data-thinglink-scene="2151338138495091556"
+            data-tour-title="Interactive 4K Ship Deck Blueprint &amp; Compartment Map"
+            data-tour-desc="Click any hotspot on the architectural profile and deck plans of USS LCS(L)(3)-102 to jump directly into that compartment's 360° panorama."
+          >
+            <span class="mode-badge">ARCHITECTURAL DECK MAP</span>
+            <strong>📐 Interactive 4K Ship Deck Plan &amp; Blueprint</strong>
+          </button>
+        </div>
+
+        <!-- Live Embedded ThingLink 360° Iframe Viewport -->
+        <div class="lcs-thinglink-frame-wrap">
+          <iframe
+            id="lcs-thinglink-iframe"
+            title="USS LCS-102 Interactive 360 Virtual Museum Tour on ThingLink"
+            src="https://www.thinglink.com/card/2161138540841279141"
+            allow="fullscreen; vr; xr-spatial-tracking; gyroscope; accelerometer"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <!-- 11-Stop Guided Narrative & Compartment Quick-Jump Bar -->
+        <div class="lcs-scene-jump-bar">
+          <div class="lcs-scene-jump-label">
+            <span>⚡ QUICK-JUMP TO ANY 360° STORY MILESTONE OR COMPARTMENT:</span>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <a href="https://www.thinglink.com/view/scene/2161138540841279141" target="_blank" rel="noopener" style="color: var(--gold-400); text-decoration: underline;">Direct Link: Planned Story Tour (2161138540841279141) ↗</a>
+              <a href="https://www.thinglink.com/view/scene/2151393301209547620" target="_blank" rel="noopener" style="color: var(--cyan-400); text-decoration: underline;">Direct Link: 62-Scene Free-Roam Tour (2151393301209547620) ↗</a>
+            </div>
+          </div>
+          <div class="lcs-scene-pills">
+            <button type="button" class="lcs-scene-pill active" data-thinglink-scene="2161138540841279141" data-tour-title="Prologue: The Ships That Cleared the Way (Exterior 360°)">
+              01 • Prologue: Cleared the Way
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161172103557027493" data-tour-title="Milestone 1: Built for the Beach — Forward 3&quot;/50 Caliber Gun">
+              02 • Built for the Beach (3"/50 Gun)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161185783258547877" data-tour-title="Milestone 2: Preparing for War — Twin 40mm Bofors Gun Mount">
+              03 • Preparing for War (Twin 40mm)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161192850358800037" data-tour-title="Milestone 3: All Aboard — Pilothouse &amp; Helm (01 Level)">
+              04 • All Aboard (Pilothouse)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161194161896687269" data-tour-title="Milestone 4: The Crossing — Armored Conning Tower">
+              05 • The Crossing (Conning Tower)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161195067472087717" data-tour-title="Milestone 5: The Last Great Battle — 20mm Oerlikon Gun Deck at Okinawa">
+              06 • Okinawa Battle (20mm Oerlikon)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161318873628934821" data-tour-title="Milestone 6: The Last of Her Kind — 130 Built, Only 1 Intact">
+              07 • The Last of Her Kind
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161321791543314085" data-tour-title="Ship Tour: The Galley (Compartment A-111-L)">
+              08 • Ship's Galley (A-111-L)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161525456052946597" data-tour-title="The Reckoning: The Last of Both — Aft Enlisted Berthing (A-208-1L)">
+              09 • Crew Berthing (A-208-1L)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161325987508259493" data-tour-title="The Reckoning: Honoring Our Heroes — Mess Hall (Compartment A-208-L)">
+              10 • Mess Hall (A-208-L)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161326947584445093" data-tour-title="Epilogue: The Ship — USS LCS-102 Builder's Nameplate Passageway">
+              11 • Epilogue: The Ship (LCS-102)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2150994591514362724" data-tour-title="Lower Hull Engineering: Twin GM 16-278A Diesel Engine Room 360°">
+              ⚙️ Twin Diesel Engine Room
+            </button>
           </div>
         </div>
       </div>
@@ -340,12 +471,11 @@
           <div class="lcs-deck-media">
             <img
               src="https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg"
-              onerror="this.src='https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg'"
               alt="Forward bow gun mount and deck of USS LCS-102"
             />
           </div>
           <div>
-            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 01</div>
+            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 01 • Milestone 1 ("Built for the Beach")</div>
             <h3 style="font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; margin: 0 0 0.75rem; color: var(--white);">
               Forward 3"/50 Caliber Gun &amp; Mark 7 Rocket Deck
             </h3>
@@ -362,9 +492,14 @@
                 <strong>10× Mark 7 Barrage Rocket Launchers</strong>
               </div>
             </div>
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-cyan">
-              Inspect Station 01 in Virtual Museum →
-            </button>
+            <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+              <button type="button" data-thinglink-scene="2161172103557027493" data-tour-title="Station 01: Forward 3&quot;/50 Caliber Gun &amp; Rocket Deck" class="lcs-btn lcs-btn-sm lcs-btn-cyan">
+                🌐 Load 3"/50 Gun in 360° Player ↑
+              </button>
+              <a href="https://www.thinglink.com/view/scene/2161172103557027493" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline">
+                Open Scene on ThingLink ↗
+              </a>
+            </div>
           </div>
         </div>
 
@@ -373,12 +508,11 @@
           <div class="lcs-deck-media">
             <img
               src="https://usslcs102.org/img/restoration/RD_Final_Check.jpg"
-              onerror="this.src='https://usslcs102.org/img/restoration/RD_Final_Check.jpg'"
               alt="Superstructure and conning tower of USS LCS-102"
             />
           </div>
           <div>
-            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 02</div>
+            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 02 • Milestones 3 &amp; 4 ("All Aboard" &amp; "The Crossing")</div>
             <h3 style="font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; margin: 0 0 0.75rem; color: var(--white);">
               Pilothouse, Armored Conning Tower &amp; Lookout Deck
             </h3>
@@ -395,9 +529,14 @@
                 <strong>JMSDF Lookout Roof &amp; 81mm Mortars</strong>
               </div>
             </div>
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-cyan">
-              Inspect Station 02 in Virtual Museum →
-            </button>
+            <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+              <button type="button" data-thinglink-scene="2161192850358800037" data-tour-title="Station 02: Pilothouse &amp; Armored Conning Tower" class="lcs-btn lcs-btn-sm lcs-btn-cyan">
+                🌐 Load Pilothouse in 360° Player ↑
+              </button>
+              <a href="https://www.thinglink.com/view/scene/2161194161896687269" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline">
+                Open Conning Tower 360° ↗
+              </a>
+            </div>
           </div>
         </div>
 
@@ -406,12 +545,11 @@
           <div class="lcs-deck-media">
             <img
               src="https://usslcs102.org/img/restoration/RD_Stern_Aerial02.jpg"
-              onerror="this.src='https://usslcs102.org/img/restoration/RD_Stern_Aerial02.jpg'"
               alt="Twin 40mm Bofors and 20mm Oerlikon anti-aircraft gun mounts aboard USS LCS-102"
             />
           </div>
           <div>
-            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 03</div>
+            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 03 • Milestones 2 &amp; 5 ("Preparing for War" &amp; "The Last Great Battle")</div>
             <h3 style="font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; margin: 0 0 0.75rem; color: var(--white);">
               Twin 40mm Bofors &amp; 20mm Oerlikon Anti-Aircraft Deck
             </h3>
@@ -428,9 +566,14 @@
                 <strong>4× 20mm Oerlikon + 4× .50 Cal MG</strong>
               </div>
             </div>
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-cyan">
-              Inspect Station 03 in Virtual Museum →
-            </button>
+            <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+              <button type="button" data-thinglink-scene="2161185783258547877" data-tour-title="Station 03: Twin 40mm Bofors &amp; 20mm Oerlikon AA Gun Deck" class="lcs-btn lcs-btn-sm lcs-btn-cyan">
+                🌐 Load Twin 40mm Gun in 360° Player ↑
+              </button>
+              <a href="https://www.thinglink.com/view/scene/2161195067472087717" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline">
+                Open 20mm Oerlikon Deck 360° ↗
+              </a>
+            </div>
           </div>
         </div>
 
@@ -439,31 +582,35 @@
           <div class="lcs-deck-media">
             <img
               src="https://usslcs102.org/img/restoration/RD_Gangplank.jpg"
-              onerror="this.src='https://usslcs102.org/img/restoration/RD_Gangplank.jpg'"
               alt="Skipper Bill Mason and Executive Officer Gordon Stutrud welcoming visitors at the gangplank of USS LCS-102"
             />
           </div>
           <div>
-            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 04</div>
+            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 04 • Compartments A-111-L, A-208-L &amp; A-208-1L</div>
             <h3 style="font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; margin: 0 0 0.75rem; color: var(--white);">
-              Crew Berthing, Mess Deck &amp; Overnight Encampment Quarters
+              Ship's Galley (A-111-L), Mess Hall (A-208-L) &amp; Aft Crew Berthing (A-208-1L)
             </h3>
             <p style="color: var(--slate-300); margin: 0;">
-              Seventy-one men (6 officers and 65 enlisted sailors) lived, slept, and ate in compact quarters below the main deck across months of Pacific combat and postwar occupation duty in Japan, China, and Korea. Today, these restored berthing compartments also host Boy Scout troops and youth groups for overnight stays.
+              Seventy-one men (6 officers and 65 enlisted sailors) lived, slept, and ate in compact quarters below the main deck across months of Pacific combat and postwar occupation duty in Japan, China, and Korea. Today, these restored compartments honor fallen heroes and host Boy Scout troops and youth groups for overnight stays.
             </p>
             <div class="lcs-deck-specs">
               <div class="lcs-spec-pill">
-                <small>Wartime Complement</small>
-                <strong>6 Officers • 65 Enlisted Men</strong>
+                <small>Authentic WWII Compartments</small>
+                <strong>A-111-L Galley • A-208-L Mess • A-208-1L Berthing</strong>
               </div>
               <div class="lcs-spec-pill">
-                <small>Living History</small>
-                <strong>Restored Bunks, Galley &amp; Wardroom</strong>
+                <small>Wartime Complement</small>
+                <strong>6 Officers • 65 Enlisted Sailors</strong>
               </div>
             </div>
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-cyan">
-              Inspect Station 04 in Virtual Museum →
-            </button>
+            <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+              <button type="button" data-thinglink-scene="2161525456052946597" data-tour-title="Station 04: Aft Enlisted Crew Berthing (Compartment A-208-1L)" class="lcs-btn lcs-btn-sm lcs-btn-cyan">
+                🌐 Load Crew Berthing in 360° Player ↑
+              </button>
+              <a href="https://www.thinglink.com/view/scene/2161325987508259493" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline">
+                Open Mess Hall (A-208-L) 360° ↗
+              </a>
+            </div>
           </div>
         </div>
 
@@ -472,17 +619,16 @@
           <div class="lcs-deck-media">
             <img
               src="https://usslcs102.org/img/restoration/in-drydock-wide.jpg"
-              onerror="this.src='https://usslcs102.org/img/restoration/in-drydock-wide.jpg'"
               alt="USS LCS-102 resting on blocks in Mare Island drydock"
             />
           </div>
           <div>
-            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 05</div>
+            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 05 • Lower Hull Engineering &amp; Deck Plan</div>
             <h3 style="font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; margin: 0 0 0.75rem; color: var(--white);">
               Twin GM 16-278A Diesel Engine Room &amp; Flat-Bottom Hull
             </h3>
             <p style="color: var(--slate-300); margin: 0;">
-              Built on an LCI(L) shallow-draft hull so she could maneuver close to invasion beaches, the LCS-102 is powered by twin General Motors 16-278A diesel engines driving two controllable-pitch propellers. Guided physical and virtual tours take you deep into the engine room restored by our all-volunteer veteran engineering crew.
+              Built on an LCI(L) shallow-draft hull so she could maneuver close to invasion beaches, the LCS-102 is powered by twin General Motors 16-278A diesel engines driving two controllable-pitch propellers, flanked by Generator Rooms (B-1-2-A). Guided physical and virtual tours take you deep into the engine room restored by our all-volunteer veteran engineering crew.
             </p>
             <div class="lcs-deck-specs">
               <div class="lcs-spec-pill">
@@ -494,9 +640,14 @@
                 <strong>5' 8" Forward • 6' 6" Aft (16.5 Knots)</strong>
               </div>
             </div>
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-cyan">
-              Inspect Station 05 in Virtual Museum →
-            </button>
+            <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+              <button type="button" data-thinglink-scene="2150994591514362724" data-tour-title="Station 05: Twin GM 16-278A Diesel Engine Room 360°" class="lcs-btn lcs-btn-sm lcs-btn-cyan">
+                🌐 Load Engine Room in 360° Player ↑
+              </button>
+              <a href="https://www.thinglink.com/view/scene/2151338138495091556" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline">
+                Open 4K Ship Blueprint ↗
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -554,14 +705,12 @@
           <div class="lcs-collage-main">
             <img
               src="https://usslcs102.org/img/restoration/RD_Lowering04.jpg"
-              onerror="this.src='https://usslcs102.org/img/restoration/RD_Lowering04.jpg'"
               alt="Full starboard profile of USS LCS-102 floating at Mare Island Naval Shipyard"
             />
           </div>
           <div class="lcs-collage-inset">
             <img
               src="https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg"
-              onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg'"
               alt="U.S. Flag flying at the stern of USS LCS-102 during a naval memorial ceremony"
             />
             <span>LIVING NATIONAL MEMORIAL</span>
@@ -626,6 +775,10 @@
             <td><strong>1 × 3"/50 caliber dual-purpose bow gun</strong> (or twin 40mm) • <strong>2 × Twin 40mm Bofors AA mounts</strong> • <strong>4 × Single 20mm Oerlikon AA cannons</strong> • <strong>4 × .50-caliber Browning machine guns</strong> • <strong>10 × Mark 7 barrage rocket launchers</strong></td>
           </tr>
           <tr>
+            <th>Restored WWII Compartments</th>
+            <td><strong>A-111-L</strong> Ship's Galley • <strong>A-208-L</strong> Crew Mess Hall • <strong>A-208-1L</strong> Aft Enlisted Berthing • <strong>A-207-5L</strong> Officers Wardroom • <strong>B-1-2-A</strong> Diesel Generator &amp; Engine Rooms</td>
+          </tr>
+          <tr>
             <th>Allied Naval Service</th>
             <td>Japanese Maritime Self-Defense Force: <strong><em>JDS Himawari</em></strong> (1953–1966; added lookout roof &amp; 81mm mortars) • Royal Thai Navy: <strong><em>HTMS Nakha</em> (LSSL-751)</strong> (1966–2007)</td>
           </tr>
@@ -635,6 +788,27 @@
           </tr>
         </tbody>
       </table>
+
+      <!-- Borrowed from Battleship Iowa & Battleship North Carolina: "You Don't Just Tour the Ship — You Join the Crew" -->
+      <div class="lcs-crew-life-callout">
+        <div>
+          <span class="lcs-gallery-tag" style="color: var(--crimson-600);">LIVING HISTORY EXPERIENCE • LATE-SUMMER 1945 CONFIGURATION</span>
+          <h3 style="font-family: var(--font-display); font-size: 1.75rem; text-transform: uppercase; color: var(--navy-950) !important; margin: 0.2rem 0 0.45rem;">
+            You Don't Just Tour the Ship — You Step Into the Boots of Her 1945 Crew
+          </h3>
+          <p style="color: var(--slate-600); font-size: 0.94rem; margin: 0;">
+            Through the sights and sounds of steel decks, canvas-laced pipe berths, and ammunition handling rooms, visitors experience daily life aboard a 158-foot amphibious warship where <strong>6 officers and 65 enlisted men</strong> lived, cooked in <strong>Galley A-111-L</strong>, gathered in <strong>Mess Hall A-208-L</strong>, and stood watch at Okinawa Radar Picket Station #18. Of the <strong>130 LCS(L) gunboats built</strong> and roughly <strong>10,000 sailors who served</strong> aboard them in WWII, the <em>Yankee Dollar</em> is the only intact ship remaining on earth.
+          </p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.6rem; min-width: 240px;">
+          <a href="#lcs-thinglink-theater" class="lcs-btn lcs-btn-sm lcs-btn-crimson" style="width: 100%;">
+            🌐 Tour Crew Compartments in 360°
+          </a>
+          <a href="#visit" class="lcs-btn lcs-btn-sm" style="background: var(--navy-900); color: var(--white); width: 100%;">
+            ⚓ Book a Docent-Led Ship Tour
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -660,7 +834,6 @@
           <div class="lcs-era-img">
             <img
               src="https://usslcs102.org/img/restoration/in-drydock-inspection03.jpg"
-              onerror="this.src='https://usslcs102.org/img/restoration/in-drydock-inspection03.jpg'"
               alt="Close-up of the giant 102 hull number on the bow of USS LCS(L)(3)-102 Yankee Dollar"
             />
             <span class="lcs-era-year">1943 – FEB 1945</span>
@@ -678,7 +851,6 @@
           <div class="lcs-era-img">
             <img
               src="https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg"
-              onerror="this.src='https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg'"
               alt="Forward 3-inch/50 gun, twin 40mm Bofors mount, and rocket deck of USS LCS-102"
             />
             <span class="lcs-era-year">APR – JUN 1945</span>
@@ -696,7 +868,6 @@
           <div class="lcs-era-img">
             <img
               src="https://usslcs102.org/img/restoration/RD_Waterline02.jpg"
-              onerror="this.src='https://usslcs102.org/img/restoration/RD_Waterline02.jpg'"
               alt="Full-length elevated stern-to-bow view of USS LCS-102"
             />
             <span class="lcs-era-year">JUL 1945 – APR 1946</span>
@@ -714,7 +885,6 @@
           <div class="lcs-era-img">
             <img
               src="https://usslcs102.org/img/restoration/RD_Lowering05.jpg"
-              onerror="this.src='https://usslcs102.org/img/restoration/RD_Lowering05.jpg'"
               alt="Elevated view of USS LCS-102 showing the JMSDF Himawari lookout roof and twin 40mm mounts"
             />
             <span class="lcs-era-year">1946 – 1966</span>
@@ -732,7 +902,6 @@
           <div class="lcs-era-img">
             <img
               src="https://usslcs102.org/img/restoration/RD_Entrance04.jpg"
-              onerror="this.src='https://usslcs102.org/img/restoration/RD_Entrance04.jpg'"
               alt="USS LCS-102 underway on the water escorted by harbor tug"
             />
             <span class="lcs-era-year">1966 – 2007</span>
@@ -750,7 +919,6 @@
           <div class="lcs-era-img">
             <img
               src="https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg"
-              onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg'"
               alt="U.S. Flag flying at the stern of USS LCS-102 at Mare Island Naval Shipyard"
             />
             <span class="lcs-era-year">2007 – PRESENT</span>
@@ -809,7 +977,7 @@
             The Landing Craft Support Museum receives <strong>zero government operating funding</strong> and charges <strong>no admission fee</strong>. Every gallon of marine primer, every steel hull plate welded in drydock, and every dollar of docking and insurance fees at Mare Island is funded directly by patriotic donors like you.
           </p>
 
-          <div class="lcs-two-col-grid" style="gap: 1rem; margin: 1.75rem 0;">
+          <div class="lcs-two-col-grid" style="gap: 1rem; margin: 1.5rem 0;">
             <div style="background: rgba(15, 33, 58, 0.75); border-left: 3px solid var(--gold-400); padding: 1rem 1.15rem; border-radius: 6px;">
               <strong style="color: var(--white); display: block; font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase;">Drydock &amp; Hull Preservation</strong>
               <span style="font-size: 0.85rem; color: var(--slate-300);">Ultrasonic hull inspections, O1 deck drainage repairs, anti-fouling bottom paint, and zinc anode replacement.</span>
@@ -818,6 +986,16 @@
               <strong style="color: var(--white); display: block; font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase;">Mare Island Berthing &amp; Insurance</strong>
               <span style="font-size: 0.85rem; color: var(--slate-300);">Covers essential monthly dockage, shore power, marine liability insurance, and gangway safety equipment.</span>
             </div>
+          </div>
+
+          <!-- Borrowed from USS Pampanito & Battleship New Jersey: Why Museum Ships Urgently Need Preservation Support -->
+          <div style="background: rgba(5, 12, 22, 0.65); border: 1px solid rgba(56, 189, 248, 0.3); padding: 1rem 1.2rem; border-radius: var(--radius-md); margin-bottom: 1.25rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.73rem; color: var(--cyan-400); text-transform: uppercase; margin-bottom: 0.25rem;">
+              ⚓ WHY FLOATING MUSEUM SHIPS REQUIRE CONTINUOUS SUPPORT
+            </div>
+            <p style="font-size: 0.88rem; color: var(--slate-200); margin: 0;">
+              Unlike artifacts displayed inside climate-controlled buildings, the <strong>USS LCS(L)(3)-102</strong> is a steel-hulled WWII warship berthed year-round in a corrosive marine environment. Restored by volunteers to a specific point in time—<strong>late summer 1945</strong>—every contribution goes directly toward fighting saltwater corrosion, maintaining authentic WWII equipment, and periodic drydock haul-outs.
+            </p>
           </div>
 
           <!-- Mail-In Check Card (Avoid Online Fees for Large Gifts) -->
@@ -928,7 +1106,7 @@
         <!-- Item 1 -->
         <article class="lcs-gallery-item" data-category="ship">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg'" alt="Aerial bow view of USS LCS(L)(3)-102 at Mare Island" />
+            <img src="https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg" alt="Aerial bow view of USS LCS(L)(3)-102 at Mare Island" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">THE SHIP • MARE ISLAND</span>
@@ -940,7 +1118,7 @@
         <!-- Item 2 -->
         <article class="lcs-gallery-item" data-category="ship">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/RD_Lowering04.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Lowering04.jpg'" alt="Full sunlit starboard profile of USS LCS-102 floating at Mare Island" />
+            <img src="https://usslcs102.org/img/restoration/RD_Lowering04.jpg" alt="Full sunlit starboard profile of USS LCS-102 floating at Mare Island" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">THE SHIP • STARBOARD PROFILE</span>
@@ -952,7 +1130,7 @@
         <!-- Item 3 -->
         <article class="lcs-gallery-item" data-category="wwii">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/in-drydock-inspection03.jpg" onerror="this.src='https://usslcs102.org/img/restoration/in-drydock-inspection03.jpg'" alt="Low-angle close-up of hull number 102 on the bow of USS LCS-102" />
+            <img src="https://usslcs102.org/img/restoration/in-drydock-inspection03.jpg" alt="Low-angle close-up of hull number 102 on the bow of USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">HULL #102 • "YANKEE DOLLAR"</span>
@@ -964,7 +1142,7 @@
         <!-- Item 4 -->
         <article class="lcs-gallery-item" data-category="wwii">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/RD_Waterline02.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Waterline02.jpg'" alt="Elevated full-length stern-to-bow view of USS LCS-102" />
+            <img src="https://usslcs102.org/img/restoration/RD_Waterline02.jpg" alt="Elevated full-length stern-to-bow view of USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">WWII DESIGN • MIGHTY MIDGET</span>
@@ -976,7 +1154,7 @@
         <!-- Item 5 -->
         <article class="lcs-gallery-item" data-category="restoration">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/RD_Positioning.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Positioning.jpg'" alt="Positioning USS LCS-102 in Mare Island Drydock" />
+            <img src="https://usslcs102.org/img/restoration/RD_Positioning.jpg" alt="Positioning USS LCS-102 in Mare Island Drydock" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">MARE ISLAND • DRYDOCK EVOLUTION</span>
@@ -988,7 +1166,7 @@
         <!-- Item 6 -->
         <article class="lcs-gallery-item" data-category="restoration">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/in-drydock-wide.jpg" onerror="this.src='https://usslcs102.org/img/restoration/in-drydock-wide.jpg'" alt="USS LCS-102 resting on concrete blocks in Mare Island drydock" />
+            <img src="https://usslcs102.org/img/restoration/in-drydock-wide.jpg" alt="USS LCS-102 resting on concrete blocks in Mare Island drydock" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">MARE ISLAND DRYDOCK • PRESERVATION</span>
@@ -1000,7 +1178,7 @@
         <!-- Item 7 -->
         <article class="lcs-gallery-item" data-category="ship">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/RD_Predeparture.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Predeparture.jpg'" alt="USS LCS-102 berthed at Mare Island Waterfront" />
+            <img src="https://usslcs102.org/img/restoration/RD_Predeparture.jpg" alt="USS LCS-102 berthed at Mare Island Waterfront" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">THE SHIP • WATERFRONT BERTH</span>
@@ -1012,7 +1190,7 @@
         <!-- Item 8 -->
         <article class="lcs-gallery-item" data-category="wwii">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/RD_Lowering05.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Lowering05.jpg'" alt="Elevated stern quarter view of USS LCS-102 at Mare Island Naval Shipyard" />
+            <img src="https://usslcs102.org/img/restoration/RD_Lowering05.jpg" alt="Elevated stern quarter view of USS LCS-102 at Mare Island Naval Shipyard" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">MULTI-ERA HERITAGE • USN &amp; JMSDF</span>
@@ -1024,7 +1202,7 @@
         <!-- Item 9 -->
         <article class="lcs-gallery-item" data-category="community">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/RD_Gangplank.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Gangplank.jpg'" alt="Skipper Bill Mason and Executive Officer Gordon Stutrud at the gangplank of USS LCS-102" />
+            <img src="https://usslcs102.org/img/restoration/RD_Gangplank.jpg" alt="Skipper Bill Mason and Executive Officer Gordon Stutrud at the gangplank of USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">SHIP'S COMPANY • VETERAN LEADERSHIP</span>
@@ -1036,7 +1214,7 @@
         <!-- Item 10 -->
         <article class="lcs-gallery-item" data-category="community">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/lost_subs/submarines_2019_2.jpg" onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_2.jpg'" alt="Naval ceremony and honor guard at USS LCS-102 berth" />
+            <img src="https://usslcs102.org/img/lost_subs/submarines_2019_2.jpg" alt="Naval ceremony and honor guard at USS LCS-102 berth" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">CEREMONY • HONORING VETERANS</span>
@@ -1048,7 +1226,7 @@
         <!-- Item 11 -->
         <article class="lcs-gallery-item" data-category="restoration">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/RD_Entrance04.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Entrance04.jpg'" alt="USS LCS-102 underway on the Mare Island Strait escorted by harbor tug" />
+            <img src="https://usslcs102.org/img/restoration/RD_Entrance04.jpg" alt="USS LCS-102 underway on the Mare Island Strait escorted by harbor tug" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">MARE ISLAND STRAIT • UNDERWAY</span>
@@ -1060,7 +1238,7 @@
         <!-- Item 12 -->
         <article class="lcs-gallery-item" data-category="community">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/lost_subs/submarines_2019_3.jpg" onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_3.jpg'" alt="Veterans ringing the ship's brass bell aboard USS LCS-102" />
+            <img src="https://usslcs102.org/img/lost_subs/submarines_2019_3.jpg" alt="Veterans ringing the ship's brass bell aboard USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">LIVING MEMORIAL • SHIP'S BELL</span>
@@ -1072,7 +1250,7 @@
         <!-- Item 13 -->
         <article class="lcs-gallery-item" data-category="community">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg" onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg'" alt="U.S. Flag flying at the stern of USS LCS-102 during memorial wreath ceremony" />
+            <img src="https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg" alt="U.S. Flag flying at the stern of USS LCS-102 during memorial wreath ceremony" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">NATIONAL MEMORIAL • STERN ENSIGN</span>
@@ -1084,7 +1262,7 @@
         <!-- Item 14 -->
         <article class="lcs-gallery-item" data-category="ship">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/RD_Stern_Aerial02.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Stern_Aerial02.jpg'" alt="USS LCS(L)(3)-102 elevated full deck and superstructure view at Mare Island" />
+            <img src="https://usslcs102.org/img/restoration/RD_Stern_Aerial02.jpg" alt="USS LCS(L)(3)-102 elevated full deck and superstructure view at Mare Island" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">THE SHIP • NATIONAL HISTORIC LANDMARK</span>
@@ -1096,7 +1274,7 @@
         <!-- Item 15 (Drydock Hull Inspection) -->
         <article class="lcs-gallery-item" data-category="restoration">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/in-drydock-inspection01.jpg" onerror="this.src='https://usslcs102.org/img/restoration/in-drydock-inspection01.jpg'" alt="Crew and drydock workers inspecting the hull of USS LCS-102" />
+            <img src="https://usslcs102.org/img/restoration/in-drydock-inspection01.jpg" alt="Crew and drydock workers inspecting the hull of USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">DRYDOCK • HULL INTEGRITY</span>
@@ -1108,7 +1286,7 @@
         <!-- Item 16 (Tugboat Alongside) -->
         <article class="lcs-gallery-item" data-category="restoration">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/RD_Tugboat_Starboard.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Tugboat_Starboard.jpg'" alt="Tugboat alongside USS LCS-102 at Mare Island" />
+            <img src="https://usslcs102.org/img/restoration/RD_Tugboat_Starboard.jpg" alt="Tugboat alongside USS LCS-102 at Mare Island" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">MARE ISLAND • SHIPYARD OPERATIONS</span>
@@ -1120,7 +1298,7 @@
         <!-- Item 17 (Lost Submarines Ceremony) -->
         <article class="lcs-gallery-item" data-category="community">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/lost_subs/submarines_2019_1.jpg" onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_1.jpg'" alt="Lost Submarines of Mare Island Ceremony at USS LCS-102" />
+            <img src="https://usslcs102.org/img/lost_subs/submarines_2019_1.jpg" alt="Lost Submarines of Mare Island Ceremony at USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">MEMORIAL • MARE ISLAND HERITAGE</span>
@@ -1132,7 +1310,7 @@
         <!-- Item 18 (Armored Conning Tower & 20mm AA) -->
         <article class="lcs-gallery-item" data-category="wwii">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/RD_Final_Check.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Final_Check.jpg'" alt="Armored conning tower, pilothouse, and 20mm Oerlikon mounts of USS LCS-102" />
+            <img src="https://usslcs102.org/img/restoration/RD_Final_Check.jpg" alt="Armored conning tower, pilothouse, and 20mm Oerlikon mounts of USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">WWII COMBAT • RADAR PICKET #18</span>
@@ -1181,17 +1359,26 @@
               </span>
             </div>
             <div>
-              <strong style="color: var(--white); display: block; font-size: 0.95rem;">🎟️ Admission &amp; Accessibility:</strong>
+              <strong style="color: var(--white); display: block; font-size: 0.95rem;">🎟️ Admission &amp; Guided Access:</strong>
               <span style="color: var(--slate-300); font-size: 0.92rem;">
                 <strong>Admission is 100% Free</strong> and dockside parking is free. Donations to help maintain the 102 are gratefully accepted aboard or online. Tour groups are guided in small groups (up to 6 visitors per guide) for safety on naval ladders and hatches.
               </span>
             </div>
+            <!-- Borrowed from USS Cod & USS Nautilus: Authentic WWII Access & Footwear Advisory -->
+            <div style="background: rgba(15, 33, 58, 0.72); border-left: 3px solid var(--cyan-400); padding: 0.95rem 1.1rem; border-radius: 6px;">
+              <strong style="color: var(--cyan-400); font-family: var(--font-display); font-size: 1.12rem; text-transform: uppercase; display: block; margin-bottom: 0.25rem;">
+                🥾 Know Before You Board: 100% Original 1945 Configuration
+              </strong>
+              <p style="font-size: 0.86rem; color: var(--slate-200); margin: 0;">
+                As an authentic National Historic Landmark vessel, the <em>Yankee Dollar</em> has <strong>not</strong> had modern stairways cut into her hull. Visitors board via the gangway and navigate original WWII watertight doors, high coamings, and steep naval ladders. Please wear <strong>flat, closed-toe, non-skid shoes</strong>. Visitors unable to climb ladders can explore all 62 compartments via our <a href="#lcs-thinglink-theater" style="color: var(--gold-400); text-decoration: underline;">360° Virtual Museum</a>.
+              </p>
+            </div>
             <div style="background: rgba(5, 12, 22, 0.55); border: 1px solid rgba(229, 169, 60, 0.35); padding: 1.15rem; border-radius: var(--radius-md);">
               <strong style="color: var(--gold-400); font-family: var(--font-display); font-size: 1.2rem; text-transform: uppercase; display: block; margin-bottom: 0.3rem;">
-                ⛺ Overnight Youth &amp; Group Stays Aboard the 102
+                ⛺ "Nautical Nights" Youth &amp; Scout Overnight Encampments
               </strong>
               <p style="font-size: 0.88rem; color: var(--slate-200); margin: 0;">
-                Boy Scout troops, Sea Cadets, and educational groups can arrange to spend the night or weekend sleeping in authentic WWII sailor bunks aboard the USS LCS-102. Contact <strong>Skipper Bill Mason</strong> (<a href="mailto:bmason6056@aol.com" style="color: var(--gold-400); text-decoration: underline;">bmason6056@aol.com</a>) or <strong>Exec. Officer Gordon Stutrud</strong> (<a href="tel:7073732159" style="color: var(--gold-400); text-decoration: underline;">707-373-2159</a>) to schedule an overnight visit.
+                Boy Scout troops, Sea Cadets, and educational youth groups can arrange to spend the night or weekend sleeping in authentic WWII sailor bunks (Compartment A-208-1L) and dining on the Mess Deck (A-208-L) aboard the USS LCS-102. Contact <strong>Skipper Bill Mason</strong> (<a href="mailto:bmason6056@aol.com" style="color: var(--gold-400); text-decoration: underline;">bmason6056@aol.com</a>) or <strong>Exec. Officer Gordon Stutrud</strong> (<a href="tel:7073732159" style="color: var(--gold-400); text-decoration: underline;">707-373-2159</a>) to schedule an overnight stay.
               </p>
             </div>
           </div>
@@ -1202,8 +1389,8 @@
             title="USS LCS-102 Mare Island Naval Shipyard Map"
             src="https://www.google.com/maps?q=289+Waterfront+Ave,+Vallejo,+CA+94592&output=embed"
             width="100%"
-            height="370"
-            style="border: 0; border-radius: var(--radius-md); filter: contrast(1.05);"
+            height="395"
+            style="border: 0; border-radius: var(--radius-md);"
             allowfullscreen=""
             loading="lazy"
           ></iframe>
@@ -1512,37 +1699,59 @@
   <div class="lcs-modal-backdrop" id="lcs-virtual-modal" role="dialog" aria-modal="true" aria-label="USS LCS-102 Virtual Museum Portal">
     <div class="lcs-modal-content lcs-virtual-modal-inner">
       <button type="button" class="lcs-modal-close" aria-label="Close">✕</button>
-      <span class="lcs-spotlight-tag">🌐 USS LCS-102 VIRTUAL MUSEUM PORTAL</span>
+      <span class="lcs-spotlight-tag">🌐 USS LCS-102 VIRTUAL MUSEUM PORTAL • LIVE ON THINGLINK</span>
       <h3 style="font-family: var(--font-display); font-size: 2.2rem; text-transform: uppercase; color: var(--white); margin: 0.25rem 0 0.75rem;">
-        Interactive 3D &amp; 360° Online Ship Experience
+        Choose Your Interactive 360° Ship Experience
       </h3>
       <p style="color: var(--slate-200); margin: 0 0 1.25rem;">
-        The interactive online version of the <strong>Landing Craft Support Museum (USS LCS-102 "Yankee Dollar")</strong> is being produced by our dedicated Virtual Museum development team. Once live, this portal button connects directly to the full 3D/360° walkthrough of the ship.
+        Step aboard the <strong>USS LCS(L)(3)-102 ("Yankee Dollar")</strong> through two live interactive ThingLink 360° digital tours—or use the embedded 360° theater directly on this page:
       </p>
       <div class="lcs-modal-grid">
-        <div style="background: rgba(5,12,22,0.65); border: 1px solid rgba(56,189,248,0.3); padding: 1rem; border-radius: 6px;">
-          <strong style="color: var(--cyan-400); font-family: var(--font-display); text-transform: uppercase; display: block;">01. Upper Decks &amp; Guns</strong>
-          <span style="font-size: 0.82rem; color: var(--slate-300);">3"/50 bow gun, 10× Mark 7 rocket launchers, twin 40mm Bofors &amp; 20mm Oerlikons.</span>
+        <div style="background: rgba(5,12,22,0.75); border: 1px solid rgba(229,169,60,0.45); padding: 1.1rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem;">
+          <div>
+            <strong style="color: var(--gold-400); font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase; display: block;">01. Planned Guided Story Tour (11 Stops)</strong>
+            <span style="font-size: 0.83rem; color: var(--slate-300); display: block; margin-top: 0.25rem;">"The Ships That Cleared the Way" — narrated 11-milestone historical tour from the 3"/50 bow gun to Okinawa Radar Picket #18 and the crew quarters.</span>
+          </div>
+          <a href="https://www.thinglink.com/view/scene/2161138540841279141" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-gold" style="width: 100%;">
+            🎬 Launch Guided Tour ↗
+          </a>
         </div>
-        <div style="background: rgba(5,12,22,0.65); border: 1px solid rgba(56,189,248,0.3); padding: 1rem; border-radius: 6px;">
-          <strong style="color: var(--cyan-400); font-family: var(--font-display); text-transform: uppercase; display: block;">02. Bridge &amp; Conning</strong>
-          <span style="font-size: 0.82rem; color: var(--slate-300);">Pilothouse helm, radar picket chart room, and JMSDF lookout deck.</span>
+        <div style="background: rgba(5,12,22,0.75); border: 1px solid rgba(56,189,248,0.45); padding: 1.1rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem;">
+          <div>
+            <strong style="color: var(--cyan-400); font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase; display: block;">02. 62-Compartment Free-Roam 360°</strong>
+            <span style="font-size: 0.83rem; color: var(--slate-300); display: block; margin-top: 0.25rem;">Self-guided 360° digital twin covering all 62 shipboard stations, gun mounts, pilothouse, conning tower, and twin GM diesel engine room.</span>
+          </div>
+          <a href="https://www.thinglink.com/view/scene/2151393301209547620" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-cyan" style="width: 100%;">
+            🧭 Launch 62-Scene Tour ↗
+          </a>
         </div>
-        <div style="background: rgba(5,12,22,0.65); border: 1px solid rgba(56,189,248,0.3); padding: 1rem; border-radius: 6px;">
-          <strong style="color: var(--cyan-400); font-family: var(--font-display); text-transform: uppercase; display: block;">03. Below Decks</strong>
-          <span style="font-size: 0.82rem; color: var(--slate-300);">Crew berthing, mess deck, ammunition magazines, and twin GM diesel engine room.</span>
+        <div style="background: rgba(5,12,22,0.75); border: 1px solid rgba(255,255,255,0.25); padding: 1.1rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem;">
+          <div>
+            <strong style="color: var(--white); font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase; display: block;">03. 4K Deck Plan &amp; Documentary</strong>
+            <span style="font-size: 0.83rem; color: var(--slate-300); display: block; margin-top: 0.25rem;">Explore the clickable 4K architectural deck blueprint or watch the companion documentary video on YouTube.</span>
+          </div>
+          <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+            <a href="https://www.thinglink.com/view/scene/2151338138495091556" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline" style="flex: 1;">
+              📐 Deck Plan ↗
+            </a>
+            <a href="https://youtu.be/n87M2tm7GRk" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline" style="flex: 1;">
+              ▶️ Video ↗
+            </a>
+          </div>
         </div>
       </div>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="#lcs-thinglink-theater" onclick="document.getElementById('lcs-virtual-modal').classList.remove('open')" class="lcs-btn lcs-btn-cyan">
+          🌐 Use Embedded 360° Player on Page
+        </a>
         <a href="#donate" onclick="document.getElementById('lcs-virtual-modal').classList.remove('open')" class="lcs-btn lcs-btn-gold">
           ❤️ Support the Museum &amp; Virtual Initiative
-        </a>
-        <a href="mailto:gstutrud@usslcs102.org?subject=USS%20LCS-102%20Virtual%20Museum%20Updates" class="lcs-btn lcs-btn-outline">
-          ✉️ Get Notified on Full Virtual Tour Launch
         </a>
       </div>
     </div>
   </div>
+
+  
 </div>
 
 <script>
@@ -1555,8 +1764,62 @@ document.addEventListener('DOMContentLoaded', () => {
   // 0. Ensure Browser Tab Title reflects the Museum Name
   document.title = 'USS LCS-102 "Yankee Dollar" | Landing Craft Support Museum';
 
-  // 1. Sticky Header Scroll Effect + Top Reading Progress Bar
+  // 0a. Squarespace 7.1 Auto-Cleanup: Hide default "Your Site" header, footer, "Empty Page" & "Title" blocks
+  const lcsRoot = document.querySelector('.lcs-site');
+  function cleanSquarespaceDOM() {
+    if (!lcsRoot) return;
+    document.querySelectorAll('header#header, .header, footer#footer-sections, .footer-sections').forEach((el) => {
+      el.style.setProperty('display', 'none', 'important');
+    });
+    document.querySelectorAll('.sqs-block:not(.sqs-block-code), .fe-block, section.page-section, article#sections > section').forEach((el) => {
+      if (!el.contains(lcsRoot) && !lcsRoot.contains(el)) {
+        el.style.setProperty('display', 'none', 'important');
+      }
+    });
+
+    // Walk up from .lcs-site to #siteWrapper and hide any sibling branches (such as "Empty Page" notices)
+    let curr = lcsRoot;
+    while (curr && curr !== document.body) {
+      const parent = curr.parentElement;
+      if (!parent) break;
+      Array.from(parent.children).forEach((sib) => {
+        if (sib !== curr && !['STYLE', 'SCRIPT', 'LINK', 'SVG'].includes(sib.tagName)) {
+          if (!sib.contains(lcsRoot) && !lcsRoot.contains(sib)) {
+            sib.style.setProperty('display', 'none', 'important');
+          }
+        }
+      });
+      if (parent.id === 'siteWrapper') break;
+      curr = parent;
+    }
+
+    // Also hide any dynamically injected Squarespace "Empty Page" notice
+    document.querySelectorAll('div, section, p, h1, h2, h3, span').forEach((el) => {
+      if (!el.contains(lcsRoot) && !lcsRoot.contains(el) && el.children.length === 0) {
+        const txt = (el.textContent || '').trim();
+        if (txt === 'Empty Page' || txt === 'Create a beautiful page by adding and combining sections.') {
+          let box = el.parentElement || el;
+          while (box && box.parentElement && !box.parentElement.contains(lcsRoot) && box.parentElement !== document.body) {
+            box = box.parentElement;
+          }
+          if (box && !box.contains(lcsRoot)) {
+            box.style.setProperty('display', 'none', 'important');
+          }
+          el.style.setProperty('display', 'none', 'important');
+        }
+      }
+    });
+  }
+
+  cleanSquarespaceDOM();
+  window.addEventListener('load', cleanSquarespaceDOM);
+  setTimeout(cleanSquarespaceDOM, 450);
+  setTimeout(cleanSquarespaceDOM, 1400);
+
+  // 1. Sticky Header Scroll Effect + Top Reading Progress Bar + Intrepid Scroll-Scrubbed Ship Bow Wipe
   const header = document.querySelector('.lcs-header');
+  const bowPathMain = document.getElementById('lcs-bow-path-main');
+  const bowPathAccent = document.getElementById('lcs-bow-path-accent');
   let progressBar = null;
   if (header) {
     progressBar = document.createElement('div');
@@ -1576,46 +1839,87 @@ document.addEventListener('DOMContentLoaded', () => {
         const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
         progressBar.style.width = `${pct}%`;
       }
+
+      // Intrepid Museum ScrollLottie.js / AircraftHead.js Ship Bow Silhouette Morph
+      if (bowPathMain && bowPathAccent) {
+        const rawProgress = Math.min(1, Math.max(0, scrollTop / 520));
+        // Intrepid easeOut curve
+        const p = 1 - Math.pow(1 - rawProgress, 2.6);
+        const edgeY = Math.round(180 * (1 - p));
+        const chineLeftX = Math.round(340 * (1 - p));
+        const chineRightX = Math.round(940 + (1280 - 940) * p);
+        const chineMainY = Math.round(98 * (1 - p));
+        const chineAccentY = Math.round(92 * (1 - p));
+        const apexMainY = Math.round(16 * (1 - p));
+        const apexAccentY = Math.round(8 * (1 - p));
+
+        bowPathMain.setAttribute(
+          'd',
+          `M 0,${edgeY} L ${chineLeftX},${chineMainY} L 640,${apexMainY} L ${chineRightX},${chineMainY} L 1280,${edgeY} L 1280,180 L 0,180 Z`
+        );
+        bowPathAccent.setAttribute(
+          'd',
+          `M 0,${edgeY} L ${chineLeftX},${chineAccentY} L 640,${apexAccentY} L ${chineRightX},${chineAccentY} L 1280,${edgeY} L 1280,180 L 0,180 Z`
+        );
+      }
     };
 
     window.addEventListener('scroll', updateScrollUI, { passive: true });
     updateScrollUI();
   }
 
-  // 2. Mobile Navigation Toggle
+  // 2. Mobile Navigation Toggle (Intrepid 3-Slice 225deg Hamburger Morph + Staggered Menu Slide-In)
   const mobileToggle = document.querySelector('.lcs-mobile-toggle');
   const nav = document.querySelector('.lcs-nav');
   if (mobileToggle && nav) {
     mobileToggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('open');
+      mobileToggle.classList.toggle('active', isOpen);
       mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      mobileToggle.innerHTML = isOpen ? '✕' : '☰';
     });
 
     nav.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         nav.classList.remove('open');
+        mobileToggle.classList.remove('active');
         mobileToggle.setAttribute('aria-expanded', 'false');
-        mobileToggle.innerHTML = '☰';
       });
     });
   }
 
-  // 3. Staggered Scroll-Reveal Animation Engine (IntersectionObserver)
+  // 2b. Inject Intrepid Delta-Jet Arrowhead + 3-Bar Speed-Trail CTAs into Era & Gallery Cards
+  document.querySelectorAll('.lcs-era-card .lcs-era-body').forEach((body) => {
+    if (!body.querySelector('.lcs-intrepid-cta')) {
+      const cta = document.createElement('div');
+      cta.className = 'lcs-intrepid-cta';
+      cta.textContent = 'Inspect Historical Record';
+      body.appendChild(cta);
+    }
+  });
+  document.querySelectorAll('.lcs-gallery-item .lcs-gallery-meta').forEach((meta) => {
+    if (!meta.querySelector('.lcs-intrepid-cta')) {
+      const cta = document.createElement('div');
+      cta.className = 'lcs-intrepid-cta';
+      cta.textContent = 'Enlarge Archival Photo';
+      meta.appendChild(cta);
+    }
+  });
+
+  // 3. Staggered Scroll-Reveal Animation Engine (Intrepid ParallaxGrid.js style)
   const revealGroups = [
     { selector: '.lcs-section-header', stagger: 0 },
     { selector: '.lcs-virtual-banner', stagger: 0 },
     { selector: '.lcs-deck-explorer', stagger: 0 },
-    { selector: '.lcs-objective-card', stagger: 75 },
+    { selector: '.lcs-objective-card', stagger: 100 },
     { selector: '.lcs-photo-collage', stagger: 100 },
     { selector: '.lcs-stats-bar', stagger: 0 },
     { selector: '.lcs-blueprint-table', stagger: 0 },
-    { selector: '.lcs-era-card', stagger: 90 },
+    { selector: '.lcs-era-card', stagger: 100 },
     { selector: '.lcs-donate-box, .lcs-check-card', stagger: 100 },
-    { selector: '.lcs-gallery-item', stagger: 55 },
-    { selector: '.lcs-info-card', stagger: 110 },
-    { selector: '.lcs-comm-card', stagger: 95 },
-    { selector: '.lcs-crew-card', stagger: 75 },
+    { selector: '.lcs-gallery-item', stagger: 80 },
+    { selector: '.lcs-info-card', stagger: 100 },
+    { selector: '.lcs-comm-card', stagger: 100 },
+    { selector: '.lcs-crew-card', stagger: 90 },
     { selector: '.lcs-membership-form-card', stagger: 0 },
   ];
 
@@ -1638,11 +1942,12 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
-            revealObserver.unobserve(entry.target);
+          } else {
+            entry.target.classList.remove('is-visible');
           }
         });
       },
-      { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+      { threshold: 0.08, rootMargin: '0px 0px -24px 0px' }
     );
     allRevealEls.forEach((el) => revealObserver.observe(el));
   } else {
@@ -1892,7 +2197,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxDesc = document.getElementById('lcs-lightbox-desc');
   const lightboxTag = document.getElementById('lcs-lightbox-tag');
 
-  if (lightboxModal && galleryItems.length) {
+  if (lightboxModal) {
     galleryItems.forEach((item) => {
       item.addEventListener('click', () => {
         const imgEl = item.querySelector('img');
@@ -1911,6 +2216,26 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxModal.classList.add('open');
       });
     });
+
+    document.querySelectorAll('.lcs-era-card').forEach((card) => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => {
+        const imgEl = card.querySelector('img');
+        const titleEl = card.querySelector('h3');
+        const descEl = card.querySelector('p');
+        const tagEl = card.querySelector('.lcs-era-year');
+
+        if (imgEl && lightboxImg) {
+          lightboxImg.src = imgEl.src;
+          lightboxImg.alt = imgEl.alt || '';
+        }
+        if (titleEl && lightboxTitle) lightboxTitle.textContent = titleEl.textContent;
+        if (descEl && lightboxDesc) lightboxDesc.textContent = descEl.textContent;
+        if (tagEl && lightboxTag) lightboxTag.textContent = `HISTORICAL ERA • ${tagEl.textContent}`;
+
+        lightboxModal.classList.add('open');
+      });
+    });
   }
 
   // 10. Virtual Museum Portal Modal Trigger
@@ -1925,6 +2250,56 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 10B. ThingLink 360° Virtual Museum Theater Scene & Mode Switcher
+  const thinglinkIframe = document.getElementById('lcs-thinglink-iframe');
+  const thinglinkExternalBtn = document.getElementById('lcs-thinglink-external-btn');
+  const activeTourTitle = document.getElementById('lcs-active-tour-title');
+  const activeTourDesc = document.getElementById('lcs-active-tour-desc');
+  const sceneButtons = document.querySelectorAll('[data-thinglink-scene]');
+
+  if (thinglinkIframe && sceneButtons.length) {
+    sceneButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const sceneId = btn.getAttribute('data-thinglink-scene');
+        const tourTitle = btn.getAttribute('data-tour-title');
+        const tourDesc = btn.getAttribute('data-tour-desc');
+        if (!sceneId) return;
+
+        const cardUrl = `https://www.thinglink.com/card/${sceneId}`;
+        const viewUrl = `https://www.thinglink.com/view/scene/${sceneId}`;
+
+        if (thinglinkIframe.getAttribute('src') !== cardUrl) {
+          thinglinkIframe.setAttribute('src', cardUrl);
+        }
+        if (thinglinkExternalBtn) {
+          thinglinkExternalBtn.setAttribute('href', viewUrl);
+        }
+        if (tourTitle && activeTourTitle) {
+          activeTourTitle.textContent = tourTitle;
+        }
+        if (tourDesc && activeTourDesc) {
+          activeTourDesc.textContent = tourDesc;
+        }
+
+        // Sync active classes across mode buttons and quick-jump pills
+        document.querySelectorAll('.lcs-tour-mode-btn').forEach((mBtn) => {
+          mBtn.classList.toggle('active', mBtn.getAttribute('data-thinglink-scene') === sceneId);
+        });
+        document.querySelectorAll('.lcs-scene-pill').forEach((pBtn) => {
+          pBtn.classList.toggle('active', pBtn.getAttribute('data-thinglink-scene') === sceneId);
+        });
+
+        // If triggered from a lower Deck Explorer Station, scroll smoothly to the 360° Theater
+        if (btn.closest('.lcs-deck-panel')) {
+          const theaterEl = document.getElementById('lcs-thinglink-theater');
+          if (theaterEl) {
+            theaterEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+  }
+
   // 11. Membership Application Form Handler
   const memForm = document.getElementById('lcs-membership-form');
   const memStatus = document.getElementById('lcs-mem-status');
@@ -1933,23 +2308,59 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const name = (document.getElementById('mem-name') || {}).value || '';
       const email = (document.getElementById('mem-email') || {}).value || '';
-      const phone = (document.getElementById('mem-phone') || {}).value || '';
-      const relation = (document.getElementById('mem-relation') || {}).value || '';
-      const address = (document.getElementById('mem-address') || {}).value || '';
+      const phone = (document.getElementById('mem-phone') || {}).value || 'Not provided';
+      const relation = (document.getElementById('mem-relation') || {}).value || 'Supporter / Friend of the Museum';
+      const address = (document.getElementById('mem-address') || {}).value || 'Not provided';
+
+      const plainBody =
+        `Landing Craft Support Museum — Official Membership Application\n` +
+        `--------------------------------------------------------------\n` +
+        `Full Name: ${name}\n` +
+        `Email Address: ${email}\n` +
+        `Phone Number: ${phone}\n` +
+        `WWII Veteran / Ship Connection: ${relation}\n` +
+        `Mailing Address: ${address}\n`;
 
       const subject = encodeURIComponent(`LCS Museum Membership Application — ${name}`);
-      const body = encodeURIComponent(
-        `Landing Craft Support Museum Membership Application\n\n` +
-          `Name: ${name}\n` +
-          `Email: ${email}\n` +
-          `Phone: ${phone}\n` +
-          `Ship / Veteran Connection: ${relation}\n` +
-          `Mailing Address: ${address}\n`
-      );
-      window.location.href = `mailto:dsteenbergen1165@gmail.com?subject=${subject}&body=${body}`;
+      const body = encodeURIComponent(plainBody);
+      const mailtoUrl = `mailto:dsteenbergen1165@gmail.com?subject=${subject}&body=${body}`;
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=dsteenbergen1165@gmail.com&su=${subject}&body=${body}`;
+
       if (memStatus) {
-        memStatus.textContent = '✓ Application prepared! Complete sending in your email client.';
+        memStatus.style.display = 'block';
+        memStatus.style.width = '100%';
+        memStatus.style.marginTop = '0.75rem';
+        memStatus.innerHTML = `
+          <div style="background:#f0fdf4;border:1px solid #16a34a;border-radius:8px;padding:1rem 1.25rem;color:#052e16;">
+            <div style="font-weight:700;font-size:0.98rem;margin-bottom:0.35rem;color:#15803d;">
+              ✅ Membership Application Prepared for Museum Secretary Dennis Steenbergen
+            </div>
+            <p style="margin:0 0 0.75rem;font-size:0.86rem;color:#166534;">
+              Your enrollment details for <strong>${name}</strong> (${email}) have been formatted for <strong>dsteenbergen1165@gmail.com</strong>. If your email app did not open automatically, choose an option below:
+            </p>
+            <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+              <a href="${mailtoUrl}" class="lcs-btn lcs-btn-sm lcs-btn-crimson" style="text-decoration:none;">
+                📧 Open Default Email App
+              </a>
+              <a href="${gmailUrl}" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm" style="background:#091526;color:#fff;text-decoration:none;">
+                🌐 Send via Gmail Web ↗
+              </a>
+              <button type="button" id="lcs-copy-mem-btn" class="lcs-btn lcs-btn-sm" style="background:#e2e8f0;color:#050c16;border:1px solid #94a3b8;">
+                📋 Copy Application Details
+              </button>
+            </div>
+          </div>
+        `;
+        const copyBtn = document.getElementById('lcs-copy-mem-btn');
+        if (copyBtn && navigator.clipboard) {
+          copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(plainBody);
+            copyBtn.textContent = '✓ Copied to Clipboard!';
+          });
+        }
       }
+
+      window.location.href = mailtoUrl;
     });
   }
 

@@ -7,8 +7,62 @@ document.addEventListener('DOMContentLoaded', () => {
   // 0. Ensure Browser Tab Title reflects the Museum Name
   document.title = 'USS LCS-102 "Yankee Dollar" | Landing Craft Support Museum';
 
-  // 1. Sticky Header Scroll Effect + Top Reading Progress Bar
+  // 0a. Squarespace 7.1 Auto-Cleanup: Hide default "Your Site" header, footer, "Empty Page" & "Title" blocks
+  const lcsRoot = document.querySelector('.lcs-site');
+  function cleanSquarespaceDOM() {
+    if (!lcsRoot) return;
+    document.querySelectorAll('header#header, .header, footer#footer-sections, .footer-sections').forEach((el) => {
+      el.style.setProperty('display', 'none', 'important');
+    });
+    document.querySelectorAll('.sqs-block:not(.sqs-block-code), .fe-block, section.page-section, article#sections > section').forEach((el) => {
+      if (!el.contains(lcsRoot) && !lcsRoot.contains(el)) {
+        el.style.setProperty('display', 'none', 'important');
+      }
+    });
+
+    // Walk up from .lcs-site to #siteWrapper and hide any sibling branches (such as "Empty Page" notices)
+    let curr = lcsRoot;
+    while (curr && curr !== document.body) {
+      const parent = curr.parentElement;
+      if (!parent) break;
+      Array.from(parent.children).forEach((sib) => {
+        if (sib !== curr && !['STYLE', 'SCRIPT', 'LINK', 'SVG'].includes(sib.tagName)) {
+          if (!sib.contains(lcsRoot) && !lcsRoot.contains(sib)) {
+            sib.style.setProperty('display', 'none', 'important');
+          }
+        }
+      });
+      if (parent.id === 'siteWrapper') break;
+      curr = parent;
+    }
+
+    // Also hide any dynamically injected Squarespace "Empty Page" notice
+    document.querySelectorAll('div, section, p, h1, h2, h3, span').forEach((el) => {
+      if (!el.contains(lcsRoot) && !lcsRoot.contains(el) && el.children.length === 0) {
+        const txt = (el.textContent || '').trim();
+        if (txt === 'Empty Page' || txt === 'Create a beautiful page by adding and combining sections.') {
+          let box = el.parentElement || el;
+          while (box && box.parentElement && !box.parentElement.contains(lcsRoot) && box.parentElement !== document.body) {
+            box = box.parentElement;
+          }
+          if (box && !box.contains(lcsRoot)) {
+            box.style.setProperty('display', 'none', 'important');
+          }
+          el.style.setProperty('display', 'none', 'important');
+        }
+      }
+    });
+  }
+
+  cleanSquarespaceDOM();
+  window.addEventListener('load', cleanSquarespaceDOM);
+  setTimeout(cleanSquarespaceDOM, 450);
+  setTimeout(cleanSquarespaceDOM, 1400);
+
+  // 1. Sticky Header Scroll Effect + Top Reading Progress Bar + Intrepid Scroll-Scrubbed Ship Bow Wipe
   const header = document.querySelector('.lcs-header');
+  const bowPathMain = document.getElementById('lcs-bow-path-main');
+  const bowPathAccent = document.getElementById('lcs-bow-path-accent');
   let progressBar = null;
   if (header) {
     progressBar = document.createElement('div');
@@ -28,46 +82,87 @@ document.addEventListener('DOMContentLoaded', () => {
         const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
         progressBar.style.width = `${pct}%`;
       }
+
+      // Intrepid Museum ScrollLottie.js / AircraftHead.js Ship Bow Silhouette Morph
+      if (bowPathMain && bowPathAccent) {
+        const rawProgress = Math.min(1, Math.max(0, scrollTop / 520));
+        // Intrepid easeOut curve
+        const p = 1 - Math.pow(1 - rawProgress, 2.6);
+        const edgeY = Math.round(180 * (1 - p));
+        const chineLeftX = Math.round(340 * (1 - p));
+        const chineRightX = Math.round(940 + (1280 - 940) * p);
+        const chineMainY = Math.round(98 * (1 - p));
+        const chineAccentY = Math.round(92 * (1 - p));
+        const apexMainY = Math.round(16 * (1 - p));
+        const apexAccentY = Math.round(8 * (1 - p));
+
+        bowPathMain.setAttribute(
+          'd',
+          `M 0,${edgeY} L ${chineLeftX},${chineMainY} L 640,${apexMainY} L ${chineRightX},${chineMainY} L 1280,${edgeY} L 1280,180 L 0,180 Z`
+        );
+        bowPathAccent.setAttribute(
+          'd',
+          `M 0,${edgeY} L ${chineLeftX},${chineAccentY} L 640,${apexAccentY} L ${chineRightX},${chineAccentY} L 1280,${edgeY} L 1280,180 L 0,180 Z`
+        );
+      }
     };
 
     window.addEventListener('scroll', updateScrollUI, { passive: true });
     updateScrollUI();
   }
 
-  // 2. Mobile Navigation Toggle
+  // 2. Mobile Navigation Toggle (Intrepid 3-Slice 225deg Hamburger Morph + Staggered Menu Slide-In)
   const mobileToggle = document.querySelector('.lcs-mobile-toggle');
   const nav = document.querySelector('.lcs-nav');
   if (mobileToggle && nav) {
     mobileToggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('open');
+      mobileToggle.classList.toggle('active', isOpen);
       mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      mobileToggle.innerHTML = isOpen ? '✕' : '☰';
     });
 
     nav.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         nav.classList.remove('open');
+        mobileToggle.classList.remove('active');
         mobileToggle.setAttribute('aria-expanded', 'false');
-        mobileToggle.innerHTML = '☰';
       });
     });
   }
 
-  // 3. Staggered Scroll-Reveal Animation Engine (IntersectionObserver)
+  // 2b. Inject Intrepid Delta-Jet Arrowhead + 3-Bar Speed-Trail CTAs into Era & Gallery Cards
+  document.querySelectorAll('.lcs-era-card .lcs-era-body').forEach((body) => {
+    if (!body.querySelector('.lcs-intrepid-cta')) {
+      const cta = document.createElement('div');
+      cta.className = 'lcs-intrepid-cta';
+      cta.textContent = 'Inspect Historical Record';
+      body.appendChild(cta);
+    }
+  });
+  document.querySelectorAll('.lcs-gallery-item .lcs-gallery-meta').forEach((meta) => {
+    if (!meta.querySelector('.lcs-intrepid-cta')) {
+      const cta = document.createElement('div');
+      cta.className = 'lcs-intrepid-cta';
+      cta.textContent = 'Enlarge Archival Photo';
+      meta.appendChild(cta);
+    }
+  });
+
+  // 3. Staggered Scroll-Reveal Animation Engine (Intrepid ParallaxGrid.js style)
   const revealGroups = [
     { selector: '.lcs-section-header', stagger: 0 },
     { selector: '.lcs-virtual-banner', stagger: 0 },
     { selector: '.lcs-deck-explorer', stagger: 0 },
-    { selector: '.lcs-objective-card', stagger: 75 },
+    { selector: '.lcs-objective-card', stagger: 100 },
     { selector: '.lcs-photo-collage', stagger: 100 },
     { selector: '.lcs-stats-bar', stagger: 0 },
     { selector: '.lcs-blueprint-table', stagger: 0 },
-    { selector: '.lcs-era-card', stagger: 90 },
+    { selector: '.lcs-era-card', stagger: 100 },
     { selector: '.lcs-donate-box, .lcs-check-card', stagger: 100 },
-    { selector: '.lcs-gallery-item', stagger: 55 },
-    { selector: '.lcs-info-card', stagger: 110 },
-    { selector: '.lcs-comm-card', stagger: 95 },
-    { selector: '.lcs-crew-card', stagger: 75 },
+    { selector: '.lcs-gallery-item', stagger: 80 },
+    { selector: '.lcs-info-card', stagger: 100 },
+    { selector: '.lcs-comm-card', stagger: 100 },
+    { selector: '.lcs-crew-card', stagger: 90 },
     { selector: '.lcs-membership-form-card', stagger: 0 },
   ];
 
@@ -90,11 +185,12 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
-            revealObserver.unobserve(entry.target);
+          } else {
+            entry.target.classList.remove('is-visible');
           }
         });
       },
-      { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+      { threshold: 0.08, rootMargin: '0px 0px -24px 0px' }
     );
     allRevealEls.forEach((el) => revealObserver.observe(el));
   } else {
@@ -344,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxDesc = document.getElementById('lcs-lightbox-desc');
   const lightboxTag = document.getElementById('lcs-lightbox-tag');
 
-  if (lightboxModal && galleryItems.length) {
+  if (lightboxModal) {
     galleryItems.forEach((item) => {
       item.addEventListener('click', () => {
         const imgEl = item.querySelector('img');
@@ -363,6 +459,26 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxModal.classList.add('open');
       });
     });
+
+    document.querySelectorAll('.lcs-era-card').forEach((card) => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => {
+        const imgEl = card.querySelector('img');
+        const titleEl = card.querySelector('h3');
+        const descEl = card.querySelector('p');
+        const tagEl = card.querySelector('.lcs-era-year');
+
+        if (imgEl && lightboxImg) {
+          lightboxImg.src = imgEl.src;
+          lightboxImg.alt = imgEl.alt || '';
+        }
+        if (titleEl && lightboxTitle) lightboxTitle.textContent = titleEl.textContent;
+        if (descEl && lightboxDesc) lightboxDesc.textContent = descEl.textContent;
+        if (tagEl && lightboxTag) lightboxTag.textContent = `HISTORICAL ERA • ${tagEl.textContent}`;
+
+        lightboxModal.classList.add('open');
+      });
+    });
   }
 
   // 10. Virtual Museum Portal Modal Trigger
@@ -377,6 +493,56 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 10B. ThingLink 360° Virtual Museum Theater Scene & Mode Switcher
+  const thinglinkIframe = document.getElementById('lcs-thinglink-iframe');
+  const thinglinkExternalBtn = document.getElementById('lcs-thinglink-external-btn');
+  const activeTourTitle = document.getElementById('lcs-active-tour-title');
+  const activeTourDesc = document.getElementById('lcs-active-tour-desc');
+  const sceneButtons = document.querySelectorAll('[data-thinglink-scene]');
+
+  if (thinglinkIframe && sceneButtons.length) {
+    sceneButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const sceneId = btn.getAttribute('data-thinglink-scene');
+        const tourTitle = btn.getAttribute('data-tour-title');
+        const tourDesc = btn.getAttribute('data-tour-desc');
+        if (!sceneId) return;
+
+        const cardUrl = `https://www.thinglink.com/card/${sceneId}`;
+        const viewUrl = `https://www.thinglink.com/view/scene/${sceneId}`;
+
+        if (thinglinkIframe.getAttribute('src') !== cardUrl) {
+          thinglinkIframe.setAttribute('src', cardUrl);
+        }
+        if (thinglinkExternalBtn) {
+          thinglinkExternalBtn.setAttribute('href', viewUrl);
+        }
+        if (tourTitle && activeTourTitle) {
+          activeTourTitle.textContent = tourTitle;
+        }
+        if (tourDesc && activeTourDesc) {
+          activeTourDesc.textContent = tourDesc;
+        }
+
+        // Sync active classes across mode buttons and quick-jump pills
+        document.querySelectorAll('.lcs-tour-mode-btn').forEach((mBtn) => {
+          mBtn.classList.toggle('active', mBtn.getAttribute('data-thinglink-scene') === sceneId);
+        });
+        document.querySelectorAll('.lcs-scene-pill').forEach((pBtn) => {
+          pBtn.classList.toggle('active', pBtn.getAttribute('data-thinglink-scene') === sceneId);
+        });
+
+        // If triggered from a lower Deck Explorer Station, scroll smoothly to the 360° Theater
+        if (btn.closest('.lcs-deck-panel')) {
+          const theaterEl = document.getElementById('lcs-thinglink-theater');
+          if (theaterEl) {
+            theaterEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+  }
+
   // 11. Membership Application Form Handler
   const memForm = document.getElementById('lcs-membership-form');
   const memStatus = document.getElementById('lcs-mem-status');
@@ -385,23 +551,59 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const name = (document.getElementById('mem-name') || {}).value || '';
       const email = (document.getElementById('mem-email') || {}).value || '';
-      const phone = (document.getElementById('mem-phone') || {}).value || '';
-      const relation = (document.getElementById('mem-relation') || {}).value || '';
-      const address = (document.getElementById('mem-address') || {}).value || '';
+      const phone = (document.getElementById('mem-phone') || {}).value || 'Not provided';
+      const relation = (document.getElementById('mem-relation') || {}).value || 'Supporter / Friend of the Museum';
+      const address = (document.getElementById('mem-address') || {}).value || 'Not provided';
+
+      const plainBody =
+        `Landing Craft Support Museum — Official Membership Application\n` +
+        `--------------------------------------------------------------\n` +
+        `Full Name: ${name}\n` +
+        `Email Address: ${email}\n` +
+        `Phone Number: ${phone}\n` +
+        `WWII Veteran / Ship Connection: ${relation}\n` +
+        `Mailing Address: ${address}\n`;
 
       const subject = encodeURIComponent(`LCS Museum Membership Application — ${name}`);
-      const body = encodeURIComponent(
-        `Landing Craft Support Museum Membership Application\n\n` +
-          `Name: ${name}\n` +
-          `Email: ${email}\n` +
-          `Phone: ${phone}\n` +
-          `Ship / Veteran Connection: ${relation}\n` +
-          `Mailing Address: ${address}\n`
-      );
-      window.location.href = `mailto:dsteenbergen1165@gmail.com?subject=${subject}&body=${body}`;
+      const body = encodeURIComponent(plainBody);
+      const mailtoUrl = `mailto:dsteenbergen1165@gmail.com?subject=${subject}&body=${body}`;
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=dsteenbergen1165@gmail.com&su=${subject}&body=${body}`;
+
       if (memStatus) {
-        memStatus.textContent = '✓ Application prepared! Complete sending in your email client.';
+        memStatus.style.display = 'block';
+        memStatus.style.width = '100%';
+        memStatus.style.marginTop = '0.75rem';
+        memStatus.innerHTML = `
+          <div style="background:#f0fdf4;border:1px solid #16a34a;border-radius:8px;padding:1rem 1.25rem;color:#052e16;">
+            <div style="font-weight:700;font-size:0.98rem;margin-bottom:0.35rem;color:#15803d;">
+              ✅ Membership Application Prepared for Museum Secretary Dennis Steenbergen
+            </div>
+            <p style="margin:0 0 0.75rem;font-size:0.86rem;color:#166534;">
+              Your enrollment details for <strong>${name}</strong> (${email}) have been formatted for <strong>dsteenbergen1165@gmail.com</strong>. If your email app did not open automatically, choose an option below:
+            </p>
+            <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+              <a href="${mailtoUrl}" class="lcs-btn lcs-btn-sm lcs-btn-crimson" style="text-decoration:none;">
+                📧 Open Default Email App
+              </a>
+              <a href="${gmailUrl}" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm" style="background:#091526;color:#fff;text-decoration:none;">
+                🌐 Send via Gmail Web ↗
+              </a>
+              <button type="button" id="lcs-copy-mem-btn" class="lcs-btn lcs-btn-sm" style="background:#e2e8f0;color:#050c16;border:1px solid #94a3b8;">
+                📋 Copy Application Details
+              </button>
+            </div>
+          </div>
+        `;
+        const copyBtn = document.getElementById('lcs-copy-mem-btn');
+        if (copyBtn && navigator.clipboard) {
+          copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(plainBody);
+            copyBtn.textContent = '✓ Copied to Clipboard!';
+          });
+        }
       }
+
+      window.location.href = mailtoUrl;
     });
   }
 

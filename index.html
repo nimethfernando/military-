@@ -41,7 +41,7 @@
         </span>
       </div>
       <div class="lcs-utility-right">
-        <a href="#virtual-museum" class="lcs-utility-link highlight">🌐 Virtual Museum (New)</a>
+        <a href="#virtual-museum" class="lcs-utility-link highlight">🌐 Live 360° Virtual Museum (2 Tours)</a>
         <a href="#visit" class="lcs-utility-link">Overnight Group Stays</a>
         <a href="#community" class="lcs-utility-link">Newsletters</a>
         <a href="https://www.facebook.com/theyankeedollar" target="_blank" rel="noopener" class="lcs-utility-link">Facebook Community ↗</a>
@@ -77,7 +77,11 @@
       <div class="lcs-header-actions">
         <a href="#virtual-museum" data-page-link="virtual-museum" class="lcs-btn lcs-btn-sm lcs-btn-cyan">Explore Virtual Tour</a>
         <a href="#donate" data-page-link="donate" class="lcs-btn lcs-btn-sm lcs-btn-crimson">Donate (501c3)</a>
-        <button class="lcs-mobile-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+        <button class="lcs-mobile-toggle" aria-label="Toggle Menu" aria-expanded="false">
+          <span class="lcs-menu-slice"></span>
+          <span class="lcs-menu-slice"></span>
+          <span class="lcs-menu-slice"></span>
+        </button>
       </div>
     </div>
   </header>
@@ -158,7 +162,7 @@
         <!-- Right Column: Virtual Museum Online Experience Spotlight -->
         <aside class="lcs-hero-spotlight" aria-label="Virtual Museum Feature">
           <div class="lcs-spotlight-tag">
-            <span>●</span> NEW DIGITAL INITIATIVE • ONLINE ACCESS
+            <span>●</span> LIVE NOW • 2 INTERACTIVE 360° THINGLINK TOURS
           </div>
           <div class="lcs-spotlight-img-wrap">
             <img
@@ -166,19 +170,22 @@
               onerror="this.src='https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg'"
               alt="Bow and gun mounts of USS LCS-102 Yankee Dollar"
             />
-            <span class="lcs-spotlight-overlay-badge">360° DIGITAL DECK TOUR</span>
+            <span class="lcs-spotlight-overlay-badge">11-STOP STORY TOUR + 62-SCENE DIGITAL TWIN</span>
           </div>
-          <h2 class="lcs-spotlight-title">Introducing the USS LCS-102 Virtual Museum</h2>
+          <h2 class="lcs-spotlight-title">Step Aboard the Live 360° Virtual Museum</h2>
           <p class="lcs-spotlight-desc">
-            A dedicated virtual museum team is building an interactive online version of the <em>Yankee Dollar</em>. Walk the steel decks, inspect the 3-inch and twin 40mm gun mounts, enter the armored conning tower, and tour the engine room from anywhere in the world.
+            Explore <strong>two complete 360° digital experiences</strong> of the <em>Yankee Dollar</em>: follow our 11-stop guided narrative tour (<strong>"The Ships That Cleared the Way"</strong>) or roam freely across <strong>62 interior &amp; exterior compartments</strong> with an interactive 4K ship deck plan.
           </p>
-          <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
-            <a href="#virtual-museum" data-page-link="virtual-museum" class="lcs-btn lcs-btn-sm lcs-btn-cyan" style="flex: 1;">
-              Explore Virtual Tour →
+          <div style="display: flex; gap: 0.55rem; flex-wrap: wrap;">
+            <a href="#lcs-thinglink-theater" class="lcs-btn lcs-btn-sm lcs-btn-cyan" style="flex: 1 1 100%;">
+              🌐 Explore Live Embedded 360° Theater ↓
             </a>
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-outline" style="flex: 1;">
-              Preview Online Portal
-            </button>
+            <a href="https://www.thinglink.com/view/scene/2161138540841279141" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-gold" style="flex: 1;">
+              🎬 Guided Story Tour ↗
+            </a>
+            <a href="https://www.thinglink.com/view/scene/2151393301209547620" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline" style="flex: 1;">
+              🧭 62-Scene Free-Roam ↗
+            </a>
           </div>
         </aside>
       </div>
@@ -217,13 +224,21 @@
             <div>
               <div class="lcs-strip-label">Digital Experience</div>
               <div class="lcs-strip-value">Virtual Online Museum</div>
-              <div class="lcs-strip-sub"><a href="#virtual-museum" style="color: var(--cyan-400); text-decoration: underline;">Step aboard the digital twin online →</a></div>
+              <div class="lcs-strip-sub"><a href="#virtual-museum" class="lcs-intrepid-cta" style="color: var(--cyan-400);">Step aboard the digital twin online</a></div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Intrepid Museum Signature Scroll-Scrubbed Ship Bow Silhouette Wipe (#aircraftHeadContainer) -->
+  <div id="lcs-bow-scroll-wipe" class="lcs-bow-wipe" aria-hidden="true">
+    <svg class="lcs-bow-svg" viewBox="0 0 1280 180" preserveAspectRatio="none">
+      <path id="lcs-bow-path-accent" d="M 0,180 L 340,92 L 640,8 L 940,92 L 1280,180 L 1280,180 L 0,180 Z" fill="#fbb300" fill-opacity="0.7" />
+      <path id="lcs-bow-path-main" d="M 0,180 L 340,98 L 640,16 L 940,98 L 1280,180 L 1280,180 L 0,180 Z" fill="#091526" />
+    </svg>
+  </div>
 
   <!-- ========================================================================
        4. VIRTUAL MUSEUM FEATURE SECTION (Core Objective: Introduce Online Version)
@@ -283,12 +298,15 @@
             </div>
           </div>
 
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-gold">
-              🚀 Enter Virtual Museum Portal
-            </button>
-            <a href="#donate" class="lcs-btn lcs-btn-outline">
-              Support Physical &amp; Digital Preservation
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+            <a href="https://www.thinglink.com/view/scene/2161138540841279141" target="_blank" rel="noopener" class="lcs-btn lcs-btn-gold">
+              🎬 Launch Guided Story Tour (11 Stops) ↗
+            </a>
+            <a href="https://www.thinglink.com/view/scene/2151393301209547620" target="_blank" rel="noopener" class="lcs-btn lcs-btn-cyan">
+              🧭 Launch 62-Compartment Free-Roam 360° ↗
+            </a>
+            <a href="https://youtu.be/n87M2tm7GRk" target="_blank" rel="noopener" class="lcs-btn lcs-btn-outline">
+              ▶️ Watch Tour Documentary Video ↗
             </a>
           </div>
         </div>
@@ -303,11 +321,130 @@
             />
             <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.85rem;">
               <div>
-                <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--cyan-400); text-transform: uppercase;">VIRTUAL TOUR PREVIEW</div>
-                <div style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; text-transform: uppercase; color: var(--white);">5 Interactive Ship Stations Below</div>
+                <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--cyan-400); text-transform: uppercase;">2 LIVE THINGLINK 360° EXPERIENCES</div>
+                <div style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; text-transform: uppercase; color: var(--white);">130 Ships Built • ~10,000 Sailors • 1 Survivor</div>
               </div>
               <span style="font-family: var(--font-mono); font-size: 0.75rem; background: rgba(229,169,60,0.15); color: var(--gold-400); padding: 0.3rem 0.6rem; border-radius: 4px;">HULL #102</span>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           LIVE EMBEDDED THINGLINK 360° VIRTUAL MUSEUM THEATER (2 TOURS + DECK PLAN)
+           ==================================================================== -->
+      <div id="lcs-thinglink-theater" class="lcs-thinglink-theater" aria-label="Interactive ThingLink 360 Virtual Museum Player">
+        <div class="lcs-theater-header">
+          <div>
+            <span class="lcs-spotlight-tag" style="margin-bottom: 0.25rem;">🟢 LIVE INTERACTIVE 360° THINGLINK PLAYER • CLICK &amp; DRAG TO LOOK AROUND</span>
+            <h3 id="lcs-active-tour-title" style="font-family: var(--font-display); font-size: clamp(1.55rem, 2.5vw, 2.1rem); text-transform: uppercase; margin: 0; color: var(--white);">
+              Guided Story Tour: "The Ships That Cleared the Way" (11 Narrative Stops)
+            </h3>
+            <p id="lcs-active-tour-desc" style="color: var(--slate-300); font-size: 0.92rem; margin: 0.25rem 0 0;">
+              Follow the combat journey of the WWII "Mighty Midgets" across 11 guided 360° stations—or switch tabs below to roam freely through all 62 ship compartments and the interactive 4K deck blueprint.
+            </p>
+          </div>
+          <div class="lcs-theater-actions">
+            <a id="lcs-thinglink-external-btn" href="https://www.thinglink.com/view/scene/2161138540841279141" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-gold">
+              ⛶ Open Fullscreen in ThingLink ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Primary Tour Mode Switcher Tabs (Both Client Links + 4K Deck Plan) -->
+        <div class="lcs-tour-mode-tabs" role="tablist" aria-label="Select Virtual Museum Tour Mode">
+          <button
+            type="button"
+            class="lcs-tour-mode-btn active"
+            data-thinglink-scene="2161138540841279141"
+            data-tour-title="Guided Story Tour: &quot;The Ships That Cleared the Way&quot; (11 Narrative Stops)"
+            data-tour-desc="Follow the planned 11-stop historical narrative tour from the 3&quot;/50 bow gun and Okinawa Radar Picket #18 to the Galley (A-111-L), Mess Hall (A-208-L), and Aft Berthing (A-208-1L)."
+          >
+            <span class="mode-badge">TOUR 01 • PLANNED GUIDED TOUR</span>
+            <strong>🎬 "The Ships That Cleared the Way" (11-Stop Story Tour)</strong>
+          </button>
+
+          <button
+            type="button"
+            class="lcs-tour-mode-btn"
+            data-thinglink-scene="2151393301209547620"
+            data-tour-title="62-Compartment Free-Roam 360° Digital Twin &amp; Ship Explorer"
+            data-tour-desc="Self-guided 360° exploration across 62 high-resolution panoramic stations covering every gun tub, bridge level, magazine, berthing compartment, and engine room aboard USS LCS-102."
+          >
+            <span class="mode-badge">TOUR 02 • COMPLETE 62-SCENE DIGITAL TWIN</span>
+            <strong>🧭 62-Compartment Free-Roam 360° Ship Explorer</strong>
+          </button>
+
+          <button
+            type="button"
+            class="lcs-tour-mode-btn"
+            data-thinglink-scene="2151338138495091556"
+            data-tour-title="Interactive 4K Ship Deck Blueprint &amp; Compartment Map"
+            data-tour-desc="Click any hotspot on the architectural profile and deck plans of USS LCS(L)(3)-102 to jump directly into that compartment's 360° panorama."
+          >
+            <span class="mode-badge">ARCHITECTURAL DECK MAP</span>
+            <strong>📐 Interactive 4K Ship Deck Plan &amp; Blueprint</strong>
+          </button>
+        </div>
+
+        <!-- Live Embedded ThingLink 360° Iframe Viewport -->
+        <div class="lcs-thinglink-frame-wrap">
+          <iframe
+            id="lcs-thinglink-iframe"
+            title="USS LCS-102 Interactive 360 Virtual Museum Tour on ThingLink"
+            src="https://www.thinglink.com/card/2161138540841279141"
+            allow="fullscreen; vr; xr-spatial-tracking; gyroscope; accelerometer"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <!-- 11-Stop Guided Narrative & Compartment Quick-Jump Bar -->
+        <div class="lcs-scene-jump-bar">
+          <div class="lcs-scene-jump-label">
+            <span>⚡ QUICK-JUMP TO ANY 360° STORY MILESTONE OR COMPARTMENT:</span>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <a href="https://www.thinglink.com/view/scene/2161138540841279141" target="_blank" rel="noopener" style="color: var(--gold-400); text-decoration: underline;">Direct Link: Planned Story Tour (2161138540841279141) ↗</a>
+              <a href="https://www.thinglink.com/view/scene/2151393301209547620" target="_blank" rel="noopener" style="color: var(--cyan-400); text-decoration: underline;">Direct Link: 62-Scene Free-Roam Tour (2151393301209547620) ↗</a>
+            </div>
+          </div>
+          <div class="lcs-scene-pills">
+            <button type="button" class="lcs-scene-pill active" data-thinglink-scene="2161138540841279141" data-tour-title="Prologue: The Ships That Cleared the Way (Exterior 360°)">
+              01 • Prologue: Cleared the Way
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161172103557027493" data-tour-title="Milestone 1: Built for the Beach — Forward 3&quot;/50 Caliber Gun">
+              02 • Built for the Beach (3"/50 Gun)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161185783258547877" data-tour-title="Milestone 2: Preparing for War — Twin 40mm Bofors Gun Mount">
+              03 • Preparing for War (Twin 40mm)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161192850358800037" data-tour-title="Milestone 3: All Aboard — Pilothouse &amp; Helm (01 Level)">
+              04 • All Aboard (Pilothouse)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161194161896687269" data-tour-title="Milestone 4: The Crossing — Armored Conning Tower">
+              05 • The Crossing (Conning Tower)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161195067472087717" data-tour-title="Milestone 5: The Last Great Battle — 20mm Oerlikon Gun Deck at Okinawa">
+              06 • Okinawa Battle (20mm Oerlikon)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161318873628934821" data-tour-title="Milestone 6: The Last of Her Kind — 130 Built, Only 1 Intact">
+              07 • The Last of Her Kind
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161321791543314085" data-tour-title="Ship Tour: The Galley (Compartment A-111-L)">
+              08 • Ship's Galley (A-111-L)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161525456052946597" data-tour-title="The Reckoning: The Last of Both — Aft Enlisted Berthing (A-208-1L)">
+              09 • Crew Berthing (A-208-1L)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161325987508259493" data-tour-title="The Reckoning: Honoring Our Heroes — Mess Hall (Compartment A-208-L)">
+              10 • Mess Hall (A-208-L)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2161326947584445093" data-tour-title="Epilogue: The Ship — USS LCS-102 Builder's Nameplate Passageway">
+              11 • Epilogue: The Ship (LCS-102)
+            </button>
+            <button type="button" class="lcs-scene-pill" data-thinglink-scene="2150994591514362724" data-tour-title="Lower Hull Engineering: Twin GM 16-278A Diesel Engine Room 360°">
+              ⚙️ Twin Diesel Engine Room
+            </button>
           </div>
         </div>
       </div>
@@ -347,7 +484,7 @@
             />
           </div>
           <div>
-            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 01</div>
+            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 01 • Milestone 1 ("Built for the Beach")</div>
             <h3 style="font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; margin: 0 0 0.75rem; color: var(--white);">
               Forward 3"/50 Caliber Gun &amp; Mark 7 Rocket Deck
             </h3>
@@ -364,9 +501,14 @@
                 <strong>10× Mark 7 Barrage Rocket Launchers</strong>
               </div>
             </div>
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-cyan">
-              Inspect Station 01 in Virtual Museum →
-            </button>
+            <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+              <button type="button" data-thinglink-scene="2161172103557027493" data-tour-title="Station 01: Forward 3&quot;/50 Caliber Gun &amp; Rocket Deck" class="lcs-btn lcs-btn-sm lcs-btn-cyan">
+                🌐 Load 3"/50 Gun in 360° Player ↑
+              </button>
+              <a href="https://www.thinglink.com/view/scene/2161172103557027493" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline">
+                Open Scene on ThingLink ↗
+              </a>
+            </div>
           </div>
         </div>
 
@@ -380,7 +522,7 @@
             />
           </div>
           <div>
-            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 02</div>
+            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 02 • Milestones 3 &amp; 4 ("All Aboard" &amp; "The Crossing")</div>
             <h3 style="font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; margin: 0 0 0.75rem; color: var(--white);">
               Pilothouse, Armored Conning Tower &amp; Lookout Deck
             </h3>
@@ -397,9 +539,14 @@
                 <strong>JMSDF Lookout Roof &amp; 81mm Mortars</strong>
               </div>
             </div>
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-cyan">
-              Inspect Station 02 in Virtual Museum →
-            </button>
+            <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+              <button type="button" data-thinglink-scene="2161192850358800037" data-tour-title="Station 02: Pilothouse &amp; Armored Conning Tower" class="lcs-btn lcs-btn-sm lcs-btn-cyan">
+                🌐 Load Pilothouse in 360° Player ↑
+              </button>
+              <a href="https://www.thinglink.com/view/scene/2161194161896687269" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline">
+                Open Conning Tower 360° ↗
+              </a>
+            </div>
           </div>
         </div>
 
@@ -413,7 +560,7 @@
             />
           </div>
           <div>
-            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 03</div>
+            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 03 • Milestones 2 &amp; 5 ("Preparing for War" &amp; "The Last Great Battle")</div>
             <h3 style="font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; margin: 0 0 0.75rem; color: var(--white);">
               Twin 40mm Bofors &amp; 20mm Oerlikon Anti-Aircraft Deck
             </h3>
@@ -430,9 +577,14 @@
                 <strong>4× 20mm Oerlikon + 4× .50 Cal MG</strong>
               </div>
             </div>
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-cyan">
-              Inspect Station 03 in Virtual Museum →
-            </button>
+            <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+              <button type="button" data-thinglink-scene="2161185783258547877" data-tour-title="Station 03: Twin 40mm Bofors &amp; 20mm Oerlikon AA Gun Deck" class="lcs-btn lcs-btn-sm lcs-btn-cyan">
+                🌐 Load Twin 40mm Gun in 360° Player ↑
+              </button>
+              <a href="https://www.thinglink.com/view/scene/2161195067472087717" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline">
+                Open 20mm Oerlikon Deck 360° ↗
+              </a>
+            </div>
           </div>
         </div>
 
@@ -446,26 +598,31 @@
             />
           </div>
           <div>
-            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 04</div>
+            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 04 • Compartments A-111-L, A-208-L &amp; A-208-1L</div>
             <h3 style="font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; margin: 0 0 0.75rem; color: var(--white);">
-              Crew Berthing, Mess Deck &amp; Overnight Encampment Quarters
+              Ship's Galley (A-111-L), Mess Hall (A-208-L) &amp; Aft Crew Berthing (A-208-1L)
             </h3>
             <p style="color: var(--slate-300); margin: 0;">
-              Seventy-one men (6 officers and 65 enlisted sailors) lived, slept, and ate in compact quarters below the main deck across months of Pacific combat and postwar occupation duty in Japan, China, and Korea. Today, these restored berthing compartments also host Boy Scout troops and youth groups for overnight stays.
+              Seventy-one men (6 officers and 65 enlisted sailors) lived, slept, and ate in compact quarters below the main deck across months of Pacific combat and postwar occupation duty in Japan, China, and Korea. Today, these restored compartments honor fallen heroes and host Boy Scout troops and youth groups for overnight stays.
             </p>
             <div class="lcs-deck-specs">
               <div class="lcs-spec-pill">
-                <small>Wartime Complement</small>
-                <strong>6 Officers • 65 Enlisted Men</strong>
+                <small>Authentic WWII Compartments</small>
+                <strong>A-111-L Galley • A-208-L Mess • A-208-1L Berthing</strong>
               </div>
               <div class="lcs-spec-pill">
-                <small>Living History</small>
-                <strong>Restored Bunks, Galley &amp; Wardroom</strong>
+                <small>Wartime Complement</small>
+                <strong>6 Officers • 65 Enlisted Sailors</strong>
               </div>
             </div>
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-cyan">
-              Inspect Station 04 in Virtual Museum →
-            </button>
+            <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+              <button type="button" data-thinglink-scene="2161525456052946597" data-tour-title="Station 04: Aft Enlisted Crew Berthing (Compartment A-208-1L)" class="lcs-btn lcs-btn-sm lcs-btn-cyan">
+                🌐 Load Crew Berthing in 360° Player ↑
+              </button>
+              <a href="https://www.thinglink.com/view/scene/2161325987508259493" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline">
+                Open Mess Hall (A-208-L) 360° ↗
+              </a>
+            </div>
           </div>
         </div>
 
@@ -479,12 +636,12 @@
             />
           </div>
           <div>
-            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 05</div>
+            <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Virtual Tour Station 05 • Lower Hull Engineering &amp; Deck Plan</div>
             <h3 style="font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; margin: 0 0 0.75rem; color: var(--white);">
               Twin GM 16-278A Diesel Engine Room &amp; Flat-Bottom Hull
             </h3>
             <p style="color: var(--slate-300); margin: 0;">
-              Built on an LCI(L) shallow-draft hull so she could maneuver close to invasion beaches, the LCS-102 is powered by twin General Motors 16-278A diesel engines driving two controllable-pitch propellers. Guided physical and virtual tours take you deep into the engine room restored by our all-volunteer veteran engineering crew.
+              Built on an LCI(L) shallow-draft hull so she could maneuver close to invasion beaches, the LCS-102 is powered by twin General Motors 16-278A diesel engines driving two controllable-pitch propellers, flanked by Generator Rooms (B-1-2-A). Guided physical and virtual tours take you deep into the engine room restored by our all-volunteer veteran engineering crew.
             </p>
             <div class="lcs-deck-specs">
               <div class="lcs-spec-pill">
@@ -496,9 +653,14 @@
                 <strong>5' 8" Forward • 6' 6" Aft (16.5 Knots)</strong>
               </div>
             </div>
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-cyan">
-              Inspect Station 05 in Virtual Museum →
-            </button>
+            <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+              <button type="button" data-thinglink-scene="2150994591514362724" data-tour-title="Station 05: Twin GM 16-278A Diesel Engine Room 360°" class="lcs-btn lcs-btn-sm lcs-btn-cyan">
+                🌐 Load Engine Room in 360° Player ↑
+              </button>
+              <a href="https://www.thinglink.com/view/scene/2151338138495091556" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline">
+                Open 4K Ship Blueprint ↗
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -628,6 +790,10 @@
             <td><strong>1 × 3"/50 caliber dual-purpose bow gun</strong> (or twin 40mm) • <strong>2 × Twin 40mm Bofors AA mounts</strong> • <strong>4 × Single 20mm Oerlikon AA cannons</strong> • <strong>4 × .50-caliber Browning machine guns</strong> • <strong>10 × Mark 7 barrage rocket launchers</strong></td>
           </tr>
           <tr>
+            <th>Restored WWII Compartments</th>
+            <td><strong>A-111-L</strong> Ship's Galley • <strong>A-208-L</strong> Crew Mess Hall • <strong>A-208-1L</strong> Aft Enlisted Berthing • <strong>A-207-5L</strong> Officers Wardroom • <strong>B-1-2-A</strong> Diesel Generator &amp; Engine Rooms</td>
+          </tr>
+          <tr>
             <th>Allied Naval Service</th>
             <td>Japanese Maritime Self-Defense Force: <strong><em>JDS Himawari</em></strong> (1953–1966; added lookout roof &amp; 81mm mortars) • Royal Thai Navy: <strong><em>HTMS Nakha</em> (LSSL-751)</strong> (1966–2007)</td>
           </tr>
@@ -637,6 +803,27 @@
           </tr>
         </tbody>
       </table>
+
+      <!-- Borrowed from Battleship Iowa & Battleship North Carolina: "You Don't Just Tour the Ship — You Join the Crew" -->
+      <div class="lcs-crew-life-callout">
+        <div>
+          <span class="lcs-gallery-tag" style="color: var(--crimson-600);">LIVING HISTORY EXPERIENCE • LATE-SUMMER 1945 CONFIGURATION</span>
+          <h3 style="font-family: var(--font-display); font-size: 1.75rem; text-transform: uppercase; color: var(--navy-950) !important; margin: 0.2rem 0 0.45rem;">
+            You Don't Just Tour the Ship — You Step Into the Boots of Her 1945 Crew
+          </h3>
+          <p style="color: var(--slate-600); font-size: 0.94rem; margin: 0;">
+            Through the sights and sounds of steel decks, canvas-laced pipe berths, and ammunition handling rooms, visitors experience daily life aboard a 158-foot amphibious warship where <strong>6 officers and 65 enlisted men</strong> lived, cooked in <strong>Galley A-111-L</strong>, gathered in <strong>Mess Hall A-208-L</strong>, and stood watch at Okinawa Radar Picket Station #18. Of the <strong>130 LCS(L) gunboats built</strong> and roughly <strong>10,000 sailors who served</strong> aboard them in WWII, the <em>Yankee Dollar</em> is the only intact ship remaining on earth.
+          </p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.6rem; min-width: 240px;">
+          <a href="#lcs-thinglink-theater" class="lcs-btn lcs-btn-sm lcs-btn-crimson" style="width: 100%;">
+            🌐 Tour Crew Compartments in 360°
+          </a>
+          <a href="#visit" class="lcs-btn lcs-btn-sm" style="background: var(--navy-900); color: var(--white); width: 100%;">
+            ⚓ Book a Docent-Led Ship Tour
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -811,7 +998,7 @@
             The Landing Craft Support Museum receives <strong>zero government operating funding</strong> and charges <strong>no admission fee</strong>. Every gallon of marine primer, every steel hull plate welded in drydock, and every dollar of docking and insurance fees at Mare Island is funded directly by patriotic donors like you.
           </p>
 
-          <div class="lcs-two-col-grid" style="gap: 1rem; margin: 1.75rem 0;">
+          <div class="lcs-two-col-grid" style="gap: 1rem; margin: 1.5rem 0;">
             <div style="background: rgba(15, 33, 58, 0.75); border-left: 3px solid var(--gold-400); padding: 1rem 1.15rem; border-radius: 6px;">
               <strong style="color: var(--white); display: block; font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase;">Drydock &amp; Hull Preservation</strong>
               <span style="font-size: 0.85rem; color: var(--slate-300);">Ultrasonic hull inspections, O1 deck drainage repairs, anti-fouling bottom paint, and zinc anode replacement.</span>
@@ -820,6 +1007,16 @@
               <strong style="color: var(--white); display: block; font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase;">Mare Island Berthing &amp; Insurance</strong>
               <span style="font-size: 0.85rem; color: var(--slate-300);">Covers essential monthly dockage, shore power, marine liability insurance, and gangway safety equipment.</span>
             </div>
+          </div>
+
+          <!-- Borrowed from USS Pampanito & Battleship New Jersey: Why Museum Ships Urgently Need Preservation Support -->
+          <div style="background: rgba(5, 12, 22, 0.65); border: 1px solid rgba(56, 189, 248, 0.3); padding: 1rem 1.2rem; border-radius: var(--radius-md); margin-bottom: 1.25rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.73rem; color: var(--cyan-400); text-transform: uppercase; margin-bottom: 0.25rem;">
+              ⚓ WHY FLOATING MUSEUM SHIPS REQUIRE CONTINUOUS SUPPORT
+            </div>
+            <p style="font-size: 0.88rem; color: var(--slate-200); margin: 0;">
+              Unlike artifacts displayed inside climate-controlled buildings, the <strong>USS LCS(L)(3)-102</strong> is a steel-hulled WWII warship berthed year-round in a corrosive marine environment. Restored by volunteers to a specific point in time—<strong>late summer 1945</strong>—every contribution goes directly toward fighting saltwater corrosion, maintaining authentic WWII equipment, and periodic drydock haul-outs.
+            </p>
           </div>
 
           <!-- Mail-In Check Card (Avoid Online Fees for Large Gifts) -->
@@ -1183,17 +1380,26 @@
               </span>
             </div>
             <div>
-              <strong style="color: var(--white); display: block; font-size: 0.95rem;">🎟️ Admission &amp; Accessibility:</strong>
+              <strong style="color: var(--white); display: block; font-size: 0.95rem;">🎟️ Admission &amp; Guided Access:</strong>
               <span style="color: var(--slate-300); font-size: 0.92rem;">
                 <strong>Admission is 100% Free</strong> and dockside parking is free. Donations to help maintain the 102 are gratefully accepted aboard or online. Tour groups are guided in small groups (up to 6 visitors per guide) for safety on naval ladders and hatches.
               </span>
             </div>
+            <!-- Borrowed from USS Cod & USS Nautilus: Authentic WWII Access & Footwear Advisory -->
+            <div style="background: rgba(15, 33, 58, 0.72); border-left: 3px solid var(--cyan-400); padding: 0.95rem 1.1rem; border-radius: 6px;">
+              <strong style="color: var(--cyan-400); font-family: var(--font-display); font-size: 1.12rem; text-transform: uppercase; display: block; margin-bottom: 0.25rem;">
+                🥾 Know Before You Board: 100% Original 1945 Configuration
+              </strong>
+              <p style="font-size: 0.86rem; color: var(--slate-200); margin: 0;">
+                As an authentic National Historic Landmark vessel, the <em>Yankee Dollar</em> has <strong>not</strong> had modern stairways cut into her hull. Visitors board via the gangway and navigate original WWII watertight doors, high coamings, and steep naval ladders. Please wear <strong>flat, closed-toe, non-skid shoes</strong>. Visitors unable to climb ladders can explore all 62 compartments via our <a href="#lcs-thinglink-theater" style="color: var(--gold-400); text-decoration: underline;">360° Virtual Museum</a>.
+              </p>
+            </div>
             <div style="background: rgba(5, 12, 22, 0.55); border: 1px solid rgba(229, 169, 60, 0.35); padding: 1.15rem; border-radius: var(--radius-md);">
               <strong style="color: var(--gold-400); font-family: var(--font-display); font-size: 1.2rem; text-transform: uppercase; display: block; margin-bottom: 0.3rem;">
-                ⛺ Overnight Youth &amp; Group Stays Aboard the 102
+                ⛺ "Nautical Nights" Youth &amp; Scout Overnight Encampments
               </strong>
               <p style="font-size: 0.88rem; color: var(--slate-200); margin: 0;">
-                Boy Scout troops, Sea Cadets, and educational groups can arrange to spend the night or weekend sleeping in authentic WWII sailor bunks aboard the USS LCS-102. Contact <strong>Skipper Bill Mason</strong> (<a href="mailto:bmason6056@aol.com" style="color: var(--gold-400); text-decoration: underline;">bmason6056@aol.com</a>) or <strong>Exec. Officer Gordon Stutrud</strong> (<a href="tel:7073732159" style="color: var(--gold-400); text-decoration: underline;">707-373-2159</a>) to schedule an overnight visit.
+                Boy Scout troops, Sea Cadets, and educational youth groups can arrange to spend the night or weekend sleeping in authentic WWII sailor bunks (Compartment A-208-1L) and dining on the Mess Deck (A-208-L) aboard the USS LCS-102. Contact <strong>Skipper Bill Mason</strong> (<a href="mailto:bmason6056@aol.com" style="color: var(--gold-400); text-decoration: underline;">bmason6056@aol.com</a>) or <strong>Exec. Officer Gordon Stutrud</strong> (<a href="tel:7073732159" style="color: var(--gold-400); text-decoration: underline;">707-373-2159</a>) to schedule an overnight stay.
               </p>
             </div>
           </div>
@@ -1204,8 +1410,8 @@
             title="USS LCS-102 Mare Island Naval Shipyard Map"
             src="https://www.google.com/maps?q=289+Waterfront+Ave,+Vallejo,+CA+94592&output=embed"
             width="100%"
-            height="370"
-            style="border: 0; border-radius: var(--radius-md); filter: contrast(1.05);"
+            height="395"
+            style="border: 0; border-radius: var(--radius-md);"
             allowfullscreen=""
             loading="lazy"
           ></iframe>
@@ -1514,33 +1720,53 @@
   <div class="lcs-modal-backdrop" id="lcs-virtual-modal" role="dialog" aria-modal="true" aria-label="USS LCS-102 Virtual Museum Portal">
     <div class="lcs-modal-content lcs-virtual-modal-inner">
       <button type="button" class="lcs-modal-close" aria-label="Close">✕</button>
-      <span class="lcs-spotlight-tag">🌐 USS LCS-102 VIRTUAL MUSEUM PORTAL</span>
+      <span class="lcs-spotlight-tag">🌐 USS LCS-102 VIRTUAL MUSEUM PORTAL • LIVE ON THINGLINK</span>
       <h3 style="font-family: var(--font-display); font-size: 2.2rem; text-transform: uppercase; color: var(--white); margin: 0.25rem 0 0.75rem;">
-        Interactive 3D &amp; 360° Online Ship Experience
+        Choose Your Interactive 360° Ship Experience
       </h3>
       <p style="color: var(--slate-200); margin: 0 0 1.25rem;">
-        The interactive online version of the <strong>Landing Craft Support Museum (USS LCS-102 "Yankee Dollar")</strong> is being produced by our dedicated Virtual Museum development team. Once live, this portal button connects directly to the full 3D/360° walkthrough of the ship.
+        Step aboard the <strong>USS LCS(L)(3)-102 ("Yankee Dollar")</strong> through two live interactive ThingLink 360° digital tours—or use the embedded 360° theater directly on this page:
       </p>
       <div class="lcs-modal-grid">
-        <div style="background: rgba(5,12,22,0.65); border: 1px solid rgba(56,189,248,0.3); padding: 1rem; border-radius: 6px;">
-          <strong style="color: var(--cyan-400); font-family: var(--font-display); text-transform: uppercase; display: block;">01. Upper Decks &amp; Guns</strong>
-          <span style="font-size: 0.82rem; color: var(--slate-300);">3"/50 bow gun, 10× Mark 7 rocket launchers, twin 40mm Bofors &amp; 20mm Oerlikons.</span>
+        <div style="background: rgba(5,12,22,0.75); border: 1px solid rgba(229,169,60,0.45); padding: 1.1rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem;">
+          <div>
+            <strong style="color: var(--gold-400); font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase; display: block;">01. Planned Guided Story Tour (11 Stops)</strong>
+            <span style="font-size: 0.83rem; color: var(--slate-300); display: block; margin-top: 0.25rem;">"The Ships That Cleared the Way" — narrated 11-milestone historical tour from the 3"/50 bow gun to Okinawa Radar Picket #18 and the crew quarters.</span>
+          </div>
+          <a href="https://www.thinglink.com/view/scene/2161138540841279141" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-gold" style="width: 100%;">
+            🎬 Launch Guided Tour ↗
+          </a>
         </div>
-        <div style="background: rgba(5,12,22,0.65); border: 1px solid rgba(56,189,248,0.3); padding: 1rem; border-radius: 6px;">
-          <strong style="color: var(--cyan-400); font-family: var(--font-display); text-transform: uppercase; display: block;">02. Bridge &amp; Conning</strong>
-          <span style="font-size: 0.82rem; color: var(--slate-300);">Pilothouse helm, radar picket chart room, and JMSDF lookout deck.</span>
+        <div style="background: rgba(5,12,22,0.75); border: 1px solid rgba(56,189,248,0.45); padding: 1.1rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem;">
+          <div>
+            <strong style="color: var(--cyan-400); font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase; display: block;">02. 62-Compartment Free-Roam 360°</strong>
+            <span style="font-size: 0.83rem; color: var(--slate-300); display: block; margin-top: 0.25rem;">Self-guided 360° digital twin covering all 62 shipboard stations, gun mounts, pilothouse, conning tower, and twin GM diesel engine room.</span>
+          </div>
+          <a href="https://www.thinglink.com/view/scene/2151393301209547620" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-cyan" style="width: 100%;">
+            🧭 Launch 62-Scene Tour ↗
+          </a>
         </div>
-        <div style="background: rgba(5,12,22,0.65); border: 1px solid rgba(56,189,248,0.3); padding: 1rem; border-radius: 6px;">
-          <strong style="color: var(--cyan-400); font-family: var(--font-display); text-transform: uppercase; display: block;">03. Below Decks</strong>
-          <span style="font-size: 0.82rem; color: var(--slate-300);">Crew berthing, mess deck, ammunition magazines, and twin GM diesel engine room.</span>
+        <div style="background: rgba(5,12,22,0.75); border: 1px solid rgba(255,255,255,0.25); padding: 1.1rem; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem;">
+          <div>
+            <strong style="color: var(--white); font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase; display: block;">03. 4K Deck Plan &amp; Documentary</strong>
+            <span style="font-size: 0.83rem; color: var(--slate-300); display: block; margin-top: 0.25rem;">Explore the clickable 4K architectural deck blueprint or watch the companion documentary video on YouTube.</span>
+          </div>
+          <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+            <a href="https://www.thinglink.com/view/scene/2151338138495091556" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline" style="flex: 1;">
+              📐 Deck Plan ↗
+            </a>
+            <a href="https://youtu.be/n87M2tm7GRk" target="_blank" rel="noopener" class="lcs-btn lcs-btn-sm lcs-btn-outline" style="flex: 1;">
+              ▶️ Video ↗
+            </a>
+          </div>
         </div>
       </div>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="#lcs-thinglink-theater" onclick="document.getElementById('lcs-virtual-modal').classList.remove('open')" class="lcs-btn lcs-btn-cyan">
+          🌐 Use Embedded 360° Player on Page
+        </a>
         <a href="#donate" onclick="document.getElementById('lcs-virtual-modal').classList.remove('open')" class="lcs-btn lcs-btn-gold">
           ❤️ Support the Museum &amp; Virtual Initiative
-        </a>
-        <a href="mailto:gstutrud@usslcs102.org?subject=USS%20LCS-102%20Virtual%20Museum%20Updates" class="lcs-btn lcs-btn-outline">
-          ✉️ Get Notified on Full Virtual Tour Launch
         </a>
       </div>
     </div>
