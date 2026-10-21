@@ -7,47 +7,47 @@ document.addEventListener('DOMContentLoaded', () => {
   // 0. Ensure Browser Tab Title reflects the Museum Name
   document.title = 'USS LCS-102 "Yankee Dollar" | Landing Craft Support Museum';
 
-  // 0a. Squarespace 7.1 Auto-Cleanup: Hide default "Your Site" header, footer, "Empty Page" & "Title" blocks
+  // 0a. Squarespace 7.1 Auto-Cleanup: Hide default "Your Site" header, footer, "Empty Page", "Title" & stray raw CSS text
   const lcsRoot = document.querySelector('.lcs-site');
   function cleanSquarespaceDOM() {
     if (!lcsRoot) return;
     document.querySelectorAll('header#header, .header, footer#footer-sections, .footer-sections').forEach((el) => {
       el.style.setProperty('display', 'none', 'important');
     });
-    document.querySelectorAll('.sqs-block:not(.sqs-block-code), .fe-block, section.page-section, article#sections > section').forEach((el) => {
+    document.querySelectorAll('.sqs-block, .sqs-block-code, .fe-block, section.page-section, article#sections > section').forEach((el) => {
       if (!el.contains(lcsRoot) && !lcsRoot.contains(el)) {
         el.style.setProperty('display', 'none', 'important');
       }
     });
 
-    // Walk up from .lcs-site to #siteWrapper and hide any sibling branches (such as "Empty Page" notices)
+    // Walk up from .lcs-site to document.body and hide any sibling elements + wipe stray raw TextNodes (e.g. accidentally pasted CSS)
     let curr = lcsRoot;
-    while (curr && curr !== document.body) {
+    while (curr) {
       const parent = curr.parentElement;
       if (!parent) break;
-      Array.from(parent.children).forEach((sib) => {
-        if (sib !== curr && !['STYLE', 'SCRIPT', 'LINK', 'SVG'].includes(sib.tagName)) {
-          if (!sib.contains(lcsRoot) && !lcsRoot.contains(sib)) {
-            sib.style.setProperty('display', 'none', 'important');
+      Array.from(parent.childNodes).forEach((node) => {
+        if (node.nodeType === 3 && (node.textContent || '').trim().length > 0) {
+          node.textContent = '';
+        } else if (node.nodeType === 1 && node !== curr && !['STYLE', 'SCRIPT', 'LINK', 'SVG'].includes(node.tagName)) {
+          if (!node.contains(lcsRoot) && !lcsRoot.contains(node)) {
+            node.style.setProperty('display', 'none', 'important');
           }
         }
       });
-      if (parent.id === 'siteWrapper') break;
+      if (parent === document.body) break;
       curr = parent;
     }
 
-    // Also hide any dynamically injected Squarespace "Empty Page" notice
-    document.querySelectorAll('div, section, p, h1, h2, h3, span').forEach((el) => {
-      if (!el.contains(lcsRoot) && !lcsRoot.contains(el) && el.children.length === 0) {
+    // Also hide any dynamically injected Squarespace "Empty Page" notice or stray CSS dumps
+    document.querySelectorAll('div, section, p, pre, code, h1, h2, h3, span').forEach((el) => {
+      if (!el.contains(lcsRoot) && !lcsRoot.contains(el)) {
         const txt = (el.textContent || '').trim();
-        if (txt === 'Empty Page' || txt === 'Create a beautiful page by adding and combining sections.') {
-          let box = el.parentElement || el;
-          while (box && box.parentElement && !box.parentElement.contains(lcsRoot) && box.parentElement !== document.body) {
-            box = box.parentElement;
-          }
-          if (box && !box.contains(lcsRoot)) {
-            box.style.setProperty('display', 'none', 'important');
-          }
+        if (
+          txt === 'Empty Page' ||
+          txt === 'Create a beautiful page by adding and combining sections.' ||
+          txt.includes('@import url') ||
+          txt.includes('--navy-950')
+        ) {
           el.style.setProperty('display', 'none', 'important');
         }
       }
@@ -58,6 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', cleanSquarespaceDOM);
   setTimeout(cleanSquarespaceDOM, 450);
   setTimeout(cleanSquarespaceDOM, 1400);
+
+  // 0b. Ensure Hero Drone Video runs with Optical HD Unsharp Mask & Deblocking Filter
+  const heroVideo = document.querySelector('.lcs-hero-video');
+  if (heroVideo) {
+    heroVideo.style.filter = 'url(#lcs-video-sharpen)';
+  }
 
   // 1. Sticky Header Scroll Effect + Top Reading Progress Bar + Intrepid Scroll-Scrubbed Ship Bow Wipe
   const header = document.querySelector('.lcs-header');

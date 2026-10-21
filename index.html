@@ -13,12 +13,16 @@
   <svg class="lcs-hd-filters" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden;pointer-events:none;" aria-hidden="true">
     <defs>
       <filter id="lcs-video-sharpen" color-interpolation-filters="sRGB">
-        <feConvolveMatrix order="3" kernelMatrix="0 -0.48 0 -0.48 2.92 -0.48 0 -0.48 0" preserveAlpha="true" />
-        <feColorMatrix type="saturate" values="1.1" />
-        <feComponentTransfer>
-          <feFuncR type="linear" slope="1.06" intercept="-0.02" />
-          <feFuncG type="linear" slope="1.06" intercept="-0.02" />
-          <feFuncB type="linear" slope="1.08" intercept="-0.02" />
+        <!-- Step 1: Micro-deblocking pass to smooth 360p MP4 macroblocks -->
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.35" result="deblocked" />
+        <!-- Step 2: High-precision 3x3 Unsharp Mask to crisp ship hull, mast & bow #102 -->
+        <feConvolveMatrix in="deblocked" order="3" kernelMatrix="0 -0.52 0 -0.52 3.08 -0.52 0 -0.52 0" preserveAlpha="true" result="sharpened" />
+        <!-- Step 3: Balanced saturation & maritime color grade (neutralizes warm yellow haze) -->
+        <feColorMatrix in="sharpened" type="saturate" values="1.14" result="saturated" />
+        <feComponentTransfer in="saturated">
+          <feFuncR type="linear" slope="1.03" intercept="-0.04" />
+          <feFuncG type="linear" slope="1.06" intercept="-0.04" />
+          <feFuncB type="linear" slope="1.15" intercept="-0.02" />
         </feComponentTransfer>
       </filter>
       <filter id="lcs-image-sharpen" color-interpolation-filters="sRGB">
@@ -37,7 +41,7 @@
         <span class="lcs-nrhp-badge">⚓ U.S. National Register of Historic Places #15000716</span>
         <span class="lcs-utility-hours">
           <span class="lcs-status-dot"></span>
-          Mare Island Naval Shipyard, Vallejo, CA • Tue, Thu &amp; Sat: 9:00 AM – 3:00 PM • Free Admission
+          Mare Island Naval Base, Vallejo, CA • Tue, Thu &amp; Sat: 9:30 AM – 3:00 PM • Free Admission
         </span>
       </div>
       <div class="lcs-utility-right">
@@ -110,7 +114,7 @@
        ======================================================================== -->
   <section class="lcs-hero">
     <div class="lcs-hero-media">
-      <video autoplay loop muted playsinline class="lcs-hero-video" poster="assets/images/rd-lowering04.jpg">
+      <video autoplay loop muted playsinline class="lcs-hero-video" style="filter: url(#lcs-video-sharpen);" poster="assets/images/rd-lowering04.jpg">
         <source src="assets/images/LCS.mp4" type="video/mp4" />
         <source src="https://usslcs102.org/img/LCS.mp4" type="video/mp4" />
       </video>
@@ -206,9 +210,9 @@
           <div class="lcs-strip-item">
             <div class="lcs-strip-icon">🕒</div>
             <div>
-              <div class="lcs-strip-label">Visiting Hours &amp; Tours</div>
-              <div class="lcs-strip-value">Tue, Thu &amp; Sat • 9:00 AM – 3:00 PM</div>
-              <div class="lcs-strip-sub">Guided tours from Engine Room to Pilothouse</div>
+              <div class="lcs-strip-label">Visiting Hours</div>
+              <div class="lcs-strip-value">Tue, Thu &amp; Sat • 9:30 AM – 3:00 PM</div>
+              <div class="lcs-strip-sub">Welcome Aboard • Guided Ship Tours</div>
             </div>
           </div>
           <div class="lcs-strip-item">
@@ -676,40 +680,40 @@
         <div>
           <div class="lcs-eyebrow">
             <span class="lcs-eyebrow-line"></span>
-            Landing Craft Support Museum Corporation • 501(c)(3) Nonprofit
+            Landing Craft Support Museum Corporation • Welcome Aboard
           </div>
-          <h2 class="lcs-section-title">Preserving America's Last Surviving Amphibious Gunboat</h2>
-          <p style="color: var(--slate-600); font-size: 1.05rem; margin: 0 0 1rem;">
-            Since her return from the Royal Thai Navy to the United States in 2007, our all-volunteer crew of U.S. Navy veterans and historians has worked tirelessly at Mare Island Naval Shipyard to restore the <strong>USS LCS(L)(3)-102 ("Yankee Dollar")</strong> back to her original 1945 World War II specifications.
+          <h2 class="lcs-section-title">Welcome to the Landing Craft Support (LCS) Museum</h2>
+          <p style="color: var(--slate-600); font-size: 1.02rem; margin: 0 0 1rem;">
+            The purpose of the <strong>Landing Craft Support Museum</strong> has six primary objectives: to manage the operation and maintenance of the former <strong>USS LCS (L)(3) 102 / HTMS NAKHA</strong> as a mobile museum; to preserve and perpetuate the memory of those officers and men who served so valiantly aboard one of the USS LCS (L) ships and their flagships of the United States Navy—which are informally known as <strong>"The Mighty Midgets"</strong>—and to the <strong>H.T.M.S. NAKHA</strong> of the Royal Thai Navy, especially those officers and men who gave their lives in the service of their country.
           </p>
-          <p style="color: var(--slate-600); font-size: 0.98rem; margin: 0;">
-            Chartered with <strong>Six Primary Objectives</strong>, the Landing Craft Support Museum serves as both an active floating museum and the permanent national memorial to the men of LCS(L) 1–130:
+          <p style="color: var(--slate-600); font-size: 0.96rem; margin: 0;">
+            To acquire, preserve, and present the records, relics, and mementos of the Landing Craft Support Vessels; to inform the public of the World War II accomplishments of the Landing Craft Support ships during operations at Iwo Jima, Okinawa, Philippines, Borneo, China, and the occupation of Japan; and to provide cruises open to the public around the San Francisco Bay area:
           </p>
 
           <div class="lcs-objectives-list">
             <div class="lcs-objective-card">
-              <h4>1. Floating Museum Ship</h4>
-              <p>Manage the operation, drydocking, and restoration of the former USS LCS(L)(3)-102 / HTMS <em>Nakha</em> as an authentic WWII museum vessel.</p>
+              <h4>1. Mobile Museum Operation</h4>
+              <p>To manage the operation and maintenance of the former USS LCS (L)(3) 102 / HTMS NAKHA as a mobile museum.</p>
             </div>
             <div class="lcs-objective-card">
-              <h4>2. Sacred Naval Memorial</h4>
-              <p>Perpetuate the memory of the officers and sailors of the U.S. Navy "Mighty Midgets" and Royal Thai Navy who gave their lives in service.</p>
+              <h4>2. Honor "The Mighty Midgets"</h4>
+              <p>To preserve and perpetuate the memory of the officers and men of the USS LCS (L) ships, their USN flagships, and H.T.M.S. NAKHA.</p>
             </div>
             <div class="lcs-objective-card">
-              <h4>3. Relics &amp; Wartime Archives</h4>
-              <p>Acquire, preserve, and exhibit original deck logs, battle flags, artifacts, and mementos of the Landing Craft Support flotillas.</p>
+              <h4>3. Records, Relics &amp; Mementos</h4>
+              <p>To acquire, preserve, and present the records, relics, and mementos of the Landing Craft Support Vessels.</p>
             </div>
             <div class="lcs-objective-card">
-              <h4>4. Pacific Theater Education</h4>
-              <p>Inform the public of LCS accomplishments at Iwo Jima, Okinawa, the Philippines, Borneo, China, and the Occupation of Japan.</p>
+              <h4>4. WWII Pacific Accomplishments</h4>
+              <p>To inform the public of WWII accomplishments at Iwo Jima, Okinawa, Philippines, Borneo, China, and the occupation of Japan.</p>
             </div>
             <div class="lcs-objective-card">
-              <h4>5. Youth Overnight Stays</h4>
-              <p>Welcome Boy Scouts, Sea Cadets, and school groups aboard to experience life on a WWII naval vessel firsthand.</p>
+              <h4>5. Overnight Visits on the 102</h4>
+              <p>Groups and Boy Scouts can arrange to spend the night or weekend on the LCS 102 at Mare Island Naval Base in Vallejo, California.</p>
             </div>
             <div class="lcs-objective-card">
-              <h4>6. San Francisco Bay Heritage</h4>
-              <p>Provide public dockside access at historic Mare Island and preserve naval maritime heritage around the San Francisco Bay Area.</p>
+              <h4>6. San Francisco Bay Cruises</h4>
+              <p>And to provide cruises open to the public around the San Francisco Bay area.</p>
             </div>
           </div>
         </div>
@@ -724,12 +728,12 @@
           </div>
           <div class="lcs-collage-inset">
             <img
-              src="assets/images/hd-submarines-2019-5.jpg"
+              src="https://lcsmuseum.org/files/flag-8%20lrg.jpg"
               onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg'"
-              alt="U.S. Flag flying at the stern of USS LCS-102 during a naval memorial ceremony"
+              alt="The Original Flag flown on the 102"
             />
-            <span>LIVING NATIONAL MEMORIAL</span>
-            <strong style="font-family: var(--font-display); font-size: 1.05rem; text-transform: uppercase;">Honoring WWII Sailors &amp; Preserving the 48-Star Battle Flag</strong>
+            <span>AUTHENTIC WWII ARTIFACT</span>
+            <strong style="font-family: var(--font-display); font-size: 1.05rem; text-transform: uppercase;">The Original Flag Flown on the 102</strong>
           </div>
         </div>
       </div>
@@ -1047,37 +1051,37 @@
           </div>
 
           <h3 style="font-family: var(--font-display); font-size: 1.9rem; text-transform: uppercase; margin: 0 0 0.4rem; color: var(--white);">
-            Select a Preservation Impact Level
+            Donations to Help Maintain the 102
           </h3>
           <p style="font-size: 0.9rem; color: var(--slate-300); margin: 0;">
-            Choose a suggested gift tier below, then click <strong>Donate via PayPal / Card</strong> to complete your tax-deductible contribution:
+            Admission to the museum is free. Donations to help maintain the <strong>USS LCS (L) 102</strong> are gratefully accepted:
           </p>
 
           <div class="lcs-tier-grid">
-            <button type="button" class="lcs-tier-btn" data-amount="$25" data-label="Sailor's Tribute" data-impact="Marine grade anti-rust primer &amp; deck supplies">
+            <button type="button" class="lcs-tier-btn" data-amount="$25" data-label="Maintain the 102" data-impact="Supports ongoing volunteer maintenance of the LCS 102">
               <div class="lcs-tier-amount">$25</div>
-              <span class="lcs-tier-name">Sailor's Tribute</span>
-              <span class="lcs-tier-impact">Deck paint, brushes &amp; anti-corrosion supplies</span>
+              <span class="lcs-tier-name">Maintain the 102</span>
+              <span class="lcs-tier-impact">Supports ongoing volunteer maintenance of the 102</span>
             </button>
-            <button type="button" class="lcs-tier-btn active" data-amount="$50" data-label="Gun Mount Guardian" data-impact="Preserves 40mm &amp; 20mm gun mounts &amp; exhibits">
+            <button type="button" class="lcs-tier-btn active" data-amount="$50" data-label="Ship Preservation" data-impact="Supports operation &amp; preservation of USS LCS (L)(3) 102">
               <div class="lcs-tier-amount">$50</div>
-              <span class="lcs-tier-name">Gun Mount Guardian</span>
-              <span class="lcs-tier-impact">Restores 40mm/20mm mounts &amp; compartment lighting</span>
+              <span class="lcs-tier-name">Ship Preservation</span>
+              <span class="lcs-tier-impact">Supports operation &amp; preservation of USS LCS (L)(3) 102</span>
             </button>
-            <button type="button" class="lcs-tier-btn" data-amount="$100" data-label="Mighty Midget Defender" data-impact="Supports Mare Island docking &amp; shore power">
+            <button type="button" class="lcs-tier-btn" data-amount="$100" data-label="Museum Operations" data-impact="Supports Mare Island Naval Base dockage &amp; records">
               <div class="lcs-tier-amount">$100</div>
-              <span class="lcs-tier-name">Mighty Midget Defender</span>
-              <span class="lcs-tier-impact">Supports Mare Island berthing &amp; shore power</span>
+              <span class="lcs-tier-name">Museum Operations</span>
+              <span class="lcs-tier-impact">Supports Mare Island Naval Base dockage &amp; records</span>
             </button>
-            <button type="button" class="lcs-tier-btn" data-amount="$250+" data-label="Skipper's Drydock Circle" data-impact="Major hull preservation &amp; drydock repair fund">
+            <button type="button" class="lcs-tier-btn" data-amount="$250+" data-label="Major Preservation Gift" data-impact="Supports drydock &amp; hull maintenance of the 102">
               <div class="lcs-tier-amount">$250+</div>
-              <span class="lcs-tier-name">Skipper's Drydock Circle</span>
-              <span class="lcs-tier-impact">Direct contribution to Drydock &amp; Hull Repair Fund</span>
+              <span class="lcs-tier-name">Major Preservation Gift</span>
+              <span class="lcs-tier-impact">Supports drydock &amp; hull maintenance of the 102</span>
             </button>
           </div>
 
           <div id="lcs-selected-tier-summary" style="background: rgba(5, 12, 22, 0.6); border: 1px solid rgba(229, 169, 60, 0.3); padding: 0.75rem 1rem; border-radius: 6px; font-size: 0.88rem; color: var(--slate-200); margin-bottom: 1.25rem; text-align: center;">
-            Selected Gift: <strong>$50 — Gun Mount Guardian</strong> (Preserves 40mm &amp; 20mm gun mounts &amp; exhibits)
+            Selected Gift: <strong>$50 — Ship Preservation</strong> (Supports operation &amp; preservation of USS LCS (L)(3) 102)
           </div>
 
           <!-- Authentic PayPal Hosted Button Form from usslcs102.org -->
@@ -1362,27 +1366,27 @@
       <div class="lcs-visit-grid">
         <div class="lcs-info-card">
           <h3 style="font-family: var(--font-display); font-size: 1.75rem; text-transform: uppercase; color: var(--gold-400); margin: 0 0 1rem;">
-            ⚓ Hours, Location &amp; Guided Tours
+            ⚓ Visiting the LCS Museum
           </h3>
 
           <div style="display: grid; gap: 1.15rem; margin-bottom: 1.5rem;">
             <div>
-              <strong style="color: var(--white); display: block; font-size: 0.95rem;">📍 Waterfront Berth Address:</strong>
+              <strong style="color: var(--white); display: block; font-size: 0.95rem;">📍 Mare Island Naval Base Location:</strong>
               <span style="color: var(--slate-300); font-size: 0.92rem;">
-                Mare Island Naval Shipyard — Intersection of <strong>"A" Street &amp; Nimitz Avenue</strong> (289 Waterfront Avenue), Mare Island / Vallejo, CA 94592.
+                To visit the Landing Craft Support Museum and the <strong>LCS (L) 102</strong>, go to the <strong>Mare Island Naval Base in Vallejo, California</strong> (intersection of "A" Street &amp; Nimitz Avenue / 289 Waterfront Ave, Vallejo, CA 94592).
               </span>
             </div>
             <div>
-              <strong style="color: var(--white); display: block; font-size: 0.95rem;">🕒 Regular Visiting Hours:</strong>
+              <strong style="color: var(--white); display: block; font-size: 0.95rem;">🕒 Visiting Hours — Welcome Aboard:</strong>
               <span style="color: var(--slate-300); font-size: 0.92rem;">
-                <strong>Tuesdays, Thursdays &amp; Saturdays:</strong> 9:00 AM to 3:00 PM.<br />
+                We are open for visitors on <strong>Tuesdays, Thursdays, and Saturdays from 9:30 AM to 3:00 PM</strong>.<br />
                 <em>Note: Because the 102 is a working historic vessel that periodically enters drydock or undergoes deck repairs, please call ahead or check our Facebook page before traveling.</em>
               </span>
             </div>
             <div>
               <strong style="color: var(--white); display: block; font-size: 0.95rem;">🎟️ Admission &amp; Guided Access:</strong>
               <span style="color: var(--slate-300); font-size: 0.92rem;">
-                <strong>Admission is 100% Free</strong> and dockside parking is free. Donations to help maintain the 102 are gratefully accepted aboard or online. Tour groups are guided in small groups (up to 6 visitors per guide) for safety on naval ladders and hatches.
+                <strong>Admission is free.</strong> Donations to help maintain the 102 are gratefully accepted.
               </span>
             </div>
             <!-- Borrowed from USS Cod & USS Nautilus: Authentic WWII Access & Footwear Advisory -->
@@ -1396,10 +1400,10 @@
             </div>
             <div style="background: rgba(5, 12, 22, 0.55); border: 1px solid rgba(229, 169, 60, 0.35); padding: 1.15rem; border-radius: var(--radius-md);">
               <strong style="color: var(--gold-400); font-family: var(--font-display); font-size: 1.2rem; text-transform: uppercase; display: block; margin-bottom: 0.3rem;">
-                ⛺ "Nautical Nights" Youth &amp; Scout Overnight Encampments
+                ⛺ Overnight Youth &amp; Group Stays on the LCS 102
               </strong>
               <p style="font-size: 0.88rem; color: var(--slate-200); margin: 0;">
-                Boy Scout troops, Sea Cadets, and educational youth groups can arrange to spend the night or weekend sleeping in authentic WWII sailor bunks (Compartment A-208-1L) and dining on the Mess Deck (A-208-L) aboard the USS LCS-102. Contact <strong>Skipper Bill Mason</strong> (<a href="mailto:bmason6056@aol.com" style="color: var(--gold-400); text-decoration: underline;">bmason6056@aol.com</a>) or <strong>Exec. Officer Gordon Stutrud</strong> (<a href="tel:7073732159" style="color: var(--gold-400); text-decoration: underline;">707-373-2159</a>) to schedule an overnight stay.
+                Groups and Boy Scouts can also arrange to spend the night or weekend on the <strong>LCS 102</strong>. Contact <strong>Skipper Bill Mason</strong> (<a href="mailto:bmason6056@aol.com" style="color: var(--gold-400); text-decoration: underline;">bmason6056@aol.com</a>, 2960 20th Ave., San Francisco, CA 94132) or <strong>Exec. Officer Gordon Stutrud</strong> (<a href="tel:7073732159" style="color: var(--gold-400); text-decoration: underline;">707-373-2159</a>) to arrange for overnight visits.
               </p>
             </div>
           </div>
@@ -1475,32 +1479,36 @@
         <!-- Card 2: Official Museum Newsletters & Convention -->
         <div class="lcs-comm-card">
           <div>
-            <span class="lcs-gallery-tag">PUBLICATIONS &amp; REUNIONS</span>
-            <h3>Museum Newsletters &amp; Conventions</h3>
-            <p style="font-size: 0.92rem; color: var(--slate-600);">
-              Edited by Secretary Dennis &amp; Bonnie Steenbergen, the official <em>Landing Craft Support Museum Newsletter</em> chronicles restoration milestones, veteran biographies, and annual conventions:
-            </p>
+            <span class="lcs-gallery-tag">UPCOMING EVENTS, CONVENTIONS &amp; NEWSLETTERS</span>
+            <h3>Conventions &amp; Museum Newsletters</h3>
+            <div style="background: var(--slate-100); border: 1px solid var(--slate-200); padding: 0.85rem 1rem; border-radius: var(--radius-md); margin: 0.75rem 0 1rem;">
+              <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--crimson-600); font-weight: 700;">LANDING CRAFT SUPPORT MUSEUM CONVENTION</div>
+              <strong style="color: var(--navy-950); display: block; margin-top: 0.15rem;">4th Annual Convention (Aug 23 – Aug 27, 2017)</strong>
+              <p style="font-size: 0.82rem; color: var(--slate-600); margin: 0.25rem 0 0;">
+                Held at the Cleveland, Ohio Embassy Suites Hotel Cleveland/Rockside. Edited by Newsletter Editors Dennis &amp; Bonnie Steenbergen:
+              </p>
+            </div>
             <ul class="lcs-newsletter-list">
+              <li>
+                <span>📄 <strong>LCS Museum Newsletter (April 2017)</strong></span>
+                <a href="https://lcsmuseum.org/files/Download/LCS_Newsletter_April_17.pdf" target="_blank" rel="noopener">Read PDF ↗</a>
+              </li>
+              <li>
+                <span>📄 <strong>LCS 2017 Convention Information</strong></span>
+                <a href="https://lcsmuseum.org/files/Download/LCS_Museum_2017_conv.PDF" target="_blank" rel="noopener">Read PDF ↗</a>
+              </li>
+              <li>
+                <span>📄 <strong>LCS 2017 Convention Sign Up Sheet</strong></span>
+                <a href="https://lcsmuseum.org/files/Download/Landing_Craft_signup_sheet_2017.PDF" target="_blank" rel="noopener">Read PDF ↗</a>
+              </li>
               <li>
                 <span>📄 <strong>November 2025 Newsletter</strong></span>
                 <a href="https://drive.google.com/file/d/1YqKkyOhErjn9CrNAYh6cOJj4rbP2UC17/view?usp=sharing" target="_blank" rel="noopener">Read PDF ↗</a>
               </li>
-              <li>
-                <span>📄 <strong>July 2025 Newsletter</strong></span>
-                <a href="https://drive.google.com/file/d/1qMA_RvfMEnZ8sk1qo2M4iRr-_q7ShzIz/" target="_blank" rel="noopener">Read PDF ↗</a>
-              </li>
-              <li>
-                <span>📄 <strong>February 2025 Newsletter</strong></span>
-                <a href="https://drive.google.com/file/d/1aOa7bMchbO89IBlnLdlpqSnqmiU65VYM" target="_blank" rel="noopener">Read PDF ↗</a>
-              </li>
-              <li>
-                <span>📄 <strong>Archival April 2017 Issue</strong></span>
-                <a href="https://lcsmuseum.org/files/Download/LCS_Newsletter_April_17.pdf" target="_blank" rel="noopener">Read PDF ↗</a>
-              </li>
             </ul>
           </div>
-          <a href="mailto:dsteenbergen1165@gmail.com?subject=LCS%20Museum%20Membership%20Application" class="lcs-btn lcs-btn-sm lcs-btn-crimson" style="width: 100%;">
-            ✉️ Request Membership Application
+          <a href="#membership-application" class="lcs-btn lcs-btn-sm lcs-btn-crimson" style="width: 100%;">
+            ✉️ Membership Application Form ↓
           </a>
         </div>
 
@@ -1508,9 +1516,9 @@
         <div class="lcs-comm-card">
           <div>
             <span class="lcs-gallery-tag">ALL-VOLUNTEER RESTORATION CREW</span>
-            <h3>Volunteer Aboard the 102</h3>
+            <h3>Volunteers Aboard the 102</h3>
             <p style="font-size: 0.92rem; color: var(--slate-600);">
-              Every inch of restoration since the 102 arrived from Thailand has been accomplished by volunteers. As Skipper <strong>Bill Mason</strong> notes, each time the ship needed a specific skill—welding, electrical, diesel mechanics, carpentry, or chipping and painting—a dedicated volunteer stepped aboard.
+              A great deal of work has been accomplished since the <strong>LCS (L) 102</strong> arrived in San Francisco. All of the work has been done by volunteers. <strong>Bill Mason</strong> has managed the renovation of the 102 since its arrival—and as Bill notes, he has been amazed by the luck he has had: each time he needed a specific skill, a volunteer with that skill arrived at the ship asking if volunteers were accepted.
             </p>
             <div style="background: var(--slate-100); border: 1px solid var(--slate-200); padding: 1rem; border-radius: var(--radius-md); margin: 1.25rem 0; font-size: 0.85rem; color: var(--slate-600);">
               <strong style="color: var(--navy-950); display: block; margin-bottom: 0.25rem;">Crew Leadership &amp; Contacts:</strong>
@@ -1519,68 +1527,73 @@
               • <strong>Historian / Archivist:</strong> Rob Rielly (<a href="mailto:robrielly1@comcast.net" style="color: var(--crimson-600);">robrielly1@comcast.net</a>)
             </div>
           </div>
-          <a href="mailto:gstutrud@usslcs102.org?subject=Volunteering%20Aboard%20USS%20LCS-102" class="lcs-btn lcs-btn-sm lcs-btn-gold" style="width: 100%;">
-            🛠️ Join the Saturday Restoration Crew
+          <a href="mailto:bmason6056@aol.com?subject=Volunteering%20Aboard%20USS%20LCS-102" class="lcs-btn lcs-btn-sm lcs-btn-gold" style="width: 100%;">
+            🛠️ Contact Bill Mason to Volunteer
           </a>
         </div>
       </div>
 
-      <!-- Dedicated Volunteer Crew & Officer Biographies (from usslcs102.org/volunteer.html & lcsmuseum.org) -->
+      <!-- Dedicated Volunteer Crew & Officer Biographies (from lcsmuseum.org/contactus.html & usslcs102.org) -->
       <div style="margin-top: 3.5rem;">
-        <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Meet the All-Volunteer Ship's Company</div>
+        <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Contact Information for the Landing Craft Support Museum</div>
         <h3 style="font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; color: var(--navy-950) !important; margin: 0 0 0.5rem;">
-          Veteran Leadership &amp; Restoration Crew Biographies
+          Museum Officers, Leadership &amp; Restoration Crew
         </h3>
         <p style="color: var(--slate-600); margin: 0;">
-          Initial restoration upon returning from Thailand was completed with the help of <strong>"Boyz Under The Hood"</strong> (Vallejo classic automobile enthusiasts), followed by our dedicated crew of U.S. Navy veterans:
+          Official corporate directory of the <strong>Landing Craft Support Museum Corporation</strong> (2960 20th Ave., San Francisco, CA 94132) and shipboard crew at Mare Island:
         </p>
 
         <div class="lcs-crew-grid">
           <div class="lcs-crew-card">
-            <span class="lcs-crew-role">MUSEUM SKIPPER • COMMANDING OFFICER</span>
+            <span class="lcs-crew-role">MUSEUM SKIPPER</span>
             <h4>William "Bill" Mason</h4>
             <p>
-              Managed the hands-on renovation and preservation of the USS LCS-102 since her arrival in San Francisco Bay in 2007. Coordinates overnight youth visits, drydock planning, and volunteer work parties.<br />
-              <strong style="color: var(--navy-950);">Contact:</strong> <a href="mailto:bmason6056@aol.com" style="color: var(--crimson-600);">bmason6056@aol.com</a> (2960 20th Ave., San Francisco, CA 94132)
-            </p>
-          </div>
-          <div class="lcs-crew-card">
-            <span class="lcs-crew-role">EXECUTIVE OFFICER • PRIMARY CONTACT</span>
-            <h4>Gordon Stutrud</h4>
-            <p>
-              Oversees shipboard operations, safety inspections, drydock mooring evolutions, and guided public tours at Mare Island Naval Shipyard.<br />
-              <strong style="color: var(--navy-950);">Phone:</strong> <a href="tel:7073732159" style="color: var(--crimson-600);">(707) 373-2159</a> • <strong style="color: var(--navy-950);">Email:</strong> <a href="mailto:gstutrud@usslcs102.org" style="color: var(--crimson-600);">gstutrud@usslcs102.org</a>
-            </p>
-          </div>
-          <div class="lcs-crew-card">
-            <span class="lcs-crew-role">ENGINEMAN 2ND CLASS • RESTORATION CREW</span>
-            <h4>Tony Jenkins, USN (Vet)</h4>
-            <p>
-              Served in the U.S. Navy (1971–1975) aboard USS <em>Flint</em> (AE-32) as Commissioning Crew Engineman 2nd Class. Handles welding, metal fabrication, electrical, mechanical, and deck restoration on Saturdays.
+              Has managed the renovation of the LCS (L) 102 since its arrival in San Francisco. Coordinates overnight group visits and volunteer work parties.<br />
+              <strong style="color: var(--navy-950);">Address:</strong> 2960 20th Ave., San Francisco, CA 94132<br />
+              <strong style="color: var(--navy-950);">Email:</strong> <a href="mailto:bmason6056@aol.com" style="color: var(--crimson-600);">bmason6056@aol.com</a>
             </p>
           </div>
           <div class="lcs-crew-card">
             <span class="lcs-crew-role">SECRETARY &amp; NEWSLETTER EDITOR</span>
-            <h4>Dennis A. Steenbergen</h4>
+            <h4>Dennis &amp; Bonnie Steenbergen</h4>
             <p>
-              Maintains museum membership records, processes tax-deductible mail-in donations, and edits the official <em>Landing Craft Support Museum Newsletter</em>.<br />
-              <strong style="color: var(--navy-950);">Email:</strong> <a href="mailto:dsteenbergen1165@gmail.com" style="color: var(--crimson-600);">dsteenbergen1165@gmail.com</a> (7345 W. Lakeside Dr., Littleton, CO 80125)
+              <strong>Secretary:</strong> Dennis Steenbergen • <strong>Newsletter Editors:</strong> Dennis &amp; Bonnie Steenbergen.<br />
+              <strong style="color: var(--navy-950);">Address:</strong> 7345 W. Lakeside Drive, Littleton, CO 80125<br />
+              <strong style="color: var(--navy-950);">Email:</strong> <a href="mailto:dsteenbergen1165@gmail.com" style="color: var(--crimson-600);">dsteenbergen1165@gmail.com</a>
             </p>
           </div>
           <div class="lcs-crew-card">
-            <span class="lcs-crew-role">TREASURER &amp; HISTORIAN / ARCHIVIST</span>
-            <h4>Bonnie Steenbergen &amp; Rob Rielly</h4>
+            <span class="lcs-crew-role">TREASURER</span>
+            <h4>Bonnie Steenbergen</h4>
             <p>
-              <strong>Treasurer:</strong> Bonnie Steenbergen (<a href="mailto:bsteenbergen@msn.com" style="color: var(--crimson-600);">bsteenbergen@msn.com</a>)<br />
-              <strong>Historian / Archivist:</strong> Rob Rielly (<a href="mailto:robrielly1@comcast.net" style="color: var(--crimson-600);">robrielly1@comcast.net</a>, 20 Chalfont Ln., Manchester, NJ 08759)
+              Oversees museum financial records and tax-deductible preservation contributions.<br />
+              <strong style="color: var(--navy-950);">Address:</strong> 7345 W. Lakeside Drive, Littleton, CO 80125<br />
+              <strong style="color: var(--navy-950);">Email:</strong> <a href="mailto:bsteenbergen@msn.com" style="color: var(--crimson-600);">bsteenbergen@msn.com</a>
             </p>
           </div>
           <div class="lcs-crew-card">
-            <span class="lcs-crew-role">LEGAL OFFICER &amp; CREW</span>
-            <h4>David Edstrom &amp; Rick Brasche</h4>
+            <span class="lcs-crew-role">HISTORIAN / ARCHIVIST</span>
+            <h4>Rob Rielly</h4>
             <p>
-              <strong>Legal Officer:</strong> David Edstrom (<a href="mailto:anhdedstrom@yahoo.com" style="color: var(--crimson-600);">anhdedstrom@yahoo.com</a>, Camas, WA)<br />
-              <strong>Shipboard Crew &amp; Webmaster:</strong> Rick Brasche &amp; Minh-Quan Nguyen (<a href="mailto:webmaster@usslcs102.org" style="color: var(--crimson-600);">webmaster@usslcs102.org</a>)
+              Preserves the records, relics, photographs, and wartime histories of the Landing Craft Support (Large) flotillas.<br />
+              <strong style="color: var(--navy-950);">Address:</strong> 20 Chalfont Lane, Manchester, NJ 08759<br />
+              <strong style="color: var(--navy-950);">Email:</strong> <a href="mailto:robrielly1@comcast.net" style="color: var(--crimson-600);">robrielly1@comcast.net</a>
+            </p>
+          </div>
+          <div class="lcs-crew-card">
+            <span class="lcs-crew-role">LEGAL OFFICER &amp; WEBMASTER</span>
+            <h4>David Edstrom &amp; John Wisner</h4>
+            <p>
+              <strong>Legal Officer:</strong> David Edstrom, 19600 SE 32nd St., Camas, WA 98607 (<a href="mailto:anhdedstrom@yahoo.com" style="color: var(--crimson-600);">anhdedstrom@yahoo.com</a>)<br />
+              <strong>Webmaster:</strong> John Wisner, 626 Bentwood Rd, El Cajon, CA 92021 (<a href="mailto:john.wisner@cox.net" style="color: var(--crimson-600);">john.wisner@cox.net</a>)
+            </p>
+          </div>
+          <div class="lcs-crew-card">
+            <span class="lcs-crew-role">EXECUTIVE OFFICER &amp; SHIPBOARD CREW</span>
+            <h4>Gordon Stutrud &amp; Tony Jenkins</h4>
+            <p>
+              <strong>Executive Officer:</strong> Gordon Stutrud • <a href="tel:7073732159" style="color: var(--crimson-600);">(707) 373-2159</a> • <a href="mailto:gstutrud@usslcs102.org" style="color: var(--crimson-600);">gstutrud@usslcs102.org</a><br />
+              <strong>Shipboard Restoration Crew:</strong> Tony Jenkins, USN (Vet), Rick Brasche &amp; Minh-Quan Nguyen
             </p>
           </div>
         </div>
@@ -1595,7 +1608,7 @@
               Become a Landing Craft Support Museum Member
             </h3>
             <p style="font-size: 0.92rem; color: var(--slate-600); margin: 0;">
-              Anyone interested in preserving World War II naval history may become a member of the Landing Craft Support Museum. Fill out the application below to generate your membership enrollment email directly to Secretary Dennis Steenbergen:
+              Anyone may become a member of the Landing Craft Support Museum. You just need to be someone who is interested in maintaining part of the history of WWII. Fill out the following form and send it in and you will be a member:
             </p>
           </div>
         </div>
@@ -1657,30 +1670,30 @@
 
         <!-- Col 3: Ship Berth & Mailing Address -->
         <div>
-          <h4>Berth &amp; Mailing Address</h4>
+          <h4>Berth &amp; Corporate Address</h4>
           <p style="font-size: 0.88rem; margin: 0 0 0.85rem;">
-            <strong style="color: var(--white);">Ship Berth Location:</strong><br />
-            Mare Island Naval Shipyard<br />
-            "A" Street &amp; Nimitz Avenue (289 Waterfront Ave)<br />
-            Mare Island / Vallejo, CA 94592
+            <strong style="color: var(--white);">Landing Craft Support Museum Corp.:</strong><br />
+            2960 20th Ave.<br />
+            San Francisco, CA 94132
           </p>
           <p style="font-size: 0.88rem; margin: 0;">
-            <strong style="color: var(--white);">Vallejo Museum Mailbox:</strong><br />
-            USS LCS-102, 1100 Railroad Avenue<br />
-            Vallejo, CA 94592
+            <strong style="color: var(--white);">Mare Island Naval Base Berth:</strong><br />
+            "A" Street &amp; Nimitz Avenue (289 Waterfront Ave)<br />
+            Vallejo, CA 94592 • Open Tue, Thu &amp; Sat 9:30–3:00
           </p>
         </div>
 
         <!-- Col 4: Board & Officers Directory -->
         <div>
-          <h4>Officers &amp; Board Directory</h4>
+          <h4>Officers &amp; Contact Directory</h4>
           <ul class="lcs-footer-links" style="font-size: 0.84rem;">
-            <li><strong style="color: var(--white);">Exec. Officer:</strong> Gordon Stutrud • <a href="tel:7073732159">(707) 373-2159</a> • <a href="mailto:gstutrud@usslcs102.org">gstutrud@usslcs102.org</a></li>
             <li><strong style="color: var(--white);">Museum Skipper:</strong> William Mason • <a href="mailto:bmason6056@aol.com">bmason6056@aol.com</a></li>
-            <li><strong style="color: var(--white);">Secretary:</strong> Dennis Steenbergen • <a href="mailto:dsteenbergen1165@gmail.com">dsteenbergen1165@gmail.com</a></li>
+            <li><strong style="color: var(--white);">Secretary &amp; Newsletter:</strong> Dennis &amp; Bonnie Steenbergen • <a href="mailto:dsteenbergen1165@gmail.com">dsteenbergen1165@gmail.com</a></li>
             <li><strong style="color: var(--white);">Treasurer:</strong> Bonnie Steenbergen • <a href="mailto:bsteenbergen@msn.com">bsteenbergen@msn.com</a></li>
-            <li><strong style="color: var(--white);">Historian:</strong> Rob Rielly • <a href="mailto:robrielly1@comcast.net">robrielly1@comcast.net</a></li>
+            <li><strong style="color: var(--white);">Historian/Archivist:</strong> Rob Rielly • <a href="mailto:robrielly1@comcast.net">robrielly1@comcast.net</a></li>
             <li><strong style="color: var(--white);">Legal Officer:</strong> David Edstrom • <a href="mailto:anhdedstrom@yahoo.com">anhdedstrom@yahoo.com</a></li>
+            <li><strong style="color: var(--white);">Webmaster:</strong> John Wisner • <a href="mailto:john.wisner@cox.net">john.wisner@cox.net</a></li>
+            <li><strong style="color: var(--white);">Exec. Officer:</strong> Gordon Stutrud • <a href="tel:7073732159">(707) 373-2159</a> • <a href="mailto:gstutrud@usslcs102.org">gstutrud@usslcs102.org</a></li>
           </ul>
         </div>
       </div>
