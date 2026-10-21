@@ -35,7 +35,7 @@
        ======================================================================== -->
   <header class="lcs-header">
     <div class="lcs-container lcs-header-inner">
-      <a href="#top" class="lcs-brand" aria-label="USS LCS-102 Landing Craft Support Museum Home">
+      <a href="#top" data-page-link="home" class="lcs-brand" aria-label="USS LCS-102 Landing Craft Support Museum Home">
         <div class="lcs-hull-emblem">102</div>
         <div class="lcs-brand-text">
           <span class="lcs-brand-title">USS LCS-102 Museum</span>
@@ -44,23 +44,43 @@
       </a>
 
       <nav class="lcs-nav" aria-label="Primary Navigation">
-        <a href="#virtual-museum" class="lcs-nav-link">
+        <a href="#top" data-page-link="home" class="lcs-nav-link active">Home</a>
+        <a href="#virtual-museum" data-page-link="virtual-museum" class="lcs-nav-link">
           Virtual Museum <span class="lcs-nav-badge">ONLINE</span>
         </a>
-        <a href="#about-museum" class="lcs-nav-link">The Ship</a>
-        <a href="#ship-history" class="lcs-nav-link">WWII History</a>
-        <a href="#photo-archive" class="lcs-nav-link">Photo Archive</a>
-        <a href="#visit" class="lcs-nav-link">Plan Your Visit</a>
-        <a href="#community" class="lcs-nav-link">Crew &amp; Events</a>
+        <a href="#about-museum" data-page-link="about-museum" class="lcs-nav-link">The Ship</a>
+        <a href="#ship-history" data-page-link="ship-history" class="lcs-nav-link">WWII History</a>
+        <a href="#photo-archive" data-page-link="photo-archive" class="lcs-nav-link">Photo Archive</a>
+        <a href="#visit" data-page-link="visit" class="lcs-nav-link">Plan Your Visit</a>
+        <a href="#community" data-page-link="community" class="lcs-nav-link">Crew &amp; Events</a>
       </nav>
 
       <div class="lcs-header-actions">
-        <a href="#virtual-museum" class="lcs-btn lcs-btn-sm lcs-btn-cyan">Explore Virtual Tour</a>
-        <a href="#donate" class="lcs-btn lcs-btn-sm lcs-btn-crimson">Donate (501c3)</a>
+        <a href="#virtual-museum" data-page-link="virtual-museum" class="lcs-btn lcs-btn-sm lcs-btn-cyan">Explore Virtual Tour</a>
+        <a href="#donate" data-page-link="donate" class="lcs-btn lcs-btn-sm lcs-btn-crimson">Donate (501c3)</a>
         <button class="lcs-mobile-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
       </div>
     </div>
   </header>
+
+  <!-- Subpage Banner (Displayed when navigating to dedicated subpages) -->
+  <div id="lcs-subpage-banner" class="lcs-subpage-banner">
+    <div class="lcs-container">
+      <div class="lcs-breadcrumb">
+        <div>
+          <a href="#top" data-page-link="home">🏠 Home Overview</a>
+          <span style="margin: 0 0.5rem; color: var(--slate-400);">/</span>
+          <span id="lcs-subpage-crumb">Virtual Museum</span>
+        </div>
+        <a href="#top" data-page-link="home" class="lcs-btn lcs-btn-sm lcs-btn-outline">
+          ← View Full All-in-One Homepage
+        </a>
+      </div>
+      <h1 id="lcs-subpage-heading" style="font-family: var(--font-display); font-size: clamp(2.1rem, 3.8vw, 3.2rem); text-transform: uppercase; margin: 0; color: var(--white) !important;">
+        USS LCS-102 Museum
+      </h1>
+    </div>
+  </div>
 
   <!-- ========================================================================
        3. HERO SECTION (Looping Drone Video + Archival Fallback + Spotlight)
@@ -560,6 +580,44 @@
           <div class="lcs-stat-label">Sole Surviving LCS(L) Worldwide</div>
         </div>
       </div>
+
+      <!-- Complete Naval Technical Blueprint & Armament Table -->
+      <table class="lcs-blueprint-table" aria-label="USS LCS(L)(3)-102 Technical Specifications">
+        <tbody>
+          <tr>
+            <th>Official U.S. Navy Designation</th>
+            <td><strong>USS LCS(L)(3)-102</strong> — Landing Craft Support (Large) (Mark 3) • Redesignated <strong>USS LSSL-102</strong> (Feb 28, 1949) • Nickname: <em>"Yankee Dollar"</em></td>
+          </tr>
+          <tr>
+            <th>Shipyard &amp; Construction</th>
+            <td>Built by <strong>Commercial Iron Works</strong>, Portland, Oregon • Laid down: <strong>January 13, 1945</strong> • Launched: <strong>February 3, 1945</strong> • Commissioned: <strong>February 17, 1945</strong></td>
+          </tr>
+          <tr>
+            <th>Hull Dimensions &amp; Displacement</th>
+            <td>Length Overall: <strong>158 ft 0 in (48.16 m)</strong> • Beam: <strong>23 ft 6 in (7.16 m)</strong> • Draft: <strong>5 ft 8 in forward / 6 ft 6 in aft</strong> • Full Load Displacement: <strong>387 tons</strong></td>
+          </tr>
+          <tr>
+            <th>Propulsion &amp; Performance</th>
+            <td><strong>2 × General Motors 16-278A diesel engines</strong> (1,800 BHP total) • Twin shafts with controllable-pitch propellers • Top Speed: <strong>16.5 knots</strong> • Range: <strong>5,500 nautical miles at 12 knots</strong></td>
+          </tr>
+          <tr>
+            <th>Wartime Ship's Company</th>
+            <td><strong>71 Total Complement</strong> — 6 Commissioned Officers and 65 Enlisted Men (WWII Commanding Officer: <strong>Lt. Richard Jones, USNR</strong>)</td>
+          </tr>
+          <tr>
+            <th>WWII Armament Suite</th>
+            <td><strong>1 × 3"/50 caliber dual-purpose bow gun</strong> (or twin 40mm) • <strong>2 × Twin 40mm Bofors AA mounts</strong> • <strong>4 × Single 20mm Oerlikon AA cannons</strong> • <strong>4 × .50-caliber Browning machine guns</strong> • <strong>10 × Mark 7 barrage rocket launchers</strong></td>
+          </tr>
+          <tr>
+            <th>Allied Naval Service</th>
+            <td>Japanese Maritime Self-Defense Force: <strong><em>JDS Himawari</em></strong> (1953–1966; added lookout roof &amp; 81mm mortars) • Royal Thai Navy: <strong><em>HTMS Nakha</em> (LSSL-751)</strong> (1966–2007)</td>
+          </tr>
+          <tr>
+            <th>Historic Landmark Status</th>
+            <td>Listed on the <strong>U.S. National Register of Historic Places (#15000716)</strong> on October 13, 2015 • Permanently berthed at Mare Island Naval Shipyard, Vallejo, CA</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -688,6 +746,32 @@
           </div>
         </article>
       </div>
+
+      <!-- Detailed Archival Narrative from lcsmuseum.org/History.html -->
+      <div style="margin-top: 3rem; background: rgba(5, 12, 22, 0.65); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: var(--radius-lg); padding: 2.25rem;">
+        <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Combat Doctrine &amp; Pacific Theater Operations</div>
+        <h3 style="font-family: var(--font-display); font-size: 1.85rem; text-transform: uppercase; margin: 0 0 1rem; color: var(--white) !important;">
+          Why the "Mighty Midgets" Looked Like Fourth of July Fireworks Leading an Assault
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; color: var(--slate-300); font-size: 0.94rem;">
+          <div>
+            <p style="margin-top: 0;">
+              <strong>The Lesson of Tarawa (November 1943):</strong> After capital ships shelled invasion beaches to disrupt enemy defenses, naval bombardment had to lift as troop-laden landing craft approached the shore. In that critical window, defenders regrouped with deadly effect on U.S. Marines. Using the LCI(L) hull plans, George Lawley &amp; Sons designed a purpose-built close-in fighting ship: the <strong>Landing Craft Support (Large)</strong>.
+            </p>
+            <p style="margin-bottom: 0;">
+              <strong>Three Shipyards, 130 Ships:</strong> Lawley &amp; Sons in Neponset, Massachusetts built 47 vessels; in Portland, Oregon, Albina Engine &amp; Machine Works built 31 and Commercial Iron Works produced 52 (including the <strong>USS LCS-102</strong>).
+            </p>
+          </div>
+          <div>
+            <p style="margin-top: 0;">
+              <strong>Amphibious Assault Tactics:</strong> Attacking the beach in line abreast, LCS(L)s made two runs firing rocket barrages at <strong>1,000, 800, and 500 yards</strong> before turning broadside to suppress targets of opportunity. On the third run, they slowed to let troop landing craft pass, then fired continuously over the heads of the Marines ashore—often carrying Marine or Army artillery spotters onboard.
+            </p>
+            <p style="margin-bottom: 0;">
+              <strong>Postwar Allied Legacy:</strong> Following minesweeping operations across Japan, Korea, China, and Taiwan, 53 LCS(L)s were loaned to Japan in the 1950s, while others served France, Italy, Greece, South Korea, Thailand, Taiwan, and the Philippines. Today, <strong>USS LCS-102 is the sole surviving vessel of all 130 built</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -815,7 +899,7 @@
 
       <!-- Filter Buttons -->
       <div class="lcs-gallery-filters" role="tablist" aria-label="Photo Gallery Categories">
-        <button type="button" class="lcs-filter-btn active" data-filter="all">All Archival Photos (12)</button>
+        <button type="button" class="lcs-filter-btn active" data-filter="all">All Archival Photos (18)</button>
         <button type="button" class="lcs-filter-btn" data-filter="ship">The Ship &amp; Mare Island</button>
         <button type="button" class="lcs-filter-btn" data-filter="wwii">WWII Pacific Theater</button>
         <button type="button" class="lcs-filter-btn" data-filter="restoration">Drydock &amp; Return Home</button>
@@ -965,6 +1049,78 @@
             <span class="lcs-gallery-tag">COMMUNITY • ANNUAL CONVENTION</span>
             <h3 class="lcs-gallery-title">LCS Museum Members &amp; WWII Veterans Reunion</h3>
             <p class="lcs-gallery-desc">Original WWII sailors, families, and Landing Craft Support Museum members gathered for the annual convention.</p>
+          </div>
+        </article>
+
+        <!-- Item 13 (Wikimedia U.S. Navy Official Photo) -->
+        <article class="lcs-gallery-item" data-category="community">
+          <div class="lcs-gallery-thumb">
+            <img src="assets/images/wikimedia-lcs102-return-2007.jpg" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/7/79/USS_LCS%28L%29_102.jpg'" alt="U.S. Navy Official Photo: 2007 Handover Ceremony at Mare Island" />
+          </div>
+          <div class="lcs-gallery-meta">
+            <span class="lcs-gallery-tag">U.S. NAVY ARCHIVE • NOV 10, 2007</span>
+            <h3 class="lcs-gallery-title">2007 U.S. &amp; Royal Thai Navy Handover at Vallejo</h3>
+            <p class="lcs-gallery-desc">Former WWII Signalman 3rd Class Gilbert Nadeau and Royal Thai Navy Lt. Sathaporn Thassanaleelaporn aboard LCS-102 in Vallejo, CA.</p>
+          </div>
+        </article>
+
+        <!-- Item 14 (Wikimedia 2016 Mare Island Profile) -->
+        <article class="lcs-gallery-item" data-category="ship">
+          <div class="lcs-gallery-thumb">
+            <img src="assets/images/wikimedia-lcs102-mare-island-2016.jpg" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/b/bb/USS_LCS_L_3_102_30Apr2016_450px.jpg'" alt="USS LCS(L)(3)-102 docked at Mare Island in April 2016" />
+          </div>
+          <div class="lcs-gallery-meta">
+            <span class="lcs-gallery-tag">THE SHIP • NATIONAL HISTORIC LANDMARK</span>
+            <h3 class="lcs-gallery-title">Port-Side Full Profile at Mare Island</h3>
+            <p class="lcs-gallery-desc">USS LCS(L)(3)-102 moored at Mare Island Naval Shipyard following her inclusion on the National Register of Historic Places.</p>
+          </div>
+        </article>
+
+        <!-- Item 15 (Drydock Hull Inspection) -->
+        <article class="lcs-gallery-item" data-category="restoration">
+          <div class="lcs-gallery-thumb">
+            <img src="assets/images/drydock-inspection.jpg" onerror="this.src='https://usslcs102.org/img/restoration/in-drydock-inspection01.jpg'" alt="Crew and drydock workers inspecting the hull of USS LCS-102" />
+          </div>
+          <div class="lcs-gallery-meta">
+            <span class="lcs-gallery-tag">DRYDOCK • HULL INTEGRITY</span>
+            <h3 class="lcs-gallery-title">Below-Waterline Hull Inspection</h3>
+            <p class="lcs-gallery-desc">Volunteer crew and Mare Island drydock shipwrights inspecting the flat amphibious bottom hull plating of the 102.</p>
+          </div>
+        </article>
+
+        <!-- Item 16 (Tugboat Alongside) -->
+        <article class="lcs-gallery-item" data-category="restoration">
+          <div class="lcs-gallery-thumb">
+            <img src="assets/images/drydock-tugboat.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Tugboat_Starboard.jpg'" alt="Tugboat alongside USS LCS-102 at Mare Island" />
+          </div>
+          <div class="lcs-gallery-meta">
+            <span class="lcs-gallery-tag">MARE ISLAND • SHIPYARD OPERATIONS</span>
+            <h3 class="lcs-gallery-title">Tugboat Escort Alongside Starboard Quarter</h3>
+            <p class="lcs-gallery-desc">Harbor tug assisting the <em>Yankee Dollar</em> during her transit between her museum berth and Mare Island Drydock.</p>
+          </div>
+        </article>
+
+        <!-- Item 17 (Lost Submarines Ceremony) -->
+        <article class="lcs-gallery-item" data-category="community">
+          <div class="lcs-gallery-thumb">
+            <img src="assets/images/lost-subs-ceremony.jpg" onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_1.jpg'" alt="Lost Submarines of Mare Island Ceremony at USS LCS-102" />
+          </div>
+          <div class="lcs-gallery-meta">
+            <span class="lcs-gallery-tag">MEMORIAL • MARE ISLAND HERITAGE</span>
+            <h3 class="lcs-gallery-title">Lost Submarines of Mare Island Ceremony</h3>
+            <p class="lcs-gallery-desc">Annual memorial service hosted at the berth of the USS LCS-102 honoring WWII submarine sailors lost on patrol.</p>
+          </div>
+        </article>
+
+        <!-- Item 18 (WWII Kamikaze Defense) -->
+        <article class="lcs-gallery-item" data-category="wwii">
+          <div class="lcs-gallery-thumb">
+            <img src="assets/images/wwii-kamikaze.jpg" onerror="this.src='https://usslcs102.org/img/wwii/kamikaze02.jpg'" alt="WWII LCS anti-aircraft action against kamikaze attack" />
+          </div>
+          <div class="lcs-gallery-meta">
+            <span class="lcs-gallery-tag">WWII COMBAT • RADAR PICKET LINE</span>
+            <h3 class="lcs-gallery-title">Anti-Aircraft Defense Against Kamikaze Attack</h3>
+            <p class="lcs-gallery-desc">Wartime photograph capturing intense 40mm and 20mm anti-aircraft fire from Landing Craft Support gunboats during Pacific operations.</p>
           </div>
         </article>
       </div>
@@ -1143,6 +1299,96 @@
           </a>
         </div>
       </div>
+
+      <!-- Dedicated Volunteer Crew & Officer Biographies (from usslcs102.org/volunteer.html & lcsmuseum.org) -->
+      <div style="margin-top: 3.5rem;">
+        <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Meet the All-Volunteer Ship's Company</div>
+        <h3 style="font-family: var(--font-display); font-size: 2rem; text-transform: uppercase; color: var(--navy-950) !important; margin: 0 0 0.5rem;">
+          Veteran Leadership &amp; Restoration Crew Biographies
+        </h3>
+        <p style="color: var(--slate-600); margin: 0;">
+          Initial restoration upon returning from Thailand was completed with the help of <strong>"Boyz Under The Hood"</strong> (Vallejo classic automobile enthusiasts), followed by our dedicated crew of U.S. Navy veterans:
+        </p>
+
+        <div class="lcs-crew-grid">
+          <div class="lcs-crew-card">
+            <span class="lcs-crew-role">MUSEUM SKIPPER • COMMANDING OFFICER</span>
+            <h4>William "Bill" Mason</h4>
+            <p>
+              Managed the hands-on renovation and preservation of the USS LCS-102 since her arrival in San Francisco Bay in 2007. Coordinates overnight youth visits, drydock planning, and volunteer work parties.<br />
+              <strong style="color: var(--navy-950);">Contact:</strong> <a href="mailto:bmason6056@aol.com" style="color: var(--crimson-600);">bmason6056@aol.com</a> (2960 20th Ave., San Francisco, CA 94132)
+            </p>
+          </div>
+          <div class="lcs-crew-card">
+            <span class="lcs-crew-role">EXECUTIVE OFFICER • PRIMARY CONTACT</span>
+            <h4>Gordon Stutrud</h4>
+            <p>
+              Oversees shipboard operations, safety inspections, drydock mooring evolutions, and guided public tours at Mare Island Naval Shipyard.<br />
+              <strong style="color: var(--navy-950);">Phone:</strong> <a href="tel:7073732159" style="color: var(--crimson-600);">(707) 373-2159</a> • <strong style="color: var(--navy-950);">Email:</strong> <a href="mailto:gstutrud@usslcs102.org" style="color: var(--crimson-600);">gstutrud@usslcs102.org</a>
+            </p>
+          </div>
+          <div class="lcs-crew-card">
+            <span class="lcs-crew-role">ENGINEMAN 2ND CLASS • RESTORATION CREW</span>
+            <h4>Tony Jenkins, USN (Vet)</h4>
+            <p>
+              Served in the U.S. Navy (1971–1975) aboard USS <em>Flint</em> (AE-32) as Commissioning Crew Engineman 2nd Class. Handles welding, metal fabrication, electrical, mechanical, and deck restoration on Saturdays.
+            </p>
+          </div>
+          <div class="lcs-crew-card">
+            <span class="lcs-crew-role">SECRETARY &amp; NEWSLETTER EDITOR</span>
+            <h4>Dennis A. Steenbergen</h4>
+            <p>
+              Maintains museum membership records, processes tax-deductible mail-in donations, and edits the official <em>Landing Craft Support Museum Newsletter</em>.<br />
+              <strong style="color: var(--navy-950);">Email:</strong> <a href="mailto:dsteenbergen1165@gmail.com" style="color: var(--crimson-600);">dsteenbergen1165@gmail.com</a> (7345 W. Lakeside Dr., Littleton, CO 80125)
+            </p>
+          </div>
+          <div class="lcs-crew-card">
+            <span class="lcs-crew-role">TREASURER &amp; HISTORIAN / ARCHIVIST</span>
+            <h4>Bonnie Steenbergen &amp; Rob Rielly</h4>
+            <p>
+              <strong>Treasurer:</strong> Bonnie Steenbergen (<a href="mailto:bsteenbergen@msn.com" style="color: var(--crimson-600);">bsteenbergen@msn.com</a>)<br />
+              <strong>Historian / Archivist:</strong> Rob Rielly (<a href="mailto:robrielly1@comcast.net" style="color: var(--crimson-600);">robrielly1@comcast.net</a>, 20 Chalfont Ln., Manchester, NJ 08759)
+            </p>
+          </div>
+          <div class="lcs-crew-card">
+            <span class="lcs-crew-role">LEGAL OFFICER &amp; CREW</span>
+            <h4>David Edstrom &amp; Rick Brasche</h4>
+            <p>
+              <strong>Legal Officer:</strong> David Edstrom (<a href="mailto:anhdedstrom@yahoo.com" style="color: var(--crimson-600);">anhdedstrom@yahoo.com</a>, Camas, WA)<br />
+              <strong>Shipboard Crew &amp; Webmaster:</strong> Rick Brasche &amp; Minh-Quan Nguyen (<a href="mailto:webmaster@usslcs102.org" style="color: var(--crimson-600);">webmaster@usslcs102.org</a>)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Museum Membership Application Form (Replaces Page6.html on lcsmuseum.org) -->
+      <div class="lcs-membership-form-card" id="membership-application">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="lcs-gallery-tag">OFFICIAL ASSOCIATION ENROLLMENT • OPEN TO ALL SUPPORTERS</span>
+            <h3 style="font-family: var(--font-display); font-size: 1.85rem; text-transform: uppercase; color: var(--navy-950) !important; margin: 0.25rem 0 0.4rem;">
+              Become a Landing Craft Support Museum Member
+            </h3>
+            <p style="font-size: 0.92rem; color: var(--slate-600); margin: 0;">
+              Anyone interested in preserving World War II naval history may become a member of the Landing Craft Support Museum. Fill out the application below to generate your membership enrollment email directly to Secretary Dennis Steenbergen:
+            </p>
+          </div>
+        </div>
+
+        <form id="lcs-membership-form" class="lcs-form-grid">
+          <input type="text" id="mem-name" class="lcs-input" placeholder="Your Full Name *" required />
+          <input type="email" id="mem-email" class="lcs-input" placeholder="Your Email Address *" required />
+          <input type="tel" id="mem-phone" class="lcs-input" placeholder="Phone Number" />
+          <input type="text" id="mem-relation" class="lcs-input" placeholder="WWII Veteran / Ship Connection (Optional, e.g., USS LCS-102)" />
+          <input type="text" id="mem-address" class="lcs-input" placeholder="Mailing Street Address, City, State &amp; ZIP" style="grid-column: 1 / -1;" />
+          <div style="grid-column: 1 / -1; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <button type="submit" class="lcs-btn lcs-btn-crimson">
+              📨 Submit Membership Application
+            </button>
+            <span id="lcs-mem-status" style="font-size: 0.88rem; color: var(--navy-800); font-weight: 600;"></span>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -1173,12 +1419,14 @@
         <div>
           <h4>Explore the Museum</h4>
           <ul class="lcs-footer-links">
-            <li><a href="#virtual-museum">🌐 Virtual Online Museum</a></li>
-            <li><a href="#about-museum">⚓ About &amp; Six Objectives</a></li>
-            <li><a href="#ship-history">📜 WWII "Mighty Midget" History</a></li>
-            <li><a href="#photo-archive">📷 Archival Photo Gallery</a></li>
-            <li><a href="#donate">❤️ 501(c)(3) Donate &amp; Support</a></li>
-            <li><a href="#visit">📍 Mare Island Visitor Guide</a></li>
+            <li><a href="#top" data-page-link="home">🏠 Home Overview</a></li>
+            <li><a href="#virtual-museum" data-page-link="virtual-museum">🌐 Virtual Online Museum</a></li>
+            <li><a href="#about-museum" data-page-link="about-museum">⚓ The Ship &amp; Six Objectives</a></li>
+            <li><a href="#ship-history" data-page-link="ship-history">📜 WWII "Mighty Midget" History</a></li>
+            <li><a href="#photo-archive" data-page-link="photo-archive">📷 Archival Photo Gallery (18)</a></li>
+            <li><a href="#donate" data-page-link="donate">❤️ 501(c)(3) Donate &amp; Support</a></li>
+            <li><a href="#visit" data-page-link="visit">📍 Mare Island Visitor Guide</a></li>
+            <li><a href="#community" data-page-link="community">🛠️ Volunteer Crew &amp; Membership</a></li>
           </ul>
         </div>
 

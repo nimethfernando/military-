@@ -1438,7 +1438,157 @@ body {
 }
 
 /* ==========================================================================
-   12. LIGHTBOX & VIRTUAL TOUR PREVIEW MODAL
+   12. MULTI-PAGE ROUTER SUBPAGE HERO BANNER, TABLES & FORMS
+   ========================================================================== */
+.lcs-subpage-banner {
+  display: none;
+  background:
+    linear-gradient(90deg, rgba(5, 12, 22, 0.95) 0%, rgba(15, 33, 58, 0.88) 100%),
+    url('https://usslcs102.org/img/restoration/RD_Predeparture.jpg') center/cover no-repeat;
+  border-bottom: 2px solid var(--gold-500);
+  padding: 2.75rem 0 2.25rem;
+}
+
+.lcs-subpage-banner.active {
+  display: block;
+}
+
+.lcs-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-400);
+}
+
+.lcs-breadcrumb a {
+  color: var(--slate-300);
+  cursor: pointer;
+}
+
+.lcs-breadcrumb a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.lcs-page-section-hidden {
+  display: none !important;
+}
+
+/* Technical Blueprint Spec Table */
+.lcs-blueprint-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--slate-200);
+  margin-top: 2rem;
+}
+
+.lcs-blueprint-table th,
+.lcs-blueprint-table td {
+  padding: 0.95rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid var(--slate-200);
+  font-size: 0.92rem;
+}
+
+.lcs-blueprint-table th {
+  background: var(--navy-900);
+  color: var(--gold-400) !important;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  width: 32%;
+}
+
+.lcs-blueprint-table td {
+  color: var(--navy-950);
+  font-weight: 500;
+}
+
+/* Crew Bio Grid */
+.lcs-crew-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.lcs-crew-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-top: 4px solid var(--navy-800);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.lcs-crew-role {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--crimson-600);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.lcs-crew-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  color: var(--navy-950) !important;
+  margin: 0 0 0.5rem;
+}
+
+.lcs-crew-card p {
+  font-size: 0.86rem;
+  color: var(--slate-600);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Interactive Membership Application Card */
+.lcs-membership-form-card {
+  background: var(--white);
+  border: 2px solid var(--navy-800);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  margin-top: 2.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.lcs-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.lcs-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--slate-300);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--navy-950);
+  background: var(--slate-100);
+}
+
+/* ==========================================================================
+   13. LIGHTBOX & VIRTUAL TOUR PREVIEW MODAL
    ========================================================================== */
 .lcs-modal-backdrop {
   position: fixed;
@@ -1551,6 +1701,8 @@ body {
   .lcs-objectives-list,
   .lcs-virtual-features,
   .lcs-tier-grid,
+  .lcs-crew-grid,
+  .lcs-form-grid,
   .lcs-footer-grid {
     grid-template-columns: 1fr;
   }
