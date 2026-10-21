@@ -441,15 +441,14 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center 35%;
-  filter: url("#lcs-video-sharpen") brightness(0.76);
+  opacity: 0.82;
   transform: translateZ(0);
   backface-visibility: hidden;
   will-change: transform;
 }
 
-/* High-Resolution Optical Sharpening for All Photographs */
+/* High-Resolution Optical Rendering for All Photographs */
 .lcs-site img:not(.lcs-ribbons-img) {
-  filter: url("#lcs-image-sharpen");
   image-rendering: -webkit-optimize-contrast;
   backface-visibility: hidden;
   transform: translateZ(0);
