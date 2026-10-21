@@ -1,1780 +1,30 @@
-<!-- USS LCS-102 MUSEUM — SELF-CONTAINED SQUARESPACE 7.1 CODE BLOCK -->
-<style>
-/* ==========================================================================
-   USS LCS(L)(3)-102 "YANKEE DOLLAR" — LANDING CRAFT SUPPORT MUSEUM
-   Inspired by Intrepid Museum (intrepidmuseum.org)
-   Compatible with Standalone Deployment & Squarespace 7.1 Custom CSS
-   ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-
-:root {
-  --navy-950: #050c16;
-  --navy-900: #091526;
-  --navy-800: #0f213a;
-  --navy-700: #173154;
-  --navy-600: #224472;
-  --slate-100: #f1f5f9;
-  --slate-200: #e2e8f0;
-  --slate-300: #cbd5e1;
-  --slate-400: #94a3b8;
-  --slate-600: #475569;
-  --slate-800: #1e293b;
-  --gold-500: #e5a93c;
-  --gold-400: #f3be56;
-  --gold-600: #c78c22;
-  --crimson-600: #c8102e;
-  --crimson-500: #e11d48;
-  --cyan-400: #38bdf8;
-  --emerald-400: #34d399;
-  --white: #ffffff;
-
-  --font-display: 'Barlow Condensed', 'Oswald', Impact, sans-serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-
-  --container-max: 1320px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 14px;
-  --shadow-lg: 0 20px 45px -15px rgba(5, 12, 22, 0.55);
-  --shadow-card: 0 12px 32px -8px rgba(9, 21, 38, 0.12);
-  --transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-sans);
-  background-color: var(--navy-950);
-  color: var(--slate-100);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-:where(.lcs-site) a {
-  color: inherit;
-  text-decoration: none;
-  transition: color var(--transition), background-color var(--transition), border-color var(--transition), transform var(--transition);
-}
-
-:where(.lcs-site) img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.lcs-container {
-  width: 100%;
-  max-width: var(--container-max);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2.25rem;
-  padding-right: 2.25rem;
-}
-
-/* ==========================================================================
-   1. TOP UTILITY & ALERT BAR (Intrepid Museum Style)
-   ========================================================================== */
-.lcs-utility-bar {
-  background-color: var(--navy-950);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.8125rem;
-  color: var(--slate-300);
-  padding: 0.55rem 0;
-  position: relative;
-  z-index: 1001;
-}
-
-.lcs-utility-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.lcs-utility-left {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-}
-
-.lcs-nrhp-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--gold-400);
-  background: rgba(229, 169, 60, 0.12);
-  border: 1px solid rgba(229, 169, 60, 0.3);
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-sm);
-}
-
-.lcs-utility-hours {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--slate-200);
-  font-weight: 500;
-}
-
-.lcs-status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--emerald-400);
-  box-shadow: 0 0 8px var(--emerald-400);
-  display: inline-block;
-}
-
-.lcs-utility-right {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.lcs-utility-link {
-  color: var(--slate-300);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.lcs-utility-link:hover {
-  color: var(--gold-400);
-}
-
-.lcs-utility-link.highlight {
-  color: var(--cyan-400);
-}
-
-/* ==========================================================================
-   2. MAIN STICKY HEADER & NAVIGATION
-   ========================================================================== */
-.lcs-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(9, 21, 38, 0.94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  transition: background var(--transition), box-shadow var(--transition);
-}
-
-.lcs-header.scrolled {
-  background: rgba(5, 12, 22, 0.98);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.lcs-header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 76px;
-  gap: 1rem;
-}
-
-.lcs-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  flex-shrink: 0;
-}
-
-.lcs-hull-emblem {
-  background: linear-gradient(135deg, var(--navy-700) 0%, var(--navy-900) 100%);
-  border: 2px solid var(--gold-500);
-  color: var(--white);
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.65rem;
-  line-height: 1;
-  padding: 0.4rem 0.6rem;
-  border-radius: var(--radius-sm);
-  letter-spacing: 0.04em;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-  position: relative;
-  flex-shrink: 0;
-}
-
-.lcs-hull-emblem::after {
-  content: 'USS';
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.52rem;
-  letter-spacing: 0.18em;
-  color: var(--gold-400);
-  text-align: center;
-  margin-top: 2px;
-}
-
-.lcs-brand-text {
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-}
-
-.lcs-brand-title {
-  font-family: var(--font-display);
-  font-size: 1.32rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--white) !important;
-  line-height: 1.05;
-  white-space: nowrap;
-}
-
-.lcs-brand-subtitle {
-  font-size: 0.68rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--gold-400) !important;
-  margin-top: 0.15rem;
-  white-space: nowrap;
-}
-
-.lcs-nav {
-  display: flex;
-  align-items: center;
-  gap: 0.95rem;
-}
-
-.lcs-nav-link {
-  font-family: var(--font-display);
-  font-size: 0.92rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--slate-100) !important;
-  padding: 0.4rem 0;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  white-space: nowrap;
-}
-
-.lcs-nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--gold-400);
-  transition: width var(--transition);
-}
-
-.lcs-nav-link:hover,
-.lcs-nav-link.active {
-  color: var(--gold-400);
-}
-
-.lcs-nav-link:hover::after,
-.lcs-nav-link.active::after {
-  width: 100%;
-}
-
-.lcs-nav-badge {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  font-weight: 700;
-  background: rgba(56, 189, 248, 0.18);
-  color: var(--cyan-400);
-  border: 1px solid rgba(56, 189, 248, 0.45);
-  padding: 0.1rem 0.38rem;
-  border-radius: 3px;
-  letter-spacing: 0.05em;
-}
-
-.lcs-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  flex-shrink: 0;
-}
-
-/* Buttons */
-.lcs-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  padding: 0.75rem 1.4rem;
-  border-radius: var(--radius-sm);
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: all var(--transition);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.lcs-btn-sm {
-  font-size: 0.86rem;
-  padding: 0.48rem 0.9rem;
-}
-
-.lcs-btn-lg {
-  font-size: 1.15rem;
-  padding: 0.9rem 1.7rem;
-}
-
-.lcs-btn-gold {
-  background-color: var(--gold-500) !important;
-  color: var(--navy-950) !important;
-  border-color: var(--gold-500) !important;
-}
-
-.lcs-btn-gold:hover {
-  background-color: var(--gold-400) !important;
-  border-color: var(--gold-400) !important;
-  color: var(--navy-950) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(229, 169, 60, 0.35);
-}
-
-.lcs-btn-crimson {
-  background-color: var(--crimson-600) !important;
-  color: var(--white) !important;
-  border-color: var(--crimson-600) !important;
-}
-
-.lcs-btn-crimson:hover {
-  background-color: var(--crimson-500) !important;
-  border-color: var(--crimson-500) !important;
-  color: var(--white) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(200, 16, 46, 0.45);
-}
-
-.lcs-btn-outline {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-  color: var(--white) !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
-}
-
-.lcs-btn-outline:hover {
-  background-color: rgba(255, 255, 255, 0.15) !important;
-  border-color: var(--white) !important;
-  color: var(--white) !important;
-  transform: translateY(-2px);
-}
-
-.lcs-btn-cyan {
-  background: rgba(56, 189, 248, 0.14) !important;
-  color: var(--cyan-400) !important;
-  border-color: var(--cyan-400) !important;
-}
-
-.lcs-btn-cyan:hover {
-  background: var(--cyan-400) !important;
-  color: var(--navy-950) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35);
-}
-
-.lcs-mobile-toggle {
-  display: none;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: var(--white);
-  padding: 0.5rem 0.7rem;
-  border-radius: var(--radius-sm);
-  font-size: 1.25rem;
-  cursor: pointer;
-}
-
-/* ==========================================================================
-   3. HERO SECTION (Intrepid Full-Bleed Video + High-Impact Overlay)
-   ========================================================================== */
-.lcs-hero {
-  position: relative;
-  min-height: 86vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-  background-color: var(--navy-950);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.lcs-hero-media {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.lcs-hero-video,
-.lcs-hero-fallback-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 35%;
-  filter: contrast(1.08) brightness(0.75);
-}
-
-.lcs-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(5, 12, 22, 0.94) 0%, rgba(5, 12, 22, 0.78) 52%, rgba(5, 12, 22, 0.45) 100%),
-    linear-gradient(180deg, rgba(5, 12, 22, 0.4) 0%, rgba(5, 12, 22, 0.1) 50%, rgba(5, 12, 22, 0.96) 100%);
-  z-index: 1;
-}
-
-.lcs-hero-content {
-  position: relative;
-  z-index: 2;
-  padding-top: 4.5rem;
-  padding-bottom: 3.5rem;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.lcs-hero-grid {
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.lcs-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--gold-400);
-  margin-bottom: 1rem;
-}
-
-.lcs-eyebrow-line {
-  width: 32px;
-  height: 2px;
-  background-color: var(--gold-400);
-  display: inline-block;
-}
-
-.lcs-hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.85rem, 5.6vw, 5.1rem);
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 0.96;
-  letter-spacing: 0.02em;
-  color: var(--white);
-  margin: 0 0 1.25rem;
-}
-
-.lcs-hero-title span {
-  color: var(--gold-400);
-  display: block;
-}
-
-.lcs-hero-lead {
-  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
-  color: var(--slate-200);
-  max-width: 650px;
-  margin: 0 0 2rem;
-  font-weight: 400;
-}
-
-.lcs-hero-ctas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2.25rem;
-}
-
-.lcs-ribbons-box {
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  background: rgba(15, 33, 58, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 0.75rem 1.15rem;
-  border-radius: var(--radius-md);
-  backdrop-filter: blur(8px);
-  max-width: 620px;
-}
-
-.lcs-site .lcs-ribbons-img,
-.lcs-ribbons-img {
-  height: 42px !important;
-  width: 126px !important;
-  max-width: 126px !important;
-  object-fit: contain !important;
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
-.lcs-ribbons-caption {
-  font-size: 0.78rem;
-  color: var(--slate-300);
-  line-height: 1.35;
-}
-
-.lcs-ribbons-caption strong {
-  color: var(--white);
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-/* Hero Right Feature Card (Virtual Museum Spotlight Card) */
-.lcs-hero-spotlight {
-  background: linear-gradient(160deg, rgba(15, 33, 58, 0.92) 0%, rgba(9, 21, 38, 0.96) 100%);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  box-shadow: var(--shadow-lg);
-  position: relative;
-  overflow: hidden;
-}
-
-.lcs-hero-spotlight::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--cyan-400), var(--gold-400));
-}
-
-.lcs-spotlight-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--cyan-400);
-  background: rgba(56, 189, 248, 0.12);
-  padding: 0.25rem 0.65rem;
-  border-radius: 4px;
-  margin-bottom: 0.9rem;
-}
-
-.lcs-spotlight-img-wrap {
-  position: relative;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  margin-bottom: 1.1rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  aspect-ratio: 16 / 9;
-}
-
-.lcs-spotlight-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.lcs-hero-spotlight:hover .lcs-spotlight-img-wrap img {
-  transform: scale(1.04);
-}
-
-.lcs-spotlight-overlay-badge {
-  position: absolute;
-  bottom: 0.65rem;
-  right: 0.65rem;
-  background: rgba(5, 12, 22, 0.88);
-  color: var(--gold-400);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  border: 1px solid rgba(229, 169, 60, 0.4);
-}
-
-.lcs-spotlight-title {
-  font-family: var(--font-display);
-  font-size: 1.65rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin: 0 0 0.5rem;
-  color: var(--white);
-}
-
-.lcs-spotlight-desc {
-  font-size: 0.92rem;
-  color: var(--slate-300);
-  margin: 0 0 1.25rem;
-}
-
-/* Hero Bottom Quick-Bar (Intrepid Visitor Utility Strip) */
-.lcs-hero-strip {
-  position: relative;
-  z-index: 2;
-  background: rgba(9, 21, 38, 0.92);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-}
-
-.lcs-strip-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.lcs-strip-item {
-  padding: 1.35rem 1.5rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.lcs-strip-item:last-child {
-  border-right: none;
-}
-
-.lcs-strip-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-md);
-  background: rgba(229, 169, 60, 0.14);
-  border: 1px solid rgba(229, 169, 60, 0.35);
-  color: var(--gold-400);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
-
-.lcs-strip-label {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gold-400);
-  margin-bottom: 0.2rem;
-}
-
-.lcs-strip-value {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--white);
-  line-height: 1.2;
-}
-
-.lcs-strip-sub {
-  font-size: 0.8rem;
-  color: var(--slate-300);
-  margin-top: 0.2rem;
-}
-
-/* ==========================================================================
-   4. SECTION HEADINGS & LAYOUT HELPERS
-   ========================================================================== */
-.lcs-section {
-  padding: 5.5rem 0;
-  position: relative;
-}
-
-.lcs-section-dark {
-  background-color: var(--navy-900);
-  color: var(--slate-100);
-}
-
-.lcs-section-deeper {
-  background-color: var(--navy-950);
-  color: var(--slate-100);
-}
-
-.lcs-section-light {
-  background-color: var(--slate-100);
-  color: var(--navy-950);
-}
-
-.lcs-section-header {
-  max-width: 780px;
-  margin-bottom: 3.25rem;
-}
-
-.lcs-section-header.center {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.lcs-section-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4vw, 3.35rem);
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 1.02;
-  letter-spacing: 0.02em;
-  margin: 0 0 1rem;
-  color: var(--white) !important;
-}
-
-.lcs-section-light .lcs-section-title {
-  color: var(--navy-950) !important;
-}
-
-.lcs-section-light .lcs-eyebrow {
-  color: var(--navy-700);
-}
-
-.lcs-section-light .lcs-eyebrow-line {
-  background-color: var(--crimson-600);
-}
-
-.lcs-section-subtitle {
-  font-size: 1.1rem;
-  color: var(--slate-300);
-  margin: 0;
-}
-
-.lcs-section-light .lcs-section-subtitle {
-  color: var(--slate-600);
-}
-
-/* ==========================================================================
-   5. VIRTUAL MUSEUM SHOWCASE & INTERACTIVE DECK EXPLORER
-   ========================================================================== */
-.lcs-virtual-section {
-  background:
-    radial-gradient(circle at 85% 15%, rgba(56, 189, 248, 0.14), transparent 45%),
-    radial-gradient(circle at 10% 85%, rgba(229, 169, 60, 0.12), transparent 45%),
-    var(--navy-950);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.lcs-virtual-banner {
-  background: linear-gradient(135deg, rgba(15, 33, 58, 0.95) 0%, rgba(23, 49, 84, 0.85) 100%);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  margin-bottom: 3rem;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 2.5rem;
-  align-items: center;
-  box-shadow: var(--shadow-lg);
-}
-
-.lcs-virtual-features {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin: 1.5rem 0 2rem;
-}
-
-.lcs-v-feat {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  background: rgba(5, 12, 22, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.9rem 1rem;
-  border-radius: var(--radius-md);
-}
-
-.lcs-v-feat-icon {
-  color: var(--cyan-400);
-  font-size: 1.2rem;
-  line-height: 1;
-  margin-top: 0.15rem;
-}
-
-.lcs-v-feat h4 {
-  font-family: var(--font-display);
-  font-size: 1.08rem;
-  text-transform: uppercase;
-  margin: 0 0 0.2rem;
-  color: var(--white);
-  letter-spacing: 0.03em;
-}
-
-.lcs-v-feat p {
-  font-size: 0.83rem;
-  color: var(--slate-300);
-  margin: 0;
-  line-height: 1.4;
-}
-
-/* Interactive Ship Station Selector (Intrepid Interactive Map Style) */
-.lcs-deck-explorer {
-  background: var(--navy-900);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.lcs-deck-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  background: var(--navy-950);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.lcs-deck-tab {
-  flex: 1;
-  min-width: 170px;
-  background: transparent;
-  border: none;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 3px solid transparent;
-  padding: 1.15rem 1rem;
-  color: var(--slate-300);
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  transition: all var(--transition);
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.lcs-deck-tab span.station-num {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--gold-400);
-  letter-spacing: 0.1em;
-}
-
-.lcs-deck-tab:hover {
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--white);
-}
-
-.lcs-deck-tab.active {
-  background: var(--navy-900);
-  color: var(--white);
-  border-bottom-color: var(--cyan-400);
-}
-
-.lcs-deck-panel {
-  display: none;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 2.5rem;
-  padding: 2.5rem;
-  align-items: center;
-}
-
-.lcs-deck-panel.active {
-  display: grid;
-}
-
-.lcs-deck-media {
-  position: relative;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  aspect-ratio: 16 / 10;
-}
-
-.lcs-deck-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.lcs-deck-specs {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.85rem;
-  margin: 1.5rem 0;
-}
-
-.lcs-spec-pill {
-  background: rgba(5, 12, 22, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0.7rem 0.95rem;
-  border-radius: var(--radius-sm);
-}
-
-.lcs-spec-pill small {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  color: var(--gold-400);
-  letter-spacing: 0.08em;
-}
-
-.lcs-spec-pill strong {
-  font-size: 0.95rem;
-  color: var(--white);
-}
-
-/* ==========================================================================
-   6. SHIP OVERVIEW, MISSION & TECHNICAL SPECIFICATIONS
-   ========================================================================== */
-.lcs-mission-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 3.5rem;
-  align-items: center;
-  margin-bottom: 4rem;
-}
-
-.lcs-objectives-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.15rem;
-  margin-top: 1.75rem;
-}
-
-.lcs-objective-card {
-  background: var(--white);
-  border: 1px solid var(--slate-200);
-  border-left: 4px solid var(--navy-700);
-  padding: 1.15rem 1.25rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-}
-
-.lcs-objective-card h4 {
-  font-family: var(--font-display);
-  font-size: 1.18rem;
-  text-transform: uppercase;
-  color: var(--navy-950);
-  margin: 0 0 0.35rem;
-}
-
-.lcs-objective-card p {
-  font-size: 0.88rem;
-  color: var(--slate-600);
-  margin: 0;
-  line-height: 1.45;
-}
-
-.lcs-photo-collage {
-  position: relative;
-}
-
-.lcs-collage-main {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border: 4px solid var(--white);
-}
-
-.lcs-collage-inset {
-  position: absolute;
-  bottom: -2rem;
-  left: -2rem;
-  width: 55%;
-  background: var(--navy-950);
-  color: var(--white);
-  padding: 1rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  border: 2px solid var(--gold-500);
-}
-
-.lcs-collage-inset img {
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  width: 100%;
-}
-
-.lcs-collage-inset span {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--gold-400);
-  display: block;
-}
-
-/* Ship Technical Stats Bar */
-.lcs-stats-bar {
-  background: var(--navy-950);
-  color: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1.5rem;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(229, 169, 60, 0.3);
-}
-
-.lcs-stat-box {
-  text-align: center;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-  padding-right: 1rem;
-}
-
-.lcs-stat-box:last-child {
-  border-right: none;
-  padding-right: 0;
-}
-
-.lcs-stat-num {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--gold-400);
-  line-height: 1;
-  margin-bottom: 0.35rem;
-}
-
-.lcs-stat-label {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--slate-300);
-}
-
-/* ==========================================================================
-   7. MULTI-ERA HISTORICAL TIMELINE (WWII -> Japan -> Thailand -> Mare Island)
-   ========================================================================== */
-.lcs-timeline-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
-}
-
-.lcs-era-card {
-  background: rgba(15, 33, 58, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform var(--transition), border-color var(--transition);
-}
-
-.lcs-era-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--gold-500);
-}
-
-.lcs-era-img {
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  position: relative;
-}
-
-.lcs-era-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.lcs-era-card:hover .lcs-era-img img {
-  transform: scale(1.06);
-}
-
-.lcs-era-year {
-  position: absolute;
-  top: 0.85rem;
-  left: 0.85rem;
-  background: var(--navy-950);
-  color: var(--gold-400);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.3rem 0.7rem;
-  border-radius: 4px;
-  border: 1px solid var(--gold-500);
-}
-
-.lcs-era-body {
-  padding: 1.65rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.lcs-era-body h3 {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  color: var(--white);
-  margin: 0 0 0.65rem;
-}
-
-.lcs-era-body p {
-  font-size: 0.92rem;
-  color: var(--slate-300);
-  margin: 0;
-  line-height: 1.55;
-}
-
-/* ==========================================================================
-   8. FUNDRAISING, 501(C)(3) DONATIONS & MEMBERSHIP
-   ========================================================================== */
-.lcs-donate-section {
-  background:
-    linear-gradient(135deg, rgba(200, 16, 46, 0.14) 0%, rgba(9, 21, 38, 0.96) 55%),
-    var(--navy-950);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.lcs-donate-layout {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-.lcs-donate-box {
-  background: var(--navy-900);
-  border: 2px solid var(--gold-500);
-  border-radius: var(--radius-lg);
-  padding: 2.25rem;
-  box-shadow: var(--shadow-lg);
-}
-
-.lcs-tier-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.85rem;
-  margin: 1.25rem 0 1.5rem;
-}
-
-.lcs-tier-btn {
-  background: rgba(5, 12, 22, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: var(--radius-md);
-  padding: 1rem;
-  text-align: left;
-  color: var(--white);
-  cursor: pointer;
-  transition: all var(--transition);
-}
-
-.lcs-tier-btn:hover,
-.lcs-tier-btn.active {
-  background: rgba(229, 169, 60, 0.16);
-  border-color: var(--gold-400);
-}
-
-.lcs-tier-amount {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--gold-400);
-  line-height: 1;
-}
-
-.lcs-tier-name {
-  font-weight: 700;
-  font-size: 0.9rem;
-  margin-top: 0.25rem;
-  display: block;
-}
-
-.lcs-tier-impact {
-  font-size: 0.76rem;
-  color: var(--slate-300);
-  margin-top: 0.2rem;
-  display: block;
-}
-
-.lcs-check-card {
-  background: rgba(15, 33, 58, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius-md);
-  padding: 1.35rem;
-  margin-top: 1.5rem;
-}
-
-/* ==========================================================================
-   9. ARCHIVAL PHOTO GALLERY (Filterable + Lightbox)
-   ========================================================================== */
-.lcs-gallery-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 2.25rem;
-}
-
-.lcs-filter-btn {
-  background: var(--white);
-  border: 1px solid var(--slate-300);
-  color: var(--navy-900);
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.55rem 1.2rem;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: all var(--transition);
-}
-
-.lcs-filter-btn:hover,
-.lcs-filter-btn.active {
-  background: var(--navy-900);
-  color: var(--gold-400);
-  border-color: var(--navy-900);
-}
-
-.lcs-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.lcs-gallery-item {
-  background: var(--white);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  border: 1px solid var(--slate-200);
-  cursor: pointer;
-  transition: transform var(--transition), box-shadow var(--transition);
-  display: flex;
-  flex-direction: column;
-}
-
-.lcs-gallery-item.hidden {
-  display: none;
-}
-
-.lcs-gallery-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 36px -10px rgba(9, 21, 38, 0.22);
-}
-
-.lcs-gallery-thumb {
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  background: var(--navy-900);
-  position: relative;
-}
-
-.lcs-gallery-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.45s ease;
-}
-
-.lcs-gallery-item:hover .lcs-gallery-thumb img {
-  transform: scale(1.06);
-}
-
-.lcs-gallery-meta {
-  padding: 1.1rem 1.25rem;
-}
-
-.lcs-gallery-tag {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--crimson-600);
-  font-weight: 700;
-}
-
-.lcs-gallery-title {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--navy-950);
-  margin: 0.2rem 0 0.35rem;
-}
-
-.lcs-gallery-desc {
-  font-size: 0.85rem;
-  color: var(--slate-600);
-  margin: 0;
-}
-
-/* ==========================================================================
-   10. PLAN YOUR VISIT, OVERNIGHT ENCAMPMENTS & COMMUNITY / SOCIAL
-   ========================================================================== */
-.lcs-visit-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-}
-
-.lcs-info-card {
-  background: rgba(15, 33, 58, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-}
-
-.lcs-community-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
-}
-
-.lcs-comm-card {
-  background: var(--white);
-  border: 1px solid var(--slate-200);
-  border-radius: var(--radius-lg);
-  padding: 1.85rem;
-  box-shadow: var(--shadow-card);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.lcs-comm-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  color: var(--navy-950);
-  margin: 0.5rem 0 0.75rem;
-}
-
-.lcs-newsletter-list {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0;
-}
-
-.lcs-newsletter-list li {
-  padding: 0.7rem 0;
-  border-bottom: 1px solid var(--slate-200);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.9rem;
-}
-
-.lcs-newsletter-list li a {
-  color: var(--crimson-600);
-  font-weight: 700;
-}
-
-/* ==========================================================================
-   11. FOOTER & LEADERSHIP DIRECTORY
-   ========================================================================== */
-.lcs-footer {
-  background-color: var(--navy-950);
-  border-top: 2px solid var(--gold-500);
-  color: var(--slate-300);
-  padding: 4.5rem 0 2.5rem;
-}
-
-.lcs-footer-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-  gap: 2.5rem;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.lcs-footer h4 {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--white);
-  margin: 0 0 1.1rem;
-}
-
-.lcs-footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.lcs-footer-links li {
-  margin-bottom: 0.6rem;
-}
-
-.lcs-footer-links a:hover {
-  color: var(--gold-400);
-}
-
-.lcs-footer-bottom {
-  padding-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 0.85rem;
-  color: var(--slate-400);
-}
-
-/* ==========================================================================
-   12. MULTI-PAGE ROUTER SUBPAGE HERO BANNER, TABLES & FORMS
-   ========================================================================== */
-.lcs-subpage-banner {
-  display: none;
-  background:
-    linear-gradient(90deg, rgba(5, 12, 22, 0.95) 0%, rgba(15, 33, 58, 0.88) 100%),
-    url('https://usslcs102.org/img/restoration/RD_Predeparture.jpg') center/cover no-repeat;
-  border-bottom: 2px solid var(--gold-500);
-  padding: 2.75rem 0 2.25rem;
-}
-
-.lcs-subpage-banner.active {
-  display: block;
-}
-
-.lcs-breadcrumb {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--gold-400);
-}
-
-.lcs-breadcrumb a {
-  color: var(--slate-300);
-  cursor: pointer;
-}
-
-.lcs-breadcrumb a:hover {
-  color: var(--white);
-  text-decoration: underline;
-}
-
-.lcs-page-section-hidden {
-  display: none !important;
-}
-
-/* Technical Blueprint Spec Table */
-.lcs-blueprint-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--white);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  border: 1px solid var(--slate-200);
-  margin-top: 2rem;
-}
-
-.lcs-blueprint-table th,
-.lcs-blueprint-table td {
-  padding: 0.95rem 1.25rem;
-  text-align: left;
-  border-bottom: 1px solid var(--slate-200);
-  font-size: 0.92rem;
-}
-
-.lcs-blueprint-table th {
-  background: var(--navy-900);
-  color: var(--gold-400) !important;
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  width: 32%;
-}
-
-.lcs-blueprint-table td {
-  color: var(--navy-950);
-  font-weight: 500;
-}
-
-/* Crew Bio Grid */
-.lcs-crew-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-}
-
-.lcs-crew-card {
-  background: var(--white);
-  border: 1px solid var(--slate-200);
-  border-top: 4px solid var(--navy-800);
-  border-radius: var(--radius-md);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-card);
-}
-
-.lcs-crew-role {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--crimson-600);
-  font-weight: 700;
-  display: block;
-  margin-bottom: 0.25rem;
-}
-
-.lcs-crew-card h4 {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  text-transform: uppercase;
-  color: var(--navy-950) !important;
-  margin: 0 0 0.5rem;
-}
-
-.lcs-crew-card p {
-  font-size: 0.86rem;
-  color: var(--slate-600);
-  margin: 0;
-  line-height: 1.5;
-}
-
-/* Interactive Membership Application Card */
-.lcs-membership-form-card {
-  background: var(--white);
-  border: 2px solid var(--navy-800);
-  border-radius: var(--radius-lg);
-  padding: 2.25rem;
-  margin-top: 2.5rem;
-  box-shadow: var(--shadow-card);
-}
-
-.lcs-form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 1.25rem;
-}
-
-.lcs-input {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--slate-300);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-sans);
-  font-size: 0.92rem;
-  color: var(--navy-950);
-  background: var(--slate-100);
-}
-
-/* ==========================================================================
-   13. LIGHTBOX & VIRTUAL TOUR PREVIEW MODAL
-   ========================================================================== */
-.lcs-modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(5, 12, 22, 0.9);
-  backdrop-filter: blur(8px);
-  z-index: 2000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-}
-
-.lcs-modal-backdrop.open {
-  display: flex;
-}
-
-.lcs-modal-content {
-  background: var(--navy-900);
-  border: 1px solid rgba(229, 169, 60, 0.45);
-  border-radius: var(--radius-lg);
-  max-width: 920px;
-  width: 100%;
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  position: relative;
-}
-
-.lcs-modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: rgba(5, 12, 22, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: var(--white);
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  cursor: pointer;
-  z-index: 10;
-}
-
-/* ==========================================================================
-   13. RESPONSIVE BREAKPOINTS
-   ========================================================================== */
-@media (max-width: 1080px) {
-  .lcs-hero-grid,
-  .lcs-virtual-banner,
-  .lcs-deck-panel.active,
-  .lcs-mission-grid,
-  .lcs-donate-layout,
-  .lcs-visit-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .lcs-strip-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .lcs-stats-bar {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .lcs-timeline-grid,
-  .lcs-gallery-grid,
-  .lcs-community-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .lcs-footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .lcs-collage-inset {
-    position: static;
-    width: 100%;
-    margin-top: 1rem;
-  }
-}
-
-@media (max-width: 820px) {
-  .lcs-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--navy-950);
-    flex-direction: column;
-    padding: 1.25rem 1.5rem;
-    border-bottom: 2px solid var(--gold-500);
-    align-items: flex-start;
-    gap: 0.85rem;
-  }
-
-  .lcs-nav.open {
-    display: flex;
-  }
-
-  .lcs-mobile-toggle {
-    display: inline-flex;
-  }
-
-  .lcs-strip-grid,
-  .lcs-stats-bar,
-  .lcs-timeline-grid,
-  .lcs-gallery-grid,
-  .lcs-community-grid,
-  .lcs-objectives-list,
-  .lcs-virtual-features,
-  .lcs-tier-grid,
-  .lcs-crew-grid,
-  .lcs-form-grid,
-  .lcs-footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .lcs-utility-right {
-    display: none;
-  }
-}
-
-
-
-
-/* ==========================================================================
-   SQUARESPACE 7.1 AUTOMATIC FULL-BLEED & THEME HEADING OVERRIDES
-   ========================================================================== */
-header#header,
-.header,
-footer#footer-sections,
-.footer-sections {
-  display: none !important;
-}
-
-#siteWrapper,
-main#page,
-article#sections,
-.page-section,
-.page-section > .content-wrapper,
-.page-section > .content-wrapper > .content,
-.fluid-engine,
-.fe-block,
-.sqs-layout,
-.sqs-row,
-.sqs-col-12,
-.sqs-block-code,
-.sqs-block-code .sqs-block-content {
-  padding: 0 !important;
-  margin: 0 !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  display: block !important;
-}
-
-.page-section {
-  min-height: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.section-background,
-.section-border {
-  background-color: #050c16 !important;
-}
-
-.lcs-site h1,
-.lcs-site h2,
-.lcs-site h3,
-.lcs-site h4 {
-  color: #ffffff !important;
-  font-family: 'Barlow Condensed', 'Oswald', Impact, sans-serif !important;
-}
-
-.lcs-site .lcs-section-light h1,
-.lcs-site .lcs-section-light h2,
-.lcs-site .lcs-section-light h3,
-.lcs-site .lcs-section-light h4 {
-  color: #050c16 !important;
-}
-</style>
+<!-- ==========================================================================
+     SQUARESPACE 7.1 FULL-PAGE CODE BLOCK
+     USS LCS(L)(3)-102 "YANKEE DOLLAR" — LANDING CRAFT SUPPORT MUSEUM
+     HOW TO USE:
+     1. Add a Blank Section on your Squarespace page (Full-Bleed / Fluid Engine)
+     2. Add a single "Code" Block and stretch it edge-to-edge
+     3. Paste this entire file into the Code Block (Mode: HTML, Display Source: OFF)
+     ========================================================================== -->
 <div class="lcs-site" id="top">
-
+<!-- Optical HD Unsharp-Mask Convolution Filters for Video & Archival Photography -->
+  <svg class="lcs-hd-filters" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden;pointer-events:none;" aria-hidden="true">
+    <defs>
+      <filter id="lcs-video-sharpen" color-interpolation-filters="sRGB">
+        <feConvolveMatrix order="3" kernelMatrix="0 -0.48 0 -0.48 2.92 -0.48 0 -0.48 0" preserveAlpha="true" />
+        <feColorMatrix type="saturate" values="1.1" />
+        <feComponentTransfer>
+          <feFuncR type="linear" slope="1.06" intercept="-0.02" />
+          <feFuncG type="linear" slope="1.06" intercept="-0.02" />
+          <feFuncB type="linear" slope="1.08" intercept="-0.02" />
+        </feComponentTransfer>
+      </filter>
+      <filter id="lcs-image-sharpen" color-interpolation-filters="sRGB">
+        <feConvolveMatrix order="3" kernelMatrix="0 -0.26 0 -0.26 2.04 -0.26 0 -0.26 0" preserveAlpha="true" />
+        <feColorMatrix type="saturate" values="1.06" />
+      </filter>
+    </defs>
+  </svg>
 
   <!-- ========================================================================
        1. TOP UTILITY & ANNOUNCEMENT BAR (Intrepid Museum Style)
@@ -1854,7 +104,7 @@ article#sections,
        ======================================================================== -->
   <section class="lcs-hero">
     <div class="lcs-hero-media">
-      <video autoplay loop muted playsinline class="lcs-hero-video" poster="https://usslcs102.org/img/restoration/RD_Predeparture.jpg">
+      <video autoplay loop muted playsinline class="lcs-hero-video" poster="https://usslcs102.org/img/restoration/RD_Lowering04.jpg">
         <source src="https://usslcs102.org/img/LCS.mp4" type="video/mp4" />
         <source src="https://usslcs102.org/img/LCS.mp4" type="video/mp4" />
       </video>
@@ -1910,8 +160,8 @@ article#sections,
           </div>
           <div class="lcs-spotlight-img-wrap">
             <img
-              src="https://lcsmuseum.org/files/LCS%20102%20bow%20lrg.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/LCS%20102%20bow%20lrg.jpg'"
+              src="https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg'"
               alt="Bow and gun mounts of USS LCS-102 Yankee Dollar"
             />
             <span class="lcs-spotlight-overlay-badge">360° DIGITAL DECK TOUR</span>
@@ -1920,11 +170,11 @@ article#sections,
           <p class="lcs-spotlight-desc">
             A dedicated virtual museum team is building an interactive online version of the <em>Yankee Dollar</em>. Walk the steel decks, inspect the 3-inch and twin 40mm gun mounts, enter the armored conning tower, and tour the engine room from anywhere in the world.
           </p>
-          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <a href="#virtual-museum" class="lcs-btn lcs-btn-sm lcs-btn-cyan" style="flex: 1;">
-              Explore Virtual Museum Section →
+          <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+            <a href="#virtual-museum" data-page-link="virtual-museum" class="lcs-btn lcs-btn-sm lcs-btn-cyan" style="flex: 1;">
+              Explore Virtual Tour →
             </a>
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-outline">
+            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-outline" style="flex: 1;">
               Preview Online Portal
             </button>
           </div>
@@ -2089,8 +339,8 @@ article#sections,
         <div class="lcs-deck-panel active" id="station-1">
           <div class="lcs-deck-media">
             <img
-              src="https://lcsmuseum.org/files/2013Feb07shipsbow.JPG"
-              onerror="this.src='https://lcsmuseum.org/files/2013Feb07shipsbow.JPG'"
+              src="https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg'"
               alt="Forward bow gun mount and deck of USS LCS-102"
             />
           </div>
@@ -2122,8 +372,8 @@ article#sections,
         <div class="lcs-deck-panel" id="station-2">
           <div class="lcs-deck-media">
             <img
-              src="https://lcsmuseum.org/files/IMG_2.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/IMG_2.jpg'"
+              src="https://usslcs102.org/img/restoration/RD_Final_Check.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Final_Check.jpg'"
               alt="Superstructure and conning tower of USS LCS-102"
             />
           </div>
@@ -2155,9 +405,9 @@ article#sections,
         <div class="lcs-deck-panel" id="station-3">
           <div class="lcs-deck-media">
             <img
-              src="https://usslcs102.org/img/wwii/kamikaze02.jpg"
-              onerror="this.src='https://usslcs102.org/img/wwii/kamikaze02.jpg'"
-              alt="WWII Landing Craft Support anti-aircraft defense against kamikaze attack"
+              src="https://usslcs102.org/img/restoration/RD_Stern_Aerial02.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Stern_Aerial02.jpg'"
+              alt="Twin 40mm Bofors and 20mm Oerlikon anti-aircraft gun mounts aboard USS LCS-102"
             />
           </div>
           <div>
@@ -2188,9 +438,9 @@ article#sections,
         <div class="lcs-deck-panel" id="station-4">
           <div class="lcs-deck-media">
             <img
-              src="https://lcsmuseum.org/files/Boy%20Scouts%20Laying%20down%20for%20the%20night.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/Boy%20Scouts%20Laying%20down%20for%20the%20night.jpg'"
-              alt="Crew berthing bunks aboard USS LCS-102 during an overnight youth stay"
+              src="https://usslcs102.org/img/restoration/RD_Gangplank.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Gangplank.jpg'"
+              alt="Skipper Bill Mason and Executive Officer Gordon Stutrud welcoming visitors at the gangplank of USS LCS-102"
             />
           </div>
           <div>
@@ -2303,19 +553,19 @@ article#sections,
         <div class="lcs-photo-collage">
           <div class="lcs-collage-main">
             <img
-              src="https://lcsmuseum.org/files/LCS%20102%20bow%20lrg.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/LCS%20102%20bow%20lrg.jpg'"
-              alt="USS LCS-102 bow at Mare Island Naval Shipyard"
+              src="https://usslcs102.org/img/restoration/RD_Lowering04.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Lowering04.jpg'"
+              alt="Full starboard profile of USS LCS-102 floating at Mare Island Naval Shipyard"
             />
           </div>
           <div class="lcs-collage-inset">
             <img
-              src="https://lcsmuseum.org/files/flag-8%20lrg.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/flag-8%20lrg.jpg'"
-              alt="The Original 48-Star WWII U.S. Flag flown on the USS LCS-102"
+              src="https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg"
+              onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg'"
+              alt="U.S. Flag flying at the stern of USS LCS-102 during a naval memorial ceremony"
             />
-            <span>AUTHENTIC ARTIFACT ON EXHIBIT</span>
-            <strong style="font-family: var(--font-display); font-size: 1.05rem; text-transform: uppercase;">The Original WWII 48-Star Flag Flown Aboard LCS-102</strong>
+            <span>LIVING NATIONAL MEMORIAL</span>
+            <strong style="font-family: var(--font-display); font-size: 1.05rem; text-transform: uppercase;">Honoring WWII Sailors &amp; Preserving the 48-Star Battle Flag</strong>
           </div>
         </div>
       </div>
@@ -2409,9 +659,9 @@ article#sections,
         <article class="lcs-era-card">
           <div class="lcs-era-img">
             <img
-              src="https://usslcs102.org/img/wwii/mem-yankeedollar.jpg"
-              onerror="this.src='https://usslcs102.org/img/wwii/mem-yankeedollar.jpg'"
-              alt="Original WWII drawing of the USS LCS-102 Yankee Dollar insignia"
+              src="https://usslcs102.org/img/restoration/in-drydock-inspection03.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/in-drydock-inspection03.jpg'"
+              alt="Close-up of the giant 102 hull number on the bow of USS LCS(L)(3)-102 Yankee Dollar"
             />
             <span class="lcs-era-year">1943 – FEB 1945</span>
           </div>
@@ -2427,9 +677,9 @@ article#sections,
         <article class="lcs-era-card">
           <div class="lcs-era-img">
             <img
-              src="https://lcsmuseum.org/files/LCS%2086%20Along%20side%20USS%20William%20D%20Porter%20(DD%20571).jpg"
-              onerror="this.src='https://lcsmuseum.org/files/LCS%2086%20Along%20side%20USS%20William%20D%20Porter%20(DD%20571).jpg'"
-              alt="LCS-86 alongside destroyer USS William D. Porter (DD-571) during Okinawa Radar Picket duty"
+              src="https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg'"
+              alt="Forward 3-inch/50 gun, twin 40mm Bofors mount, and rocket deck of USS LCS-102"
             />
             <span class="lcs-era-year">APR – JUN 1945</span>
           </div>
@@ -2445,9 +695,9 @@ article#sections,
         <article class="lcs-era-card">
           <div class="lcs-era-img">
             <img
-              src="https://usslcs102.org/img/wwii/crew03.jpg"
-              onerror="this.src='https://usslcs102.org/img/wwii/crew03.jpg'"
-              alt="Original World War II crew of the USS LCS-102"
+              src="https://usslcs102.org/img/restoration/RD_Waterline02.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Waterline02.jpg'"
+              alt="Full-length elevated stern-to-bow view of USS LCS-102"
             />
             <span class="lcs-era-year">JUL 1945 – APR 1946</span>
           </div>
@@ -2463,9 +713,9 @@ article#sections,
         <article class="lcs-era-card">
           <div class="lcs-era-img">
             <img
-              src="https://lcsmuseum.org/files/LT%20Tichard%20M.%20McCool.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/LT%20Tichard%20M.%20McCool.jpg'"
-              alt="President Harry S. Truman placing the Congressional Medal of Honor on Lt. Richard M. McCool"
+              src="https://usslcs102.org/img/restoration/RD_Lowering05.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Lowering05.jpg'"
+              alt="Elevated view of USS LCS-102 showing the JMSDF Himawari lookout roof and twin 40mm mounts"
             />
             <span class="lcs-era-year">1946 – 1966</span>
           </div>
@@ -2481,9 +731,9 @@ article#sections,
         <article class="lcs-era-card">
           <div class="lcs-era-img">
             <img
-              src="https://lcsmuseum.org/files/Loading%20102%202%20lrg.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/Loading%20102%202%20lrg.jpg'"
-              alt="Loading USS LCS-102 onto transport ship in Thailand for return to the United States in 2007"
+              src="https://usslcs102.org/img/restoration/RD_Entrance04.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Entrance04.jpg'"
+              alt="USS LCS-102 underway on the water escorted by harbor tug"
             />
             <span class="lcs-era-year">1966 – 2007</span>
           </div>
@@ -2499,9 +749,9 @@ article#sections,
         <article class="lcs-era-card">
           <div class="lcs-era-img">
             <img
-              src="https://lcsmuseum.org/files/Transfer%20Ceremony%20Officials%20lrg.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/Transfer%20Ceremony%20Officials%20lrg.jpg'"
-              alt="Official transfer ceremony welcoming USS LCS-102 home to Mare Island"
+              src="https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg"
+              onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg'"
+              alt="U.S. Flag flying at the stern of USS LCS-102 at Mare Island Naval Shipyard"
             />
             <span class="lcs-era-year">2007 – PRESENT</span>
           </div>
@@ -2515,12 +765,12 @@ article#sections,
       </div>
 
       <!-- Detailed Archival Narrative from lcsmuseum.org/History.html -->
-      <div style="margin-top: 3rem; background: rgba(5, 12, 22, 0.65); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: var(--radius-lg); padding: 2.25rem;">
+      <div class="lcs-doctrine-box">
         <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Combat Doctrine &amp; Pacific Theater Operations</div>
         <h3 style="font-family: var(--font-display); font-size: 1.85rem; text-transform: uppercase; margin: 0 0 1rem; color: var(--white) !important;">
           Why the "Mighty Midgets" Looked Like Fourth of July Fireworks Leading an Assault
         </h3>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; color: var(--slate-300); font-size: 0.94rem;">
+        <div class="lcs-two-col-grid" style="color: var(--slate-300); font-size: 0.94rem;">
           <div>
             <p style="margin-top: 0;">
               <strong>The Lesson of Tarawa (November 1943):</strong> After capital ships shelled invasion beaches to disrupt enemy defenses, naval bombardment had to lift as troop-laden landing craft approached the shore. In that critical window, defenders regrouped with deadly effect on U.S. Marines. Using the LCI(L) hull plans, George Lawley &amp; Sons designed a purpose-built close-in fighting ship: the <strong>Landing Craft Support (Large)</strong>.
@@ -2559,7 +809,7 @@ article#sections,
             The Landing Craft Support Museum receives <strong>zero government operating funding</strong> and charges <strong>no admission fee</strong>. Every gallon of marine primer, every steel hull plate welded in drydock, and every dollar of docking and insurance fees at Mare Island is funded directly by patriotic donors like you.
           </p>
 
-          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.75rem 0;">
+          <div class="lcs-two-col-grid" style="gap: 1rem; margin: 1.75rem 0;">
             <div style="background: rgba(15, 33, 58, 0.75); border-left: 3px solid var(--gold-400); padding: 1rem 1.15rem; border-radius: 6px;">
               <strong style="color: var(--white); display: block; font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase;">Drydock &amp; Hull Preservation</strong>
               <span style="font-size: 0.85rem; color: var(--slate-300);">Ultrasonic hull inspections, O1 deck drainage repairs, anti-fouling bottom paint, and zinc anode replacement.</span>
@@ -2678,60 +928,60 @@ article#sections,
         <!-- Item 1 -->
         <article class="lcs-gallery-item" data-category="ship">
           <div class="lcs-gallery-thumb">
-            <img src="https://lcsmuseum.org/files/LCS%20102%20bow%20lrg.jpg" onerror="this.src='https://lcsmuseum.org/files/LCS%20102%20bow%20lrg.jpg'" alt="Bow view of USS LCS(L)(3)-102 at Mare Island" />
+            <img src="https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg'" alt="Aerial bow view of USS LCS(L)(3)-102 at Mare Island" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">THE SHIP • MARE ISLAND</span>
             <h3 class="lcs-gallery-title">Bow &amp; Forward Gun Deck of USS LCS-102</h3>
-            <p class="lcs-gallery-desc">Starboard bow profile showing hull number 102, forward 40mm/3-inch mount, and lookout bridge.</p>
+            <p class="lcs-gallery-desc">High-resolution bow profile showing hull number 102, forward 3"/50 &amp; twin 40mm mounts, rocket deck, and bridge.</p>
           </div>
         </article>
 
         <!-- Item 2 -->
-        <article class="lcs-gallery-item" data-category="wwii">
+        <article class="lcs-gallery-item" data-category="ship">
           <div class="lcs-gallery-thumb">
-            <img src="https://lcsmuseum.org/files/LT%20Tichard%20M.%20McCool.jpg" onerror="this.src='https://lcsmuseum.org/files/LT%20Tichard%20M.%20McCool.jpg'" alt="President Truman placing Congressional Medal of Honor on Lt. Richard M. McCool" />
+            <img src="https://usslcs102.org/img/restoration/RD_Lowering04.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Lowering04.jpg'" alt="Full sunlit starboard profile of USS LCS-102 floating at Mare Island" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">WWII VALOR • MEDAL OF HONOR</span>
-            <h3 class="lcs-gallery-title">President Truman &amp; Lt. Richard M. McCool</h3>
-            <p class="lcs-gallery-desc">President Harry S. Truman placing the Congressional Medal of Honor on Lt. Richard M. McCool, Captain of sister ship USS LCS(L)(3)-122 at Okinawa.</p>
+            <span class="lcs-gallery-tag">THE SHIP • STARBOARD PROFILE</span>
+            <h3 class="lcs-gallery-title">Full Starboard Profile of the "Yankee Dollar"</h3>
+            <p class="lcs-gallery-desc">Sunlit broadside view of the 158-foot WWII amphibious gunboat afloat at Mare Island Naval Shipyard.</p>
           </div>
         </article>
 
         <!-- Item 3 -->
         <article class="lcs-gallery-item" data-category="wwii">
           <div class="lcs-gallery-thumb">
-            <img src="https://lcsmuseum.org/files/LCS%2086%20Along%20side%20USS%20William%20D%20Porter%20(DD%20571).jpg" onerror="this.src='https://lcsmuseum.org/files/LCS%2086%20Along%20side%20USS%20William%20D%20Porter%20(DD%20571).jpg'" alt="LCS-86 alongside USS William D. Porter (DD-571)" />
+            <img src="https://usslcs102.org/img/restoration/in-drydock-inspection03.jpg" onerror="this.src='https://usslcs102.org/img/restoration/in-drydock-inspection03.jpg'" alt="Low-angle close-up of hull number 102 on the bow of USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">OKINAWA • RADAR PICKET ACTION</span>
-            <h3 class="lcs-gallery-title">LCS-86 Alongside USS William D. Porter (DD-571)</h3>
-            <p class="lcs-gallery-desc">Heroic rescue and firefighting support alongside destroyer USS William D. Porter after a kamikaze attack off Okinawa, June 10, 1945.</p>
+            <span class="lcs-gallery-tag">HULL #102 • "YANKEE DOLLAR"</span>
+            <h3 class="lcs-gallery-title">Monumental Bow Close-Up of Hull #102</h3>
+            <p class="lcs-gallery-desc">Dramatic low-angle view looking up at the iconic 102 hull designation and forward 3"/50 gun tub.</p>
           </div>
         </article>
 
         <!-- Item 4 -->
         <article class="lcs-gallery-item" data-category="wwii">
           <div class="lcs-gallery-thumb">
-            <img src="https://lcsmuseum.org/files/flag-8%20lrg.jpg" onerror="this.src='https://lcsmuseum.org/files/flag-8%20lrg.jpg'" alt="The Original WWII 48-Star Flag flown on the LCS-102" />
+            <img src="https://usslcs102.org/img/restoration/RD_Waterline02.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Waterline02.jpg'" alt="Elevated full-length stern-to-bow view of USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">MUSEUM ARTIFACT • WWII RELIC</span>
-            <h3 class="lcs-gallery-title">The Original Flag Flown on the 102</h3>
-            <p class="lcs-gallery-desc">Preserved wartime 48-star U.S. Navy ensign flown aboard USS LCS(L)(3)-102 during Pacific Theater operations.</p>
+            <span class="lcs-gallery-tag">WWII DESIGN • MIGHTY MIDGET</span>
+            <h3 class="lcs-gallery-title">Full-Length Stern-to-Bow Gun Deck View</h3>
+            <p class="lcs-gallery-desc">Elevated perspective revealing how George Lawley &amp; Sons packed battleship-class firepower onto a 158-foot hull.</p>
           </div>
         </article>
 
         <!-- Item 5 -->
         <article class="lcs-gallery-item" data-category="restoration">
           <div class="lcs-gallery-thumb">
-            <img src="https://lcsmuseum.org/files/Loading%20102%202%20lrg.jpg" onerror="this.src='https://lcsmuseum.org/files/Loading%20102%202%20lrg.jpg'" alt="Loading USS LCS-102 in Thailand for transport to San Francisco Bay" />
+            <img src="https://usslcs102.org/img/restoration/RD_Positioning.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Positioning.jpg'" alt="Positioning USS LCS-102 in Mare Island Drydock" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">2007 RETRIEVAL • ROYAL THAI NAVY</span>
-            <h3 class="lcs-gallery-title">Loading the 102 for Her Journey Home</h3>
-            <p class="lcs-gallery-desc">Cradled aboard a heavy-lift transport ship in 2007 for the trans-Pacific voyage from Thailand back to Mare Island, California.</p>
+            <span class="lcs-gallery-tag">MARE ISLAND • DRYDOCK EVOLUTION</span>
+            <h3 class="lcs-gallery-title">Precision Positioning in Mare Island Drydock</h3>
+            <p class="lcs-gallery-desc">Shipyard line handlers and museum volunteers guiding the 158-foot WWII gunboat into Mare Island drydock for hull preservation.</p>
           </div>
         </article>
 
@@ -2762,84 +1012,84 @@ article#sections,
         <!-- Item 8 -->
         <article class="lcs-gallery-item" data-category="wwii">
           <div class="lcs-gallery-thumb">
-            <img src="https://lcsmuseum.org/files/LCS%2086%20Standing%20off%20USS%20William%20D%20Porter%20(DD%20571).jpg" onerror="this.src='https://lcsmuseum.org/files/LCS%2086%20Standing%20off%20USS%20William%20D%20Porter%20(DD%20571).jpg'" alt="LCS-86 standing off USS William D. Porter" />
+            <img src="https://usslcs102.org/img/restoration/RD_Lowering05.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Lowering05.jpg'" alt="Elevated stern quarter view of USS LCS-102 at Mare Island Naval Shipyard" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">WWII PACIFIC • FLEET DEFENSE</span>
-            <h3 class="lcs-gallery-title">Standing Off Stricken Destroyer DD-571</h3>
-            <p class="lcs-gallery-desc">Archival Navy photograph of LCS gunboats rescuing survivors during Okinawa radar picket combat.</p>
+            <span class="lcs-gallery-tag">MULTI-ERA HERITAGE • USN &amp; JMSDF</span>
+            <h3 class="lcs-gallery-title">Aft Twin 40mm Mount &amp; Lookout Roof</h3>
+            <p class="lcs-gallery-desc">Blue-sky view showcasing stern #102, the aft twin 40mm Bofors gun tub, and the historic JMSDF lookout deck roof.</p>
           </div>
         </article>
 
         <!-- Item 9 -->
         <article class="lcs-gallery-item" data-category="community">
           <div class="lcs-gallery-thumb">
-            <img src="https://lcsmuseum.org/files/Boy%20Scouts%20lowering%20the%20flag.jpg" onerror="this.src='https://lcsmuseum.org/files/Boy%20Scouts%20lowering%20the%20flag.jpg'" alt="Boy Scouts lowering the flag aboard USS LCS-102" />
+            <img src="https://usslcs102.org/img/restoration/RD_Gangplank.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Gangplank.jpg'" alt="Skipper Bill Mason and Executive Officer Gordon Stutrud at the gangplank of USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">YOUTH EDUCATION • OVERNIGHT STAYS</span>
-            <h3 class="lcs-gallery-title">Boy Scouts Lowering the Evening Colors</h3>
-            <p class="lcs-gallery-desc">Scouts conducting flag ceremonies on deck during an educational overnight stay aboard the LCS-102.</p>
+            <span class="lcs-gallery-tag">SHIP'S COMPANY • VETERAN LEADERSHIP</span>
+            <h3 class="lcs-gallery-title">Welcoming Visitors at the Gangplank</h3>
+            <p class="lcs-gallery-desc">Skipper Bill Mason and Executive Officer Gordon Stutrud greeting visitors dockside aboard the USS LCS-102.</p>
           </div>
         </article>
 
         <!-- Item 10 -->
         <article class="lcs-gallery-item" data-category="community">
           <div class="lcs-gallery-thumb">
-            <img src="https://lcsmuseum.org/files/Transfer%20Ceremony%20Officials%20lrg.jpg" onerror="this.src='https://lcsmuseum.org/files/Transfer%20Ceremony%20Officials%20lrg.jpg'" alt="Transfer Ceremony Officials welcoming USS LCS-102" />
+            <img src="https://usslcs102.org/img/lost_subs/submarines_2019_2.jpg" onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_2.jpg'" alt="Naval ceremony and honor guard at USS LCS-102 berth" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">CEREMONY • HONORING VETERANS</span>
-            <h3 class="lcs-gallery-title">Official Transfer Ceremony &amp; WWII Officers</h3>
-            <p class="lcs-gallery-desc">U.S. and Royal Thai Navy officials alongside original WWII LCS(L)-102 Commanding Officer Dick Jones and Rear Admiral Balmert.</p>
+            <h3 class="lcs-gallery-title">Mare Island Naval Honor Ceremony</h3>
+            <p class="lcs-gallery-desc">Veterans, naval officers, and community supporters gathered dockside alongside the USS LCS-102 at Mare Island.</p>
           </div>
         </article>
 
         <!-- Item 11 -->
         <article class="lcs-gallery-item" data-category="restoration">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/restoration/drydock-return-distance.jpg" onerror="this.src='https://usslcs102.org/img/restoration/drydock-return-distance.jpg'" alt="USS LCS-102 under tow on the Mare Island Strait" />
+            <img src="https://usslcs102.org/img/restoration/RD_Entrance04.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Entrance04.jpg'" alt="USS LCS-102 underway on the Mare Island Strait escorted by harbor tug" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">MARE ISLAND STRAIT • UNDERWAY</span>
-            <h3 class="lcs-gallery-title">Returning to Her Berth After Hull Overhaul</h3>
-            <p class="lcs-gallery-desc">USS LCS-102 moving along the Napa River / Mare Island Strait back to her museum dock.</p>
+            <h3 class="lcs-gallery-title">Underway on the Mare Island Strait</h3>
+            <p class="lcs-gallery-desc">USS LCS-102 moving across the water escorted by harbor tug <em>Sagittarian</em> at Mare Island Naval Shipyard.</p>
           </div>
         </article>
 
         <!-- Item 12 -->
         <article class="lcs-gallery-item" data-category="community">
           <div class="lcs-gallery-thumb">
-            <img src="https://lcsmuseum.org/files/Members%20on%20General%20Jackson%20lrg.jpg" onerror="this.src='https://lcsmuseum.org/files/Members%20on%20General%20Jackson%20lrg.jpg'" alt="National Association of LCS(L) 1-130 Members Reunion" />
+            <img src="https://usslcs102.org/img/lost_subs/submarines_2019_3.jpg" onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_3.jpg'" alt="Veterans ringing the ship's brass bell aboard USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">COMMUNITY • ANNUAL CONVENTION</span>
-            <h3 class="lcs-gallery-title">LCS Museum Members &amp; WWII Veterans Reunion</h3>
-            <p class="lcs-gallery-desc">Original WWII sailors, families, and Landing Craft Support Museum members gathered for the annual convention.</p>
+            <span class="lcs-gallery-tag">LIVING MEMORIAL • SHIP'S BELL</span>
+            <h3 class="lcs-gallery-title">Tolling the Ship's Bell Aboard the 102</h3>
+            <p class="lcs-gallery-desc">Veterans and crew tolling the ceremonial ship's bell directly in front of the twin 40mm Bofors gun mount.</p>
           </div>
         </article>
 
-        <!-- Item 13 (Wikimedia U.S. Navy Official Photo) -->
+        <!-- Item 13 -->
         <article class="lcs-gallery-item" data-category="community">
           <div class="lcs-gallery-thumb">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/USS_LCS%28L%29_102.jpg" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/7/79/USS_LCS%28L%29_102.jpg'" alt="U.S. Navy Official Photo: 2007 Handover Ceremony at Mare Island" />
+            <img src="https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg" onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg'" alt="U.S. Flag flying at the stern of USS LCS-102 during memorial wreath ceremony" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">U.S. NAVY ARCHIVE • NOV 10, 2007</span>
-            <h3 class="lcs-gallery-title">2007 U.S. &amp; Royal Thai Navy Handover at Vallejo</h3>
-            <p class="lcs-gallery-desc">Former WWII Signalman 3rd Class Gilbert Nadeau and Royal Thai Navy Lt. Sathaporn Thassanaleelaporn aboard LCS-102 in Vallejo, CA.</p>
+            <span class="lcs-gallery-tag">NATIONAL MEMORIAL • STERN ENSIGN</span>
+            <h3 class="lcs-gallery-title">Colors Flying Over the Fantail &amp; 40mm Deck</h3>
+            <p class="lcs-gallery-desc">The American flag flying proudly at the stern of USS LCS-102 during an annual naval memorial wreath-laying ceremony.</p>
           </div>
         </article>
 
-        <!-- Item 14 (Wikimedia 2016 Mare Island Profile) -->
+        <!-- Item 14 -->
         <article class="lcs-gallery-item" data-category="ship">
           <div class="lcs-gallery-thumb">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/USS_LCS_L_3_102_30Apr2016_450px.jpg" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/b/bb/USS_LCS_L_3_102_30Apr2016_450px.jpg'" alt="USS LCS(L)(3)-102 docked at Mare Island in April 2016" />
+            <img src="https://usslcs102.org/img/restoration/RD_Stern_Aerial02.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Stern_Aerial02.jpg'" alt="USS LCS(L)(3)-102 elevated full deck and superstructure view at Mare Island" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">THE SHIP • NATIONAL HISTORIC LANDMARK</span>
-            <h3 class="lcs-gallery-title">Port-Side Full Profile at Mare Island</h3>
-            <p class="lcs-gallery-desc">USS LCS(L)(3)-102 moored at Mare Island Naval Shipyard following her inclusion on the National Register of Historic Places.</p>
+            <h3 class="lcs-gallery-title">Elevated Full-Deck &amp; Superstructure Profile</h3>
+            <p class="lcs-gallery-desc">High-angle view of USS LCS(L)(3)-102 showing her twin 40mm gun tubs, conning tower, and stern #102.</p>
           </div>
         </article>
 
@@ -2879,15 +1129,15 @@ article#sections,
           </div>
         </article>
 
-        <!-- Item 18 (WWII Kamikaze Defense) -->
+        <!-- Item 18 (Armored Conning Tower & 20mm AA) -->
         <article class="lcs-gallery-item" data-category="wwii">
           <div class="lcs-gallery-thumb">
-            <img src="https://usslcs102.org/img/wwii/kamikaze02.jpg" onerror="this.src='https://usslcs102.org/img/wwii/kamikaze02.jpg'" alt="WWII LCS anti-aircraft action against kamikaze attack" />
+            <img src="https://usslcs102.org/img/restoration/RD_Final_Check.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Final_Check.jpg'" alt="Armored conning tower, pilothouse, and 20mm Oerlikon mounts of USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">WWII COMBAT • RADAR PICKET LINE</span>
-            <h3 class="lcs-gallery-title">Anti-Aircraft Defense Against Kamikaze Attack</h3>
-            <p class="lcs-gallery-desc">Wartime photograph capturing intense 40mm and 20mm anti-aircraft fire from Landing Craft Support gunboats during Pacific operations.</p>
+            <span class="lcs-gallery-tag">WWII COMBAT • RADAR PICKET #18</span>
+            <h3 class="lcs-gallery-title">Armored Conning Tower &amp; 20mm AA Mounts</h3>
+            <p class="lcs-gallery-desc">Close-up of the bridge, armored conning tower, and 20mm Oerlikon anti-aircraft mounts that defended Okinawa Radar Picket #18.</p>
           </div>
         </article>
       </div>
@@ -3260,7 +1510,7 @@ article#sections,
 
   <!-- Virtual Museum Interactive Portal Modal -->
   <div class="lcs-modal-backdrop" id="lcs-virtual-modal" role="dialog" aria-modal="true" aria-label="USS LCS-102 Virtual Museum Portal">
-    <div class="lcs-modal-content" style="padding: 2.5rem;">
+    <div class="lcs-modal-content lcs-virtual-modal-inner">
       <button type="button" class="lcs-modal-close" aria-label="Close">✕</button>
       <span class="lcs-spotlight-tag">🌐 USS LCS-102 VIRTUAL MUSEUM PORTAL</span>
       <h3 style="font-family: var(--font-display); font-size: 2.2rem; text-transform: uppercase; color: var(--white); margin: 0.25rem 0 0.75rem;">
@@ -3269,7 +1519,7 @@ article#sections,
       <p style="color: var(--slate-200); margin: 0 0 1.25rem;">
         The interactive online version of the <strong>Landing Craft Support Museum (USS LCS-102 "Yankee Dollar")</strong> is being produced by our dedicated Virtual Museum development team. Once live, this portal button connects directly to the full 3D/360° walkthrough of the ship.
       </p>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+      <div class="lcs-modal-grid">
         <div style="background: rgba(5,12,22,0.65); border: 1px solid rgba(56,189,248,0.3); padding: 1rem; border-radius: 6px;">
           <strong style="color: var(--cyan-400); font-family: var(--font-display); text-transform: uppercase; display: block;">01. Upper Decks &amp; Guns</strong>
           <span style="font-size: 0.82rem; color: var(--slate-300);">3"/50 bow gun, 10× Mark 7 rocket launchers, twin 40mm Bofors &amp; 20mm Oerlikons.</span>
@@ -3293,29 +1543,43 @@ article#sections,
       </div>
     </div>
   </div>
-
-  
 </div>
+
 <script>
 /**
  * USS LCS(L)(3)-102 "Yankee Dollar" — Landing Craft Support Museum
- * Interactive UI & Multi-Page View Controller (Standalone & Squarespace 7.1 Compatible)
+ * Interactive UI, Multi-Page Router & Cinematic Animation Controller
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   // 0. Ensure Browser Tab Title reflects the Museum Name
   document.title = 'USS LCS-102 "Yankee Dollar" | Landing Craft Support Museum';
 
-  // 1. Sticky Header Scroll Effect
+  // 1. Sticky Header Scroll Effect + Top Reading Progress Bar
   const header = document.querySelector('.lcs-header');
+  let progressBar = null;
   if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 30) {
+    progressBar = document.createElement('div');
+    progressBar.className = 'lcs-scroll-progress';
+    header.appendChild(progressBar);
+
+    const updateScrollUI = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      if (scrollTop > 30) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
-    });
+
+      if (progressBar) {
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+        progressBar.style.width = `${pct}%`;
+      }
+    };
+
+    window.addEventListener('scroll', updateScrollUI, { passive: true });
+    updateScrollUI();
   }
 
   // 2. Mobile Navigation Toggle
@@ -3337,7 +1601,106 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Multi-Page View Router + All-in-One Scroll Controller
+  // 3. Staggered Scroll-Reveal Animation Engine (IntersectionObserver)
+  const revealGroups = [
+    { selector: '.lcs-section-header', stagger: 0 },
+    { selector: '.lcs-virtual-banner', stagger: 0 },
+    { selector: '.lcs-deck-explorer', stagger: 0 },
+    { selector: '.lcs-objective-card', stagger: 75 },
+    { selector: '.lcs-photo-collage', stagger: 100 },
+    { selector: '.lcs-stats-bar', stagger: 0 },
+    { selector: '.lcs-blueprint-table', stagger: 0 },
+    { selector: '.lcs-era-card', stagger: 90 },
+    { selector: '.lcs-donate-box, .lcs-check-card', stagger: 100 },
+    { selector: '.lcs-gallery-item', stagger: 55 },
+    { selector: '.lcs-info-card', stagger: 110 },
+    { selector: '.lcs-comm-card', stagger: 95 },
+    { selector: '.lcs-crew-card', stagger: 75 },
+    { selector: '.lcs-membership-form-card', stagger: 0 },
+  ];
+
+  const allRevealEls = [];
+  revealGroups.forEach((group) => {
+    const nodes = document.querySelectorAll(group.selector);
+    nodes.forEach((el, idx) => {
+      el.classList.add('lcs-reveal');
+      if (group.stagger > 0) {
+        const delayMs = (idx % 6) * group.stagger;
+        el.style.setProperty('--reveal-delay', `${delayMs}ms`);
+      }
+      allRevealEls.push(el);
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+    );
+    allRevealEls.forEach((el) => revealObserver.observe(el));
+  } else {
+    allRevealEls.forEach((el) => el.classList.add('is-visible'));
+  }
+
+  // 4. Animated Naval Technical Stat Counter
+  const statsBar = document.querySelector('.lcs-stats-bar');
+  let statsAnimated = false;
+  const statTargets = [
+    { text: '158\' 0"', end: 158, format: (v) => `${Math.round(v)}' 0"` },
+    { text: '387 TONS', end: 387, format: (v) => `${Math.round(v)} TONS` },
+    { text: '16.5 KTS', end: 16.5, format: (v) => `${v.toFixed(1)} KTS` },
+    { text: '71 CREW', end: 71, format: (v) => `${Math.round(v)} CREW` },
+    { text: '10× MK 7', end: 10, format: (v) => `${Math.round(v)}× MK 7` },
+    { text: '1 OF 130', end: 130, format: (v) => `1 OF ${Math.round(v)}` },
+  ];
+
+  function animateStats() {
+    if (statsAnimated || !statsBar) return;
+    statsAnimated = true;
+    const numEls = statsBar.querySelectorAll('.lcs-stat-num');
+    numEls.forEach((el, idx) => {
+      const cfg = statTargets[idx];
+      if (!cfg) return;
+      const duration = 1350;
+      const startTime = performance.now();
+
+      function tick(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(1, elapsed / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = cfg.end * eased;
+        el.textContent = progress < 1 ? cfg.format(current) : cfg.text;
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        }
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+  if (statsBar && 'IntersectionObserver' in window) {
+    const statObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateStats();
+            statObserver.disconnect();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+    statObserver.observe(statsBar);
+  }
+
+  // 5. Multi-Page View Router + All-in-One Scroll Controller
   const heroSection = document.querySelector('.lcs-hero');
   const subpageBanner = document.getElementById('lcs-subpage-banner');
   const subpageCrumb = document.getElementById('lcs-subpage-crumb');
@@ -3398,31 +1761,37 @@ document.addEventListener('DOMContentLoaded', () => {
   function navigateToPage(pageKey) {
     const cfg = pageConfig[pageKey] || pageConfig.home;
 
-    // Toggle Hero vs Subpage Banner
     if (pageKey === 'home') {
       if (heroSection) heroSection.classList.remove('lcs-page-section-hidden');
       if (subpageBanner) subpageBanner.classList.remove('active');
     } else {
       if (heroSection) heroSection.classList.add('lcs-page-section-hidden');
       if (subpageBanner) {
-        subpageBanner.classList.add('active');
+        subpageBanner.classList.remove('lcs-page-enter');
+        void subpageBanner.offsetWidth;
+        subpageBanner.classList.add('active', 'lcs-page-enter');
         if (subpageCrumb) subpageCrumb.textContent = cfg.title;
         if (subpageHeading) subpageHeading.textContent = cfg.heading;
       }
     }
 
-    // Show/Hide Sections for Dedicated Multi-Page Feel
     allSections.forEach((secId) => {
       const el = document.getElementById(secId);
       if (!el) return;
       if (cfg.sections.includes(secId)) {
-        el.classList.remove('lcs-page-section-hidden');
+        el.classList.remove('lcs-page-section-hidden', 'lcs-page-enter');
+        void el.offsetWidth;
+        el.classList.add('lcs-page-enter');
+        el.querySelectorAll('.lcs-reveal').forEach((r) => r.classList.add('is-visible'));
       } else {
         el.classList.add('lcs-page-section-hidden');
       }
     });
 
-    // Update Active Nav Link
+    if (cfg.sections.includes('about-museum')) {
+      animateStats();
+    }
+
     document.querySelectorAll('.lcs-nav-link').forEach((navLink) => {
       const linkPage = navLink.getAttribute('data-page-link');
       if (linkPage === pageKey) {
@@ -3432,7 +1801,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Scroll cleanly to top of the page
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -3446,7 +1814,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Interactive Virtual Museum Deck Explorer Tabs
+  // 6. Interactive Virtual Museum Deck Explorer Tabs
   const deckTabs = document.querySelectorAll('.lcs-deck-tab');
   const deckPanels = document.querySelectorAll('.lcs-deck-panel');
   if (deckTabs.length && deckPanels.length) {
@@ -3459,13 +1827,14 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.classList.add('active');
         const activePanel = document.getElementById(`station-${target}`);
         if (activePanel) {
+          void activePanel.offsetWidth;
           activePanel.classList.add('active');
         }
       });
     });
   }
 
-  // 5. Interactive Donation Tier Selector
+  // 7. Interactive Donation Tier Selector
   const tierBtns = document.querySelectorAll('.lcs-tier-btn');
   const selectedTierText = document.getElementById('lcs-selected-tier-summary');
   if (tierBtns.length) {
@@ -3477,13 +1846,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const label = btn.getAttribute('data-label');
         const impact = btn.getAttribute('data-impact');
         if (selectedTierText) {
-          selectedTierText.innerHTML = `Selected Gift: <strong>${amount} — ${label}</strong> (${impact})`;
+          selectedTierText.style.opacity = '0.4';
+          setTimeout(() => {
+            selectedTierText.innerHTML = `Selected Gift: <strong>${amount} — ${label}</strong> (${impact})`;
+            selectedTierText.style.transition = 'opacity 0.25s ease';
+            selectedTierText.style.opacity = '1';
+          }, 100);
         }
       });
     });
   }
 
-  // 6. Archival Photo Gallery Filtering
+  // 8. Archival Photo Gallery Filtering with Staggered Pop-In Animation
   const filterBtns = document.querySelectorAll('.lcs-filter-btn');
   const galleryItems = document.querySelectorAll('.lcs-gallery-item');
   if (filterBtns.length && galleryItems.length) {
@@ -3493,10 +1867,16 @@ document.addEventListener('DOMContentLoaded', () => {
         filterBtns.forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
 
+        let visibleIndex = 0;
         galleryItems.forEach((item) => {
           const itemCat = item.getAttribute('data-category');
+          item.classList.remove('pop-in');
           if (category === 'all' || itemCat === category) {
             item.classList.remove('hidden');
+            item.style.animationDelay = `${visibleIndex * 45}ms`;
+            void item.offsetWidth;
+            item.classList.add('pop-in', 'is-visible');
+            visibleIndex++;
           } else {
             item.classList.add('hidden');
           }
@@ -3505,7 +1885,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 7. Photo Lightbox Modal
+  // 9. Photo Lightbox Modal
   const lightboxModal = document.getElementById('lcs-lightbox-modal');
   const lightboxImg = document.getElementById('lcs-lightbox-img');
   const lightboxTitle = document.getElementById('lcs-lightbox-title');
@@ -3533,7 +1913,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 8. Virtual Museum Portal Modal Trigger
+  // 10. Virtual Museum Portal Modal Trigger
   const virtualModal = document.getElementById('lcs-virtual-modal');
   const virtualTriggers = document.querySelectorAll('[data-open-virtual-modal]');
   if (virtualModal && virtualTriggers.length) {
@@ -3545,7 +1925,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 9. Membership Application Form Handler
+  // 11. Membership Application Form Handler
   const memForm = document.getElementById('lcs-membership-form');
   const memStatus = document.getElementById('lcs-mem-status');
   if (memForm) {

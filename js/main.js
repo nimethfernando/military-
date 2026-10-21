@@ -1,22 +1,37 @@
 /**
  * USS LCS(L)(3)-102 "Yankee Dollar" — Landing Craft Support Museum
- * Interactive UI & Multi-Page View Controller (Standalone & Squarespace 7.1 Compatible)
+ * Interactive UI, Multi-Page Router & Cinematic Animation Controller
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   // 0. Ensure Browser Tab Title reflects the Museum Name
   document.title = 'USS LCS-102 "Yankee Dollar" | Landing Craft Support Museum';
 
-  // 1. Sticky Header Scroll Effect
+  // 1. Sticky Header Scroll Effect + Top Reading Progress Bar
   const header = document.querySelector('.lcs-header');
+  let progressBar = null;
   if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 30) {
+    progressBar = document.createElement('div');
+    progressBar.className = 'lcs-scroll-progress';
+    header.appendChild(progressBar);
+
+    const updateScrollUI = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      if (scrollTop > 30) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
-    });
+
+      if (progressBar) {
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+        progressBar.style.width = `${pct}%`;
+      }
+    };
+
+    window.addEventListener('scroll', updateScrollUI, { passive: true });
+    updateScrollUI();
   }
 
   // 2. Mobile Navigation Toggle
@@ -38,7 +53,106 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Multi-Page View Router + All-in-One Scroll Controller
+  // 3. Staggered Scroll-Reveal Animation Engine (IntersectionObserver)
+  const revealGroups = [
+    { selector: '.lcs-section-header', stagger: 0 },
+    { selector: '.lcs-virtual-banner', stagger: 0 },
+    { selector: '.lcs-deck-explorer', stagger: 0 },
+    { selector: '.lcs-objective-card', stagger: 75 },
+    { selector: '.lcs-photo-collage', stagger: 100 },
+    { selector: '.lcs-stats-bar', stagger: 0 },
+    { selector: '.lcs-blueprint-table', stagger: 0 },
+    { selector: '.lcs-era-card', stagger: 90 },
+    { selector: '.lcs-donate-box, .lcs-check-card', stagger: 100 },
+    { selector: '.lcs-gallery-item', stagger: 55 },
+    { selector: '.lcs-info-card', stagger: 110 },
+    { selector: '.lcs-comm-card', stagger: 95 },
+    { selector: '.lcs-crew-card', stagger: 75 },
+    { selector: '.lcs-membership-form-card', stagger: 0 },
+  ];
+
+  const allRevealEls = [];
+  revealGroups.forEach((group) => {
+    const nodes = document.querySelectorAll(group.selector);
+    nodes.forEach((el, idx) => {
+      el.classList.add('lcs-reveal');
+      if (group.stagger > 0) {
+        const delayMs = (idx % 6) * group.stagger;
+        el.style.setProperty('--reveal-delay', `${delayMs}ms`);
+      }
+      allRevealEls.push(el);
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+    );
+    allRevealEls.forEach((el) => revealObserver.observe(el));
+  } else {
+    allRevealEls.forEach((el) => el.classList.add('is-visible'));
+  }
+
+  // 4. Animated Naval Technical Stat Counter
+  const statsBar = document.querySelector('.lcs-stats-bar');
+  let statsAnimated = false;
+  const statTargets = [
+    { text: '158\' 0"', end: 158, format: (v) => `${Math.round(v)}' 0"` },
+    { text: '387 TONS', end: 387, format: (v) => `${Math.round(v)} TONS` },
+    { text: '16.5 KTS', end: 16.5, format: (v) => `${v.toFixed(1)} KTS` },
+    { text: '71 CREW', end: 71, format: (v) => `${Math.round(v)} CREW` },
+    { text: '10× MK 7', end: 10, format: (v) => `${Math.round(v)}× MK 7` },
+    { text: '1 OF 130', end: 130, format: (v) => `1 OF ${Math.round(v)}` },
+  ];
+
+  function animateStats() {
+    if (statsAnimated || !statsBar) return;
+    statsAnimated = true;
+    const numEls = statsBar.querySelectorAll('.lcs-stat-num');
+    numEls.forEach((el, idx) => {
+      const cfg = statTargets[idx];
+      if (!cfg) return;
+      const duration = 1350;
+      const startTime = performance.now();
+
+      function tick(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(1, elapsed / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = cfg.end * eased;
+        el.textContent = progress < 1 ? cfg.format(current) : cfg.text;
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        }
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+  if (statsBar && 'IntersectionObserver' in window) {
+    const statObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateStats();
+            statObserver.disconnect();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+    statObserver.observe(statsBar);
+  }
+
+  // 5. Multi-Page View Router + All-in-One Scroll Controller
   const heroSection = document.querySelector('.lcs-hero');
   const subpageBanner = document.getElementById('lcs-subpage-banner');
   const subpageCrumb = document.getElementById('lcs-subpage-crumb');
@@ -99,31 +213,37 @@ document.addEventListener('DOMContentLoaded', () => {
   function navigateToPage(pageKey) {
     const cfg = pageConfig[pageKey] || pageConfig.home;
 
-    // Toggle Hero vs Subpage Banner
     if (pageKey === 'home') {
       if (heroSection) heroSection.classList.remove('lcs-page-section-hidden');
       if (subpageBanner) subpageBanner.classList.remove('active');
     } else {
       if (heroSection) heroSection.classList.add('lcs-page-section-hidden');
       if (subpageBanner) {
-        subpageBanner.classList.add('active');
+        subpageBanner.classList.remove('lcs-page-enter');
+        void subpageBanner.offsetWidth;
+        subpageBanner.classList.add('active', 'lcs-page-enter');
         if (subpageCrumb) subpageCrumb.textContent = cfg.title;
         if (subpageHeading) subpageHeading.textContent = cfg.heading;
       }
     }
 
-    // Show/Hide Sections for Dedicated Multi-Page Feel
     allSections.forEach((secId) => {
       const el = document.getElementById(secId);
       if (!el) return;
       if (cfg.sections.includes(secId)) {
-        el.classList.remove('lcs-page-section-hidden');
+        el.classList.remove('lcs-page-section-hidden', 'lcs-page-enter');
+        void el.offsetWidth;
+        el.classList.add('lcs-page-enter');
+        el.querySelectorAll('.lcs-reveal').forEach((r) => r.classList.add('is-visible'));
       } else {
         el.classList.add('lcs-page-section-hidden');
       }
     });
 
-    // Update Active Nav Link
+    if (cfg.sections.includes('about-museum')) {
+      animateStats();
+    }
+
     document.querySelectorAll('.lcs-nav-link').forEach((navLink) => {
       const linkPage = navLink.getAttribute('data-page-link');
       if (linkPage === pageKey) {
@@ -133,7 +253,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Scroll cleanly to top of the page
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -147,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Interactive Virtual Museum Deck Explorer Tabs
+  // 6. Interactive Virtual Museum Deck Explorer Tabs
   const deckTabs = document.querySelectorAll('.lcs-deck-tab');
   const deckPanels = document.querySelectorAll('.lcs-deck-panel');
   if (deckTabs.length && deckPanels.length) {
@@ -160,13 +279,14 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.classList.add('active');
         const activePanel = document.getElementById(`station-${target}`);
         if (activePanel) {
+          void activePanel.offsetWidth;
           activePanel.classList.add('active');
         }
       });
     });
   }
 
-  // 5. Interactive Donation Tier Selector
+  // 7. Interactive Donation Tier Selector
   const tierBtns = document.querySelectorAll('.lcs-tier-btn');
   const selectedTierText = document.getElementById('lcs-selected-tier-summary');
   if (tierBtns.length) {
@@ -178,13 +298,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const label = btn.getAttribute('data-label');
         const impact = btn.getAttribute('data-impact');
         if (selectedTierText) {
-          selectedTierText.innerHTML = `Selected Gift: <strong>${amount} — ${label}</strong> (${impact})`;
+          selectedTierText.style.opacity = '0.4';
+          setTimeout(() => {
+            selectedTierText.innerHTML = `Selected Gift: <strong>${amount} — ${label}</strong> (${impact})`;
+            selectedTierText.style.transition = 'opacity 0.25s ease';
+            selectedTierText.style.opacity = '1';
+          }, 100);
         }
       });
     });
   }
 
-  // 6. Archival Photo Gallery Filtering
+  // 8. Archival Photo Gallery Filtering with Staggered Pop-In Animation
   const filterBtns = document.querySelectorAll('.lcs-filter-btn');
   const galleryItems = document.querySelectorAll('.lcs-gallery-item');
   if (filterBtns.length && galleryItems.length) {
@@ -194,10 +319,16 @@ document.addEventListener('DOMContentLoaded', () => {
         filterBtns.forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
 
+        let visibleIndex = 0;
         galleryItems.forEach((item) => {
           const itemCat = item.getAttribute('data-category');
+          item.classList.remove('pop-in');
           if (category === 'all' || itemCat === category) {
             item.classList.remove('hidden');
+            item.style.animationDelay = `${visibleIndex * 45}ms`;
+            void item.offsetWidth;
+            item.classList.add('pop-in', 'is-visible');
+            visibleIndex++;
           } else {
             item.classList.add('hidden');
           }
@@ -206,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 7. Photo Lightbox Modal
+  // 9. Photo Lightbox Modal
   const lightboxModal = document.getElementById('lcs-lightbox-modal');
   const lightboxImg = document.getElementById('lcs-lightbox-img');
   const lightboxTitle = document.getElementById('lcs-lightbox-title');
@@ -234,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 8. Virtual Museum Portal Modal Trigger
+  // 10. Virtual Museum Portal Modal Trigger
   const virtualModal = document.getElementById('lcs-virtual-modal');
   const virtualTriggers = document.querySelectorAll('[data-open-virtual-modal]');
   if (virtualModal && virtualTriggers.length) {
@@ -246,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 9. Membership Application Form Handler
+  // 11. Membership Application Form Handler
   const memForm = document.getElementById('lcs-membership-form');
   const memStatus = document.getElementById('lcs-mem-status');
   if (memForm) {

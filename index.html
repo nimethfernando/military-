@@ -9,6 +9,25 @@
 </head>
 <body class="lcs-site" id="top">
 
+  <!-- Optical HD Unsharp-Mask Convolution Filters for Video & Archival Photography -->
+  <svg class="lcs-hd-filters" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden;pointer-events:none;" aria-hidden="true">
+    <defs>
+      <filter id="lcs-video-sharpen" color-interpolation-filters="sRGB">
+        <feConvolveMatrix order="3" kernelMatrix="0 -0.48 0 -0.48 2.92 -0.48 0 -0.48 0" preserveAlpha="true" />
+        <feColorMatrix type="saturate" values="1.1" />
+        <feComponentTransfer>
+          <feFuncR type="linear" slope="1.06" intercept="-0.02" />
+          <feFuncG type="linear" slope="1.06" intercept="-0.02" />
+          <feFuncB type="linear" slope="1.08" intercept="-0.02" />
+        </feComponentTransfer>
+      </filter>
+      <filter id="lcs-image-sharpen" color-interpolation-filters="sRGB">
+        <feConvolveMatrix order="3" kernelMatrix="0 -0.26 0 -0.26 2.04 -0.26 0 -0.26 0" preserveAlpha="true" />
+        <feColorMatrix type="saturate" values="1.06" />
+      </filter>
+    </defs>
+  </svg>
+
   <!-- ========================================================================
        1. TOP UTILITY & ANNOUNCEMENT BAR (Intrepid Museum Style)
        ======================================================================== -->
@@ -87,7 +106,7 @@
        ======================================================================== -->
   <section class="lcs-hero">
     <div class="lcs-hero-media">
-      <video autoplay loop muted playsinline class="lcs-hero-video" poster="assets/images/mare-island-berth.jpg">
+      <video autoplay loop muted playsinline class="lcs-hero-video" poster="assets/images/rd-lowering04.jpg">
         <source src="assets/images/LCS.mp4" type="video/mp4" />
         <source src="https://usslcs102.org/img/LCS.mp4" type="video/mp4" />
       </video>
@@ -144,7 +163,7 @@
           <div class="lcs-spotlight-img-wrap">
             <img
               src="assets/images/hero-ship-bow.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/LCS%20102%20bow%20lrg.jpg'"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg'"
               alt="Bow and gun mounts of USS LCS-102 Yankee Dollar"
             />
             <span class="lcs-spotlight-overlay-badge">360° DIGITAL DECK TOUR</span>
@@ -153,11 +172,11 @@
           <p class="lcs-spotlight-desc">
             A dedicated virtual museum team is building an interactive online version of the <em>Yankee Dollar</em>. Walk the steel decks, inspect the 3-inch and twin 40mm gun mounts, enter the armored conning tower, and tour the engine room from anywhere in the world.
           </p>
-          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <a href="#virtual-museum" class="lcs-btn lcs-btn-sm lcs-btn-cyan" style="flex: 1;">
-              Explore Virtual Museum Section →
+          <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+            <a href="#virtual-museum" data-page-link="virtual-museum" class="lcs-btn lcs-btn-sm lcs-btn-cyan" style="flex: 1;">
+              Explore Virtual Tour →
             </a>
-            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-outline">
+            <button type="button" data-open-virtual-modal class="lcs-btn lcs-btn-sm lcs-btn-outline" style="flex: 1;">
               Preview Online Portal
             </button>
           </div>
@@ -322,8 +341,8 @@
         <div class="lcs-deck-panel active" id="station-1">
           <div class="lcs-deck-media">
             <img
-              src="assets/images/ships-bow-2013.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/2013Feb07shipsbow.JPG'"
+              src="assets/images/hd-bow-aerial.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg'"
               alt="Forward bow gun mount and deck of USS LCS-102"
             />
           </div>
@@ -355,8 +374,8 @@
         <div class="lcs-deck-panel" id="station-2">
           <div class="lcs-deck-media">
             <img
-              src="assets/images/ship-banner.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/IMG_2.jpg'"
+              src="assets/images/rd-finalcheck.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Final_Check.jpg'"
               alt="Superstructure and conning tower of USS LCS-102"
             />
           </div>
@@ -388,9 +407,9 @@
         <div class="lcs-deck-panel" id="station-3">
           <div class="lcs-deck-media">
             <img
-              src="assets/images/wwii-kamikaze.jpg"
-              onerror="this.src='https://usslcs102.org/img/wwii/kamikaze02.jpg'"
-              alt="WWII Landing Craft Support anti-aircraft defense against kamikaze attack"
+              src="assets/images/hd-stern-aerial.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Stern_Aerial02.jpg'"
+              alt="Twin 40mm Bofors and 20mm Oerlikon anti-aircraft gun mounts aboard USS LCS-102"
             />
           </div>
           <div>
@@ -421,9 +440,9 @@
         <div class="lcs-deck-panel" id="station-4">
           <div class="lcs-deck-media">
             <img
-              src="assets/images/boy-scouts-bunks.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/Boy%20Scouts%20Laying%20down%20for%20the%20night.jpg'"
-              alt="Crew berthing bunks aboard USS LCS-102 during an overnight youth stay"
+              src="assets/images/hd-gangplank.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Gangplank.jpg'"
+              alt="Skipper Bill Mason and Executive Officer Gordon Stutrud welcoming visitors at the gangplank of USS LCS-102"
             />
           </div>
           <div>
@@ -536,19 +555,19 @@
         <div class="lcs-photo-collage">
           <div class="lcs-collage-main">
             <img
-              src="assets/images/hero-ship-bow.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/LCS%20102%20bow%20lrg.jpg'"
-              alt="USS LCS-102 bow at Mare Island Naval Shipyard"
+              src="assets/images/rd-lowering04.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Lowering04.jpg'"
+              alt="Full starboard profile of USS LCS-102 floating at Mare Island Naval Shipyard"
             />
           </div>
           <div class="lcs-collage-inset">
             <img
-              src="assets/images/original-flag-102.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/flag-8%20lrg.jpg'"
-              alt="The Original 48-Star WWII U.S. Flag flown on the USS LCS-102"
+              src="assets/images/hd-submarines-2019-5.jpg"
+              onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg'"
+              alt="U.S. Flag flying at the stern of USS LCS-102 during a naval memorial ceremony"
             />
-            <span>AUTHENTIC ARTIFACT ON EXHIBIT</span>
-            <strong style="font-family: var(--font-display); font-size: 1.05rem; text-transform: uppercase;">The Original WWII 48-Star Flag Flown Aboard LCS-102</strong>
+            <span>LIVING NATIONAL MEMORIAL</span>
+            <strong style="font-family: var(--font-display); font-size: 1.05rem; text-transform: uppercase;">Honoring WWII Sailors &amp; Preserving the 48-Star Battle Flag</strong>
           </div>
         </div>
       </div>
@@ -642,9 +661,9 @@
         <article class="lcs-era-card">
           <div class="lcs-era-img">
             <img
-              src="assets/images/yankee-dollar-insignia.jpg"
-              onerror="this.src='https://usslcs102.org/img/wwii/mem-yankeedollar.jpg'"
-              alt="Original WWII drawing of the USS LCS-102 Yankee Dollar insignia"
+              src="assets/images/drydock-insp03.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/in-drydock-inspection03.jpg'"
+              alt="Close-up of the giant 102 hull number on the bow of USS LCS(L)(3)-102 Yankee Dollar"
             />
             <span class="lcs-era-year">1943 – FEB 1945</span>
           </div>
@@ -660,9 +679,9 @@
         <article class="lcs-era-card">
           <div class="lcs-era-img">
             <img
-              src="assets/images/lcs86-alongside-porter.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/LCS%2086%20Along%20side%20USS%20William%20D%20Porter%20(DD%20571).jpg'"
-              alt="LCS-86 alongside destroyer USS William D. Porter (DD-571) during Okinawa Radar Picket duty"
+              src="assets/images/hd-bow-aerial.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg'"
+              alt="Forward 3-inch/50 gun, twin 40mm Bofors mount, and rocket deck of USS LCS-102"
             />
             <span class="lcs-era-year">APR – JUN 1945</span>
           </div>
@@ -678,9 +697,9 @@
         <article class="lcs-era-card">
           <div class="lcs-era-img">
             <img
-              src="assets/images/wwii-crew.jpg"
-              onerror="this.src='https://usslcs102.org/img/wwii/crew03.jpg'"
-              alt="Original World War II crew of the USS LCS-102"
+              src="assets/images/hd-waterline.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Waterline02.jpg'"
+              alt="Full-length elevated stern-to-bow view of USS LCS-102"
             />
             <span class="lcs-era-year">JUL 1945 – APR 1946</span>
           </div>
@@ -696,9 +715,9 @@
         <article class="lcs-era-card">
           <div class="lcs-era-img">
             <img
-              src="assets/images/truman-medal-of-honor-mccool.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/LT%20Tichard%20M.%20McCool.jpg'"
-              alt="President Harry S. Truman placing the Congressional Medal of Honor on Lt. Richard M. McCool"
+              src="assets/images/rd-lowering05.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Lowering05.jpg'"
+              alt="Elevated view of USS LCS-102 showing the JMSDF Himawari lookout roof and twin 40mm mounts"
             />
             <span class="lcs-era-year">1946 – 1966</span>
           </div>
@@ -714,9 +733,9 @@
         <article class="lcs-era-card">
           <div class="lcs-era-img">
             <img
-              src="assets/images/loading-102-thailand.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/Loading%20102%202%20lrg.jpg'"
-              alt="Loading USS LCS-102 onto transport ship in Thailand for return to the United States in 2007"
+              src="assets/images/rd-entrance04.jpg"
+              onerror="this.src='https://usslcs102.org/img/restoration/RD_Entrance04.jpg'"
+              alt="USS LCS-102 underway on the water escorted by harbor tug"
             />
             <span class="lcs-era-year">1966 – 2007</span>
           </div>
@@ -732,9 +751,9 @@
         <article class="lcs-era-card">
           <div class="lcs-era-img">
             <img
-              src="assets/images/transfer-ceremony.jpg"
-              onerror="this.src='https://lcsmuseum.org/files/Transfer%20Ceremony%20Officials%20lrg.jpg'"
-              alt="Official transfer ceremony welcoming USS LCS-102 home to Mare Island"
+              src="assets/images/hd-submarines-2019-5.jpg"
+              onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg'"
+              alt="U.S. Flag flying at the stern of USS LCS-102 at Mare Island Naval Shipyard"
             />
             <span class="lcs-era-year">2007 – PRESENT</span>
           </div>
@@ -748,12 +767,12 @@
       </div>
 
       <!-- Detailed Archival Narrative from lcsmuseum.org/History.html -->
-      <div style="margin-top: 3rem; background: rgba(5, 12, 22, 0.65); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: var(--radius-lg); padding: 2.25rem;">
+      <div class="lcs-doctrine-box">
         <div class="lcs-eyebrow"><span class="lcs-eyebrow-line"></span> Combat Doctrine &amp; Pacific Theater Operations</div>
         <h3 style="font-family: var(--font-display); font-size: 1.85rem; text-transform: uppercase; margin: 0 0 1rem; color: var(--white) !important;">
           Why the "Mighty Midgets" Looked Like Fourth of July Fireworks Leading an Assault
         </h3>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; color: var(--slate-300); font-size: 0.94rem;">
+        <div class="lcs-two-col-grid" style="color: var(--slate-300); font-size: 0.94rem;">
           <div>
             <p style="margin-top: 0;">
               <strong>The Lesson of Tarawa (November 1943):</strong> After capital ships shelled invasion beaches to disrupt enemy defenses, naval bombardment had to lift as troop-laden landing craft approached the shore. In that critical window, defenders regrouped with deadly effect on U.S. Marines. Using the LCI(L) hull plans, George Lawley &amp; Sons designed a purpose-built close-in fighting ship: the <strong>Landing Craft Support (Large)</strong>.
@@ -792,7 +811,7 @@
             The Landing Craft Support Museum receives <strong>zero government operating funding</strong> and charges <strong>no admission fee</strong>. Every gallon of marine primer, every steel hull plate welded in drydock, and every dollar of docking and insurance fees at Mare Island is funded directly by patriotic donors like you.
           </p>
 
-          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.75rem 0;">
+          <div class="lcs-two-col-grid" style="gap: 1rem; margin: 1.75rem 0;">
             <div style="background: rgba(15, 33, 58, 0.75); border-left: 3px solid var(--gold-400); padding: 1rem 1.15rem; border-radius: 6px;">
               <strong style="color: var(--white); display: block; font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase;">Drydock &amp; Hull Preservation</strong>
               <span style="font-size: 0.85rem; color: var(--slate-300);">Ultrasonic hull inspections, O1 deck drainage repairs, anti-fouling bottom paint, and zinc anode replacement.</span>
@@ -911,60 +930,60 @@
         <!-- Item 1 -->
         <article class="lcs-gallery-item" data-category="ship">
           <div class="lcs-gallery-thumb">
-            <img src="assets/images/hero-ship-bow.jpg" onerror="this.src='https://lcsmuseum.org/files/LCS%20102%20bow%20lrg.jpg'" alt="Bow view of USS LCS(L)(3)-102 at Mare Island" />
+            <img src="assets/images/hero-ship-bow.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Bow_Aerial.jpg'" alt="Aerial bow view of USS LCS(L)(3)-102 at Mare Island" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">THE SHIP • MARE ISLAND</span>
             <h3 class="lcs-gallery-title">Bow &amp; Forward Gun Deck of USS LCS-102</h3>
-            <p class="lcs-gallery-desc">Starboard bow profile showing hull number 102, forward 40mm/3-inch mount, and lookout bridge.</p>
+            <p class="lcs-gallery-desc">High-resolution bow profile showing hull number 102, forward 3"/50 &amp; twin 40mm mounts, rocket deck, and bridge.</p>
           </div>
         </article>
 
         <!-- Item 2 -->
-        <article class="lcs-gallery-item" data-category="wwii">
+        <article class="lcs-gallery-item" data-category="ship">
           <div class="lcs-gallery-thumb">
-            <img src="assets/images/truman-medal-of-honor-mccool.jpg" onerror="this.src='https://lcsmuseum.org/files/LT%20Tichard%20M.%20McCool.jpg'" alt="President Truman placing Congressional Medal of Honor on Lt. Richard M. McCool" />
+            <img src="assets/images/rd-lowering04.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Lowering04.jpg'" alt="Full sunlit starboard profile of USS LCS-102 floating at Mare Island" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">WWII VALOR • MEDAL OF HONOR</span>
-            <h3 class="lcs-gallery-title">President Truman &amp; Lt. Richard M. McCool</h3>
-            <p class="lcs-gallery-desc">President Harry S. Truman placing the Congressional Medal of Honor on Lt. Richard M. McCool, Captain of sister ship USS LCS(L)(3)-122 at Okinawa.</p>
+            <span class="lcs-gallery-tag">THE SHIP • STARBOARD PROFILE</span>
+            <h3 class="lcs-gallery-title">Full Starboard Profile of the "Yankee Dollar"</h3>
+            <p class="lcs-gallery-desc">Sunlit broadside view of the 158-foot WWII amphibious gunboat afloat at Mare Island Naval Shipyard.</p>
           </div>
         </article>
 
         <!-- Item 3 -->
         <article class="lcs-gallery-item" data-category="wwii">
           <div class="lcs-gallery-thumb">
-            <img src="assets/images/lcs86-alongside-porter.jpg" onerror="this.src='https://lcsmuseum.org/files/LCS%2086%20Along%20side%20USS%20William%20D%20Porter%20(DD%20571).jpg'" alt="LCS-86 alongside USS William D. Porter (DD-571)" />
+            <img src="assets/images/drydock-insp03.jpg" onerror="this.src='https://usslcs102.org/img/restoration/in-drydock-inspection03.jpg'" alt="Low-angle close-up of hull number 102 on the bow of USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">OKINAWA • RADAR PICKET ACTION</span>
-            <h3 class="lcs-gallery-title">LCS-86 Alongside USS William D. Porter (DD-571)</h3>
-            <p class="lcs-gallery-desc">Heroic rescue and firefighting support alongside destroyer USS William D. Porter after a kamikaze attack off Okinawa, June 10, 1945.</p>
+            <span class="lcs-gallery-tag">HULL #102 • "YANKEE DOLLAR"</span>
+            <h3 class="lcs-gallery-title">Monumental Bow Close-Up of Hull #102</h3>
+            <p class="lcs-gallery-desc">Dramatic low-angle view looking up at the iconic 102 hull designation and forward 3"/50 gun tub.</p>
           </div>
         </article>
 
         <!-- Item 4 -->
         <article class="lcs-gallery-item" data-category="wwii">
           <div class="lcs-gallery-thumb">
-            <img src="assets/images/original-flag-102.jpg" onerror="this.src='https://lcsmuseum.org/files/flag-8%20lrg.jpg'" alt="The Original WWII 48-Star Flag flown on the LCS-102" />
+            <img src="assets/images/hd-waterline.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Waterline02.jpg'" alt="Elevated full-length stern-to-bow view of USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">MUSEUM ARTIFACT • WWII RELIC</span>
-            <h3 class="lcs-gallery-title">The Original Flag Flown on the 102</h3>
-            <p class="lcs-gallery-desc">Preserved wartime 48-star U.S. Navy ensign flown aboard USS LCS(L)(3)-102 during Pacific Theater operations.</p>
+            <span class="lcs-gallery-tag">WWII DESIGN • MIGHTY MIDGET</span>
+            <h3 class="lcs-gallery-title">Full-Length Stern-to-Bow Gun Deck View</h3>
+            <p class="lcs-gallery-desc">Elevated perspective revealing how George Lawley &amp; Sons packed battleship-class firepower onto a 158-foot hull.</p>
           </div>
         </article>
 
         <!-- Item 5 -->
         <article class="lcs-gallery-item" data-category="restoration">
           <div class="lcs-gallery-thumb">
-            <img src="assets/images/loading-102-thailand.jpg" onerror="this.src='https://lcsmuseum.org/files/Loading%20102%202%20lrg.jpg'" alt="Loading USS LCS-102 in Thailand for transport to San Francisco Bay" />
+            <img src="assets/images/hd-positioning.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Positioning.jpg'" alt="Positioning USS LCS-102 in Mare Island Drydock" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">2007 RETRIEVAL • ROYAL THAI NAVY</span>
-            <h3 class="lcs-gallery-title">Loading the 102 for Her Journey Home</h3>
-            <p class="lcs-gallery-desc">Cradled aboard a heavy-lift transport ship in 2007 for the trans-Pacific voyage from Thailand back to Mare Island, California.</p>
+            <span class="lcs-gallery-tag">MARE ISLAND • DRYDOCK EVOLUTION</span>
+            <h3 class="lcs-gallery-title">Precision Positioning in Mare Island Drydock</h3>
+            <p class="lcs-gallery-desc">Shipyard line handlers and museum volunteers guiding the 158-foot WWII gunboat into Mare Island drydock for hull preservation.</p>
           </div>
         </article>
 
@@ -995,84 +1014,84 @@
         <!-- Item 8 -->
         <article class="lcs-gallery-item" data-category="wwii">
           <div class="lcs-gallery-thumb">
-            <img src="assets/images/lcs86-standing-off-porter.jpg" onerror="this.src='https://lcsmuseum.org/files/LCS%2086%20Standing%20off%20USS%20William%20D%20Porter%20(DD%20571).jpg'" alt="LCS-86 standing off USS William D. Porter" />
+            <img src="assets/images/rd-lowering05.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Lowering05.jpg'" alt="Elevated stern quarter view of USS LCS-102 at Mare Island Naval Shipyard" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">WWII PACIFIC • FLEET DEFENSE</span>
-            <h3 class="lcs-gallery-title">Standing Off Stricken Destroyer DD-571</h3>
-            <p class="lcs-gallery-desc">Archival Navy photograph of LCS gunboats rescuing survivors during Okinawa radar picket combat.</p>
+            <span class="lcs-gallery-tag">MULTI-ERA HERITAGE • USN &amp; JMSDF</span>
+            <h3 class="lcs-gallery-title">Aft Twin 40mm Mount &amp; Lookout Roof</h3>
+            <p class="lcs-gallery-desc">Blue-sky view showcasing stern #102, the aft twin 40mm Bofors gun tub, and the historic JMSDF lookout deck roof.</p>
           </div>
         </article>
 
         <!-- Item 9 -->
         <article class="lcs-gallery-item" data-category="community">
           <div class="lcs-gallery-thumb">
-            <img src="assets/images/boy-scouts-flag.jpg" onerror="this.src='https://lcsmuseum.org/files/Boy%20Scouts%20lowering%20the%20flag.jpg'" alt="Boy Scouts lowering the flag aboard USS LCS-102" />
+            <img src="assets/images/hd-gangplank.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Gangplank.jpg'" alt="Skipper Bill Mason and Executive Officer Gordon Stutrud at the gangplank of USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">YOUTH EDUCATION • OVERNIGHT STAYS</span>
-            <h3 class="lcs-gallery-title">Boy Scouts Lowering the Evening Colors</h3>
-            <p class="lcs-gallery-desc">Scouts conducting flag ceremonies on deck during an educational overnight stay aboard the LCS-102.</p>
+            <span class="lcs-gallery-tag">SHIP'S COMPANY • VETERAN LEADERSHIP</span>
+            <h3 class="lcs-gallery-title">Welcoming Visitors at the Gangplank</h3>
+            <p class="lcs-gallery-desc">Skipper Bill Mason and Executive Officer Gordon Stutrud greeting visitors dockside aboard the USS LCS-102.</p>
           </div>
         </article>
 
         <!-- Item 10 -->
         <article class="lcs-gallery-item" data-category="community">
           <div class="lcs-gallery-thumb">
-            <img src="assets/images/transfer-ceremony.jpg" onerror="this.src='https://lcsmuseum.org/files/Transfer%20Ceremony%20Officials%20lrg.jpg'" alt="Transfer Ceremony Officials welcoming USS LCS-102" />
+            <img src="assets/images/hd-submarines-2019-2.jpg" onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_2.jpg'" alt="Naval ceremony and honor guard at USS LCS-102 berth" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">CEREMONY • HONORING VETERANS</span>
-            <h3 class="lcs-gallery-title">Official Transfer Ceremony &amp; WWII Officers</h3>
-            <p class="lcs-gallery-desc">U.S. and Royal Thai Navy officials alongside original WWII LCS(L)-102 Commanding Officer Dick Jones and Rear Admiral Balmert.</p>
+            <h3 class="lcs-gallery-title">Mare Island Naval Honor Ceremony</h3>
+            <p class="lcs-gallery-desc">Veterans, naval officers, and community supporters gathered dockside alongside the USS LCS-102 at Mare Island.</p>
           </div>
         </article>
 
         <!-- Item 11 -->
         <article class="lcs-gallery-item" data-category="restoration">
           <div class="lcs-gallery-thumb">
-            <img src="assets/images/drydock-return.jpg" onerror="this.src='https://usslcs102.org/img/restoration/drydock-return-distance.jpg'" alt="USS LCS-102 under tow on the Mare Island Strait" />
+            <img src="assets/images/rd-entrance04.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Entrance04.jpg'" alt="USS LCS-102 underway on the Mare Island Strait escorted by harbor tug" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">MARE ISLAND STRAIT • UNDERWAY</span>
-            <h3 class="lcs-gallery-title">Returning to Her Berth After Hull Overhaul</h3>
-            <p class="lcs-gallery-desc">USS LCS-102 moving along the Napa River / Mare Island Strait back to her museum dock.</p>
+            <h3 class="lcs-gallery-title">Underway on the Mare Island Strait</h3>
+            <p class="lcs-gallery-desc">USS LCS-102 moving across the water escorted by harbor tug <em>Sagittarian</em> at Mare Island Naval Shipyard.</p>
           </div>
         </article>
 
         <!-- Item 12 -->
         <article class="lcs-gallery-item" data-category="community">
           <div class="lcs-gallery-thumb">
-            <img src="assets/images/members-reunion.jpg" onerror="this.src='https://lcsmuseum.org/files/Members%20on%20General%20Jackson%20lrg.jpg'" alt="National Association of LCS(L) 1-130 Members Reunion" />
+            <img src="assets/images/sub2019-3.jpg" onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_3.jpg'" alt="Veterans ringing the ship's brass bell aboard USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">COMMUNITY • ANNUAL CONVENTION</span>
-            <h3 class="lcs-gallery-title">LCS Museum Members &amp; WWII Veterans Reunion</h3>
-            <p class="lcs-gallery-desc">Original WWII sailors, families, and Landing Craft Support Museum members gathered for the annual convention.</p>
+            <span class="lcs-gallery-tag">LIVING MEMORIAL • SHIP'S BELL</span>
+            <h3 class="lcs-gallery-title">Tolling the Ship's Bell Aboard the 102</h3>
+            <p class="lcs-gallery-desc">Veterans and crew tolling the ceremonial ship's bell directly in front of the twin 40mm Bofors gun mount.</p>
           </div>
         </article>
 
-        <!-- Item 13 (Wikimedia U.S. Navy Official Photo) -->
+        <!-- Item 13 -->
         <article class="lcs-gallery-item" data-category="community">
           <div class="lcs-gallery-thumb">
-            <img src="assets/images/wikimedia-lcs102-return-2007.jpg" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/7/79/USS_LCS%28L%29_102.jpg'" alt="U.S. Navy Official Photo: 2007 Handover Ceremony at Mare Island" />
+            <img src="assets/images/hd-submarines-2019-5.jpg" onerror="this.src='https://usslcs102.org/img/lost_subs/submarines_2019_5.jpg'" alt="U.S. Flag flying at the stern of USS LCS-102 during memorial wreath ceremony" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">U.S. NAVY ARCHIVE • NOV 10, 2007</span>
-            <h3 class="lcs-gallery-title">2007 U.S. &amp; Royal Thai Navy Handover at Vallejo</h3>
-            <p class="lcs-gallery-desc">Former WWII Signalman 3rd Class Gilbert Nadeau and Royal Thai Navy Lt. Sathaporn Thassanaleelaporn aboard LCS-102 in Vallejo, CA.</p>
+            <span class="lcs-gallery-tag">NATIONAL MEMORIAL • STERN ENSIGN</span>
+            <h3 class="lcs-gallery-title">Colors Flying Over the Fantail &amp; 40mm Deck</h3>
+            <p class="lcs-gallery-desc">The American flag flying proudly at the stern of USS LCS-102 during an annual naval memorial wreath-laying ceremony.</p>
           </div>
         </article>
 
-        <!-- Item 14 (Wikimedia 2016 Mare Island Profile) -->
+        <!-- Item 14 -->
         <article class="lcs-gallery-item" data-category="ship">
           <div class="lcs-gallery-thumb">
-            <img src="assets/images/wikimedia-lcs102-mare-island-2016.jpg" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/b/bb/USS_LCS_L_3_102_30Apr2016_450px.jpg'" alt="USS LCS(L)(3)-102 docked at Mare Island in April 2016" />
+            <img src="assets/images/hd-stern-aerial.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Stern_Aerial02.jpg'" alt="USS LCS(L)(3)-102 elevated full deck and superstructure view at Mare Island" />
           </div>
           <div class="lcs-gallery-meta">
             <span class="lcs-gallery-tag">THE SHIP • NATIONAL HISTORIC LANDMARK</span>
-            <h3 class="lcs-gallery-title">Port-Side Full Profile at Mare Island</h3>
-            <p class="lcs-gallery-desc">USS LCS(L)(3)-102 moored at Mare Island Naval Shipyard following her inclusion on the National Register of Historic Places.</p>
+            <h3 class="lcs-gallery-title">Elevated Full-Deck &amp; Superstructure Profile</h3>
+            <p class="lcs-gallery-desc">High-angle view of USS LCS(L)(3)-102 showing her twin 40mm gun tubs, conning tower, and stern #102.</p>
           </div>
         </article>
 
@@ -1112,15 +1131,15 @@
           </div>
         </article>
 
-        <!-- Item 18 (WWII Kamikaze Defense) -->
+        <!-- Item 18 (Armored Conning Tower & 20mm AA) -->
         <article class="lcs-gallery-item" data-category="wwii">
           <div class="lcs-gallery-thumb">
-            <img src="assets/images/wwii-kamikaze.jpg" onerror="this.src='https://usslcs102.org/img/wwii/kamikaze02.jpg'" alt="WWII LCS anti-aircraft action against kamikaze attack" />
+            <img src="assets/images/rd-finalcheck.jpg" onerror="this.src='https://usslcs102.org/img/restoration/RD_Final_Check.jpg'" alt="Armored conning tower, pilothouse, and 20mm Oerlikon mounts of USS LCS-102" />
           </div>
           <div class="lcs-gallery-meta">
-            <span class="lcs-gallery-tag">WWII COMBAT • RADAR PICKET LINE</span>
-            <h3 class="lcs-gallery-title">Anti-Aircraft Defense Against Kamikaze Attack</h3>
-            <p class="lcs-gallery-desc">Wartime photograph capturing intense 40mm and 20mm anti-aircraft fire from Landing Craft Support gunboats during Pacific operations.</p>
+            <span class="lcs-gallery-tag">WWII COMBAT • RADAR PICKET #18</span>
+            <h3 class="lcs-gallery-title">Armored Conning Tower &amp; 20mm AA Mounts</h3>
+            <p class="lcs-gallery-desc">Close-up of the bridge, armored conning tower, and 20mm Oerlikon anti-aircraft mounts that defended Okinawa Radar Picket #18.</p>
           </div>
         </article>
       </div>
@@ -1493,7 +1512,7 @@
 
   <!-- Virtual Museum Interactive Portal Modal -->
   <div class="lcs-modal-backdrop" id="lcs-virtual-modal" role="dialog" aria-modal="true" aria-label="USS LCS-102 Virtual Museum Portal">
-    <div class="lcs-modal-content" style="padding: 2.5rem;">
+    <div class="lcs-modal-content lcs-virtual-modal-inner">
       <button type="button" class="lcs-modal-close" aria-label="Close">✕</button>
       <span class="lcs-spotlight-tag">🌐 USS LCS-102 VIRTUAL MUSEUM PORTAL</span>
       <h3 style="font-family: var(--font-display); font-size: 2.2rem; text-transform: uppercase; color: var(--white); margin: 0.25rem 0 0.75rem;">
@@ -1502,7 +1521,7 @@
       <p style="color: var(--slate-200); margin: 0 0 1.25rem;">
         The interactive online version of the <strong>Landing Craft Support Museum (USS LCS-102 "Yankee Dollar")</strong> is being produced by our dedicated Virtual Museum development team. Once live, this portal button connects directly to the full 3D/360° walkthrough of the ship.
       </p>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+      <div class="lcs-modal-grid">
         <div style="background: rgba(5,12,22,0.65); border: 1px solid rgba(56,189,248,0.3); padding: 1rem; border-radius: 6px;">
           <strong style="color: var(--cyan-400); font-family: var(--font-display); text-transform: uppercase; display: block;">01. Upper Decks &amp; Guns</strong>
           <span style="font-size: 0.82rem; color: var(--slate-300);">3"/50 bow gun, 10× Mark 7 rocket launchers, twin 40mm Bofors &amp; 20mm Oerlikons.</span>
