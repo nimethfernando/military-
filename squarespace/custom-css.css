@@ -1,31 +1,44 @@
 /* ==========================================================================
-   SQUARESPACE 7.1 FULL-BLEED WRAPPER OVERRIDES
-   Paste this entire file into: Website > Pages > Website Tools > Custom CSS
+   SQUARESPACE 7.1 AUTOMATIC FULL-BLEED OVERRIDES (Fluid Engine & Classic)
+   Automatically stretches the Code Block 100% edge-to-edge and hides
+   Squarespace's default empty template header/footer.
    ========================================================================== */
+header#header,
+.header,
+footer#footer-sections,
+.footer-sections {
+  display: none !important;
+}
+
+#siteWrapper,
+main#page,
+article#sections,
+.page-section,
+.page-section > .content-wrapper,
+.page-section > .content-wrapper > .content,
+.fluid-engine,
+.fe-block,
+.sqs-layout,
+.sqs-row,
+.sqs-col-12,
 .sqs-block-code,
 .sqs-block-code .sqs-block-content {
   padding: 0 !important;
   margin: 0 !important;
   width: 100% !important;
-}
-
-.page-section.full-bleed-section > .content-wrapper {
-  padding: 0 !important;
   max-width: 100% !important;
-}
-
-header#header, footer#footer-sections {
-  display: none !important;
-}
-body .page-section:first-child {
-  padding-top: 0 !important;
-}
-body .page-section > .content-wrapper {
-  padding: 0 !important;
-  max-width: 100% !important;
-}
-body .fluid-engine {
   display: block !important;
+}
+
+.page-section {
+  min-height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.section-background,
+.section-border {
+  background-color: #050c16 !important;
 }
 
 /* ==========================================================================
@@ -1569,3 +1582,4 @@ body {
     display: none;
   }
 }
+

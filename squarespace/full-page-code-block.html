@@ -1,6 +1,49 @@
 <!-- USS LCS-102 MUSEUM — SELF-CONTAINED SQUARESPACE 7.1 CODE BLOCK -->
 <style>
 /* ==========================================================================
+   SQUARESPACE 7.1 AUTOMATIC FULL-BLEED OVERRIDES (Fluid Engine & Classic)
+   Automatically stretches the Code Block 100% edge-to-edge and hides
+   Squarespace's default empty template header/footer.
+   ========================================================================== */
+header#header,
+.header,
+footer#footer-sections,
+.footer-sections {
+  display: none !important;
+}
+
+#siteWrapper,
+main#page,
+article#sections,
+.page-section,
+.page-section > .content-wrapper,
+.page-section > .content-wrapper > .content,
+.fluid-engine,
+.fe-block,
+.sqs-layout,
+.sqs-row,
+.sqs-col-12,
+.sqs-block-code,
+.sqs-block-code .sqs-block-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+}
+
+.page-section {
+  min-height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.section-background,
+.section-border {
+  background-color: #050c16 !important;
+}
+
+/* ==========================================================================
    USS LCS(L)(3)-102 "YANKEE DOLLAR" — LANDING CRAFT SUPPORT MUSEUM
    Inspired by Intrepid Museum (intrepidmuseum.org)
    Compatible with Standalone Deployment & Squarespace 7.1 Custom CSS
@@ -1542,6 +1585,7 @@ body {
   }
 }
 
+
 </style>
 <div class="lcs-site" id="top">
 
@@ -2970,5 +3014,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
 
 </script>
