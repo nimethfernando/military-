@@ -1,7 +1,7 @@
 /* ==========================================================================
-   SQUARESPACE 7.1 AUTOMATIC FULL-BLEED OVERRIDES (Fluid Engine & Classic)
-   Automatically stretches the Code Block 100% edge-to-edge and hides
-   Squarespace's default empty template header/footer.
+   SQUARESPACE 7.1 AUTOMATIC FULL-BLEED & THEME HEADING OVERRIDES
+   Overrides Squarespace template heading colors (e.g., dark green h1/h2/h3)
+   and stretches the Code Block 100% edge-to-edge.
    ========================================================================== */
 header#header,
 .header,
@@ -39,6 +39,22 @@ article#sections,
 .section-background,
 .section-border {
   background-color: #050c16 !important;
+}
+
+/* Override Squarespace template h1-h6 colors */
+.lcs-site h1,
+.lcs-site h2,
+.lcs-site h3,
+.lcs-site h4 {
+  color: #ffffff !important;
+  font-family: 'Barlow Condensed', 'Oswald', Impact, sans-serif !important;
+}
+
+.lcs-site .lcs-section-light h1,
+.lcs-site .lcs-section-light h2,
+.lcs-site .lcs-section-light h3,
+.lcs-site .lcs-section-light h4 {
+  color: #050c16 !important;
 }
 
 /* ==========================================================================
@@ -118,8 +134,10 @@ body {
 .lcs-container {
   width: 100%;
   max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
 }
 
 /* ==========================================================================
@@ -292,21 +310,22 @@ body {
 .lcs-nav {
   display: flex;
   align-items: center;
-  gap: 1.65rem;
+  gap: 1.15rem;
 }
 
 .lcs-nav-link {
   font-family: var(--font-display);
-  font-size: 1.08rem;
+  font-size: 0.96rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--slate-100);
+  letter-spacing: 0.05em;
+  color: var(--slate-100) !important;
   padding: 0.4rem 0;
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
+  white-space: nowrap;
 }
 
 .lcs-nav-link::after {
@@ -481,8 +500,10 @@ body {
 .lcs-hero-content {
   position: relative;
   z-index: 2;
-  padding: 5.5rem 0 3.5rem;
-  margin: auto 0;
+  padding-top: 4.5rem;
+  padding-bottom: 3.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .lcs-hero-grid {
@@ -766,10 +787,11 @@ body {
   line-height: 1.02;
   letter-spacing: 0.02em;
   margin: 0 0 1rem;
+  color: var(--white) !important;
 }
 
 .lcs-section-light .lcs-section-title {
-  color: var(--navy-950);
+  color: var(--navy-950) !important;
 }
 
 .lcs-section-light .lcs-eyebrow {

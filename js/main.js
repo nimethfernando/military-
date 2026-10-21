@@ -4,6 +4,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Ensure Browser Tab Title reflects the Museum Name (even inside Squarespace)
+  document.title = 'USS LCS-102 "Yankee Dollar" | Landing Craft Support Museum';
+
   // 1. Sticky Header Scroll Effect
   const header = document.querySelector('.lcs-header');
   if (header) {
