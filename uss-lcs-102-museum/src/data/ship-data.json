@@ -1,0 +1,283 @@
+{
+  "shipInfo": {
+    "name": "USS LCS(L)(3)-102",
+    "nickname": "Yankee Dollar",
+    "designation": "Landing Craft Support (Large) (Mark 3)",
+    "redesignation": "USS LSSL-102 (Feb 28, 1949)",
+    "historicRegister": "National Register of Historic Places #15000716",
+    "commissioned": "February 17, 1945",
+    "builder": "Commercial Iron Works, Portland, Oregon",
+    "berthLocation": "Mare Island Naval Shipyard, Intersection of \"A\" St & Nimitz Ave (289 Waterfront Ave), Vallejo, CA 94592",
+    "gps": "38°05'56\"N 122°16'05\"W",
+    "hours": "Tuesdays, Thursdays, and Saturdays from 9:30 AM to 3:00 PM",
+    "admission": "Free Admission & Free Parking",
+    "paypalHostedButtonId": "4NG6KFU98WBSJ"
+  },
+  "specifications": [
+    { "label": "Length Overall", "value": "158 ft 0 in (48.16 m)" },
+    { "label": "Beam", "value": "23 ft 6 in (7.16 m)" },
+    { "label": "Draft", "value": "5 ft 8 in forward / 6 ft 6 in aft" },
+    { "label": "Full Displacement", "value": "387 tons (full load)" },
+    { "label": "Propulsion Plant", "value": "2 × GM 16-278A Diesels (1,800 BHP total), twin shafts, variable-pitch props" },
+    { "label": "Maximum Speed", "value": "16.5 knots" },
+    { "label": "Operating Range", "value": "5,500 nautical miles at 12 knots" },
+    { "label": "Wartime Crew", "value": "71 Total (6 Officers, 65 Enlisted Sailors)" },
+    { "label": "Primary Bow Gun", "value": "1 × 3\"/50 Caliber Dual-Purpose Rapid-Fire Bow Gun" },
+    { "label": "Anti-Aircraft Suite", "value": "2 × Twin 40mm Bofors Mounts + 4 × 20mm Oerlikon AA Cannons" },
+    { "label": "Rocket Battery", "value": "10 × Mark 7 Barrage Rocket Launchers (firing salvos at 1,000, 800, 500 yds)" },
+    { "label": "Machine Guns", "value": "4 × .50-Caliber Browning Heavy Machine Guns" }
+  ],
+  "restoredCompartments": [
+    { "code": "A-111-L", "name": "Ship's Galley", "desc": "Where meals were prepared daily for 71 officers and men during combat operations." },
+    { "code": "A-208-L", "name": "Crew Mess Hall", "desc": "Central gathering space for dining, church services, briefing, and casualty triage." },
+    { "code": "A-208-1L", "name": "Aft Enlisted Berthing", "desc": "Restored canvas-laced triple-tier bunks and lockers for 65 enlisted sailors." },
+    { "code": "A-207-5L", "name": "Officers Wardroom", "desc": "Living and planning quarters for Skipper Lt. Richard Jones and five junior officers." },
+    { "code": "B-1-2-A", "name": "Diesel Generator & Engine Rooms", "desc": "Home of the twin GM 16-278A 1,800 BHP diesels and shipboard electrical grid." }
+  ],
+  "objectives": [
+    {
+      "id": 1,
+      "title": "Mobile Museum Operation",
+      "desc": "To manage the operation and maintenance of the former USS LCS (L)(3) 102 / HTMS NAKHA as a mobile museum."
+    },
+    {
+      "id": 2,
+      "title": "Honor \"The Mighty Midgets\"",
+      "desc": "To preserve and perpetuate the memory of those officers and men who served so valiantly aboard one of the USS LCS (L) ships and their flagships of the United States Navy, which are informally known as \"The Mighty Midgets\", and to the H.T.M.S NAKHA of the Royal Thai Navy, especially those officers and men who gave their lives in the service of their country."
+    },
+    {
+      "id": 3,
+      "title": "Records, Relics & Mementos",
+      "desc": "To acquire, preserve, and present the records, relics, and mementos of the Landing Craft Support Vessels."
+    },
+    {
+      "id": 4,
+      "title": "WWII Pacific Accomplishments",
+      "desc": "To inform the public of the World War II accomplishments of the Landing Craft Support ships during operations at Iwo Jima, Okinawa, Philippines, Borneo, China, and the occupation of Japan."
+    },
+    {
+      "id": 5,
+      "title": "Youth Overnight Stays",
+      "desc": "Groups and Boy Scouts can arrange to spend the night or weekend on the LCS 102 at Mare Island Naval Base in Vallejo, California."
+    },
+    {
+      "id": 6,
+      "title": "San Francisco Bay Cruises",
+      "desc": "And to provide cruises open to the public around the San Francisco Bay area."
+    }
+  ],
+  "timeline": [
+    {
+      "era": "1943 – FEB 1945",
+      "title": "1. Birth of the \"Yankee Dollar\"",
+      "desc": "Designed by George Lawley & Sons on an LCI hull, 130 LCS(L) gunboats were built across Massachusetts and Oregon. Laid down Jan 13, 1945 at Commercial Iron Works in Portland and commissioned Feb 17, 1945 under Lt. Richard Jones, LCS-102 earned the nickname \"Yankee Dollar\" ($1.02).",
+      "image": "/assets/images/drydock-insp03.jpg"
+    },
+    {
+      "era": "APR – JUN 1945",
+      "title": "2. Battle of Okinawa & Radar Picket #18",
+      "desc": "Rushed to the Pacific Theater, LCS-102 fought in the Battle of Okinawa (June 18–30, 1945). Assigned to Radar Picket Station #18 90 miles south of Okinawa, she screened fleet destroyers against relentless kamikaze attacks, earning her WWII Battle Star.",
+      "image": "/assets/images/hd-bow-aerial.jpg"
+    },
+    {
+      "era": "JUL 1945 – APR 1946",
+      "title": "3. Philippines & Occupation of Japan",
+      "desc": "Conducted mine-removal operations at Leyte Gulf when WWII ended, then sailed to Sasebo, Japan—arriving two months after the atomic bomb—where 40 crewmen toured Nagasaki before serving occupation duty in China and Korea.",
+      "image": "/assets/images/hd-waterline.jpg"
+    },
+    {
+      "era": "1946 – 1966",
+      "title": "4. Reserve Fleet & JMSDF \"Himawari\"",
+      "desc": "Decommissioned in 1946 and redesignated USS LSSL-102 in 1949, she was loaned to postwar Japan in 1953. Serving in the Japanese Maritime Self-Defense Force as JDS Himawari until 1966, she received the lookout deck roof and 81mm mortars still visible onboard.",
+      "image": "/assets/images/rd-lowering05.jpg"
+    },
+    {
+      "era": "1966 – 2007",
+      "title": "5. Royal Thai Navy & Voyage Home",
+      "desc": "Transferred to the Royal Thai Navy in 1966 as HTMS Nakha (LSSL-751), serving for 41 years. When WWII veterans found she was the last operational LCS in existence, they secured her repatriation aboard a heavy-lift ship back to San Francisco Bay in 2007.",
+      "image": "/assets/images/rd-entrance04.jpg"
+    },
+    {
+      "era": "2007 – PRESENT",
+      "title": "6. Mare Island Museum & Historic Landmark",
+      "desc": "Berthed at historic Mare Island Naval Shipyard in Vallejo, CA, restored by Navy veterans and volunteers led by Skipper Bill Mason and Gordon Stutrud. Enshrined on the U.S. National Register of Historic Places on October 13, 2015.",
+      "image": "/assets/images/hd-submarines-2019-5.jpg"
+    }
+  ],
+  "virtualTours": {
+    "plannedTour": {
+      "id": "2161138540841279141",
+      "title": "The Ships That Cleared the Way",
+      "subtitle": "11-Stop Guided Narrative Combat & Shipboard Tour",
+      "embedUrl": "https://www.thinglink.com/card/2161138540841279141",
+      "viewUrl": "https://www.thinglink.com/view/scene/2161138540841279141",
+      "videoUrl": "https://youtu.be/n87M2tm7GRk"
+    },
+    "freeRoamTour": {
+      "id": "2151393301209547620",
+      "title": "62-Compartment Free-Roam 360° Digital Twin",
+      "subtitle": "Self-Guided 360° Ship Explorer Across Every Deck Level",
+      "embedUrl": "https://www.thinglink.com/card/2151393301209547620",
+      "viewUrl": "https://www.thinglink.com/view/scene/2151393301209547620"
+    },
+    "deckPlan": {
+      "id": "2151338138495091556",
+      "title": "Interactive 4K Ship Deck Blueprint & Floor Plan",
+      "subtitle": "Architectural Profile & Clickable Compartment Navigation",
+      "embedUrl": "https://www.thinglink.com/card/2151338138495091556",
+      "viewUrl": "https://www.thinglink.com/view/scene/2151338138495091556"
+    },
+    "milestones": [
+      { "id": "2161138540841279141", "num": "01", "name": "Prologue: Cleared the Way", "desc": "130 ships built, ~10,000 sailors served, sole surviving vessel." },
+      { "id": "2161172103557027493", "num": "02", "name": "Built for the Beach (3\"/50 Gun)", "desc": "Forward 3\"/50 rapid-fire gun mount leading beach assaults." },
+      { "id": "2161185783258547877", "num": "03", "name": "Preparing for War (Twin 40mm)", "desc": "Twin 40mm Bofors anti-aircraft mount throwing curtains of flak." },
+      { "id": "2161192850358800037", "num": "04", "name": "All Aboard (Pilothouse)", "desc": "01 Level bridge helm and engine telegraph navigation center." },
+      { "id": "2161194161896687269", "num": "05", "name": "The Crossing (Conning Tower)", "desc": "Armored conning station overlooking the forward gun tubs." },
+      { "id": "2161195067472087717", "num": "06", "name": "Okinawa Battle (20mm Oerlikon)", "desc": "Defending Radar Picket Station #18 against kamikaze air strikes." },
+      { "id": "2161318873628934821", "num": "07", "name": "The Last of Her Kind", "desc": "Archival documentation of the 130 LCS gunboat flotilla." },
+      { "id": "2161321791543314085", "num": "08", "name": "Ship's Galley (A-111-L)", "desc": "Restored stainless galley where food was prepared under fire." },
+      { "id": "2161525456052946597", "num": "09", "name": "Crew Berthing (A-208-1L)", "desc": "Triple-tiered pipe berths for 65 enlisted sailors." },
+      { "id": "2161325987508259493", "num": "10", "name": "Mess Hall (A-208-L)", "desc": "Living memorial hall honoring fallen WWII shipmates." },
+      { "id": "2161326947584445093", "num": "11", "name": "Epilogue: The Ship", "desc": "Passageway with Commercial Iron Works bronze builder plaque." },
+      { "id": "2150994591514362724", "num": "12", "name": "Twin Diesel Engine Room", "desc": "Below-deck GM 16-278A propulsion plant and switchboards." }
+    ]
+  },
+  "officers": [
+    {
+      "role": "Museum Skipper",
+      "name": "William \"Bill\" Mason",
+      "address": "2960 20th Ave., San Francisco, CA 94132",
+      "email": "bmason6056@aol.com",
+      "desc": "Has managed the hands-on renovation of the LCS-102 since arrival from Thailand. Coordinates overnight group stays and drydock planning."
+    },
+    {
+      "role": "Executive Officer",
+      "name": "Gordon Stutrud",
+      "phone": "(707) 373-2159",
+      "email": "gstutrud@usslcs102.org",
+      "desc": "Directs dockside shipboard operations, guided visitor tours, safety evolutions, and Mare Island facility coordination."
+    },
+    {
+      "role": "Secretary & Newsletter Editor",
+      "name": "Dennis & Bonnie Steenbergen",
+      "address": "7345 W. Lakeside Drive, Littleton, CO 80125",
+      "email": "dsteenbergen1165@gmail.com",
+      "desc": "Manages association membership rosters, process check donations, and publishes the official quarterly museum newsletter."
+    },
+    {
+      "role": "Treasurer",
+      "name": "Bonnie Steenbergen",
+      "address": "7345 W. Lakeside Drive, Littleton, CO 80125",
+      "email": "bsteenbergen@msn.com",
+      "desc": "Administers 501(c)(3) financial compliance and preservation disbursements."
+    },
+    {
+      "role": "Historian & Archivist",
+      "name": "Rob Rielly",
+      "address": "20 Chalfont Lane, Manchester, NJ 08759",
+      "email": "robrielly1@comcast.net",
+      "desc": "Curates battle logs, official naval action reports, Medal of Honor citations, and deck records."
+    },
+    {
+      "role": "Legal Officer",
+      "name": "David Edstrom",
+      "address": "19600 SE 32nd St., Camas, WA 98607",
+      "email": "anhdedstrom@yahoo.com",
+      "desc": "Serves as general counsel for Landing Craft Support Museum Corporation."
+    },
+    {
+      "role": "Webmaster",
+      "name": "John Wisner",
+      "address": "626 Bentwood Rd, El Cajon, CA 92021",
+      "email": "john.wisner@cox.net",
+      "desc": "Maintains official web archives and technical digital assets."
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": "bow-hero",
+      "title": "Bow & Forward Gun Mounts of USS LCS-102",
+      "category": "ship",
+      "image": "/assets/images/hero-ship-bow.jpg",
+      "desc": "High-resolution bow view showing hull #102, 3\"/50 gun tub, and twin 40mm Bofors mounts at Mare Island."
+    },
+    {
+      "id": "starboard-profile",
+      "title": "Full Starboard Profile Afloat",
+      "category": "ship",
+      "image": "/assets/images/rd-lowering04.jpg",
+      "desc": "Sunlit broadside view of the 158-foot WWII gunboat floating along Mare Island Strait."
+    },
+    {
+      "id": "hull-number-102",
+      "title": "Monumental Hull #102 Close-Up",
+      "category": "wwii",
+      "image": "/assets/images/drydock-insp03.jpg",
+      "desc": "Dramatic low-angle view looking up at the iconic 102 hull stencil and steel bow plates."
+    },
+    {
+      "id": "waterline-aerial",
+      "title": "Full-Length Stern-to-Bow Deck Perspective",
+      "category": "ship",
+      "image": "/assets/images/hd-waterline.jpg",
+      "desc": "Elevated view showing how George Lawley & Sons packed battleship firepower onto an amphibious hull."
+    },
+    {
+      "id": "drydock-positioning",
+      "title": "Guiding USS LCS-102 Into Mare Island Drydock",
+      "category": "restoration",
+      "image": "/assets/images/hd-positioning.jpg",
+      "desc": "Line handlers and volunteer crew positioning the ship for hull gauging and bottom preservation."
+    },
+    {
+      "id": "drydock-blocks",
+      "title": "Resting on Blocks in Drydock",
+      "category": "restoration",
+      "image": "/assets/images/drydock-wide.jpg",
+      "desc": "Full-hull perspective in Mare Island drydock undergoing ultrasonic hull plating inspection."
+    },
+    {
+      "id": "original-flag",
+      "title": "The Original Flag Flown on the 102",
+      "category": "community",
+      "image": "/assets/images/original-flag-102.jpg",
+      "desc": "Veterans holding the framed original 48-star WWII battle ensign flown on the 102 at Okinawa."
+    },
+    {
+      "id": "scouts-salute",
+      "title": "Boy Scouts During an Overnight Stay",
+      "category": "community",
+      "image": "/assets/images/boy-scouts-flag.jpg",
+      "desc": "Boy Scouts rendering morning colors ceremony at the stern of USS LCS-102 during an overnight stay."
+    },
+    {
+      "id": "scouts-bunks",
+      "title": "Boy Scouts in Restored Sailor Bunks",
+      "category": "community",
+      "image": "/assets/images/boy-scouts-bunks.jpg",
+      "desc": "Youth group participants experiencing overnight encampment in authentic WWII triple-tiered bunks."
+    },
+    {
+      "id": "truman-mccool",
+      "title": "President Truman Awarding Medal of Honor to LT McCool",
+      "category": "wwii",
+      "image": "/assets/images/hd-truman-mccool.jpg",
+      "desc": "President Truman placing the Congressional Medal of Honor on LT Richard M. McCool, Captain of sister ship USS LCS(L)(3)-122."
+    },
+    {
+      "id": "conning-tower",
+      "title": "Bridge, Conning Tower & 20mm Oerlikon Deck",
+      "category": "wwii",
+      "image": "/assets/images/rd-finalcheck.jpg",
+      "desc": "Close-up of the bridge and armored conning tower that stood watch on Radar Picket Station #18."
+    },
+    {
+      "id": "gangplank-welcome",
+      "title": "Skipper Bill Mason & Gordon Stutrud at Gangplank",
+      "category": "community",
+      "image": "/assets/images/hd-gangplank.jpg",
+      "desc": "Museum leadership welcoming docent-led tour visitors dockside at Mare Island Naval Base."
+    }
+  ]
+}
+
