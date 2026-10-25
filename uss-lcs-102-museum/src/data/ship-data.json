@@ -199,13 +199,15 @@
       "title": "Bow & Forward Gun Mounts of USS LCS-102",
       "category": "ship",
       "image": "/assets/images/hero-ship-bow.jpg",
-      "desc": "High-resolution bow view showing hull #102, 3\"/50 gun tub, and twin 40mm Bofors mounts at Mare Island."
+      "resolution": "1024×683",
+      "desc": "Bow view showing hull #102, 3\"/50 gun tub, and twin 40mm Bofors mounts at Mare Island."
     },
     {
       "id": "starboard-profile",
       "title": "Full Starboard Profile Afloat",
       "category": "ship",
       "image": "/assets/images/rd-lowering04.jpg",
+      "resolution": "1024×683",
       "desc": "Sunlit broadside view of the 158-foot WWII gunboat floating along Mare Island Strait."
     },
     {
@@ -213,6 +215,7 @@
       "title": "Monumental Hull #102 Close-Up",
       "category": "wwii",
       "image": "/assets/images/drydock-insp03.jpg",
+      "resolution": "1120×744",
       "desc": "Dramatic low-angle view looking up at the iconic 102 hull stencil and steel bow plates."
     },
     {
@@ -220,6 +223,7 @@
       "title": "Full-Length Stern-to-Bow Deck Perspective",
       "category": "ship",
       "image": "/assets/images/hd-waterline.jpg",
+      "resolution": "1024×683",
       "desc": "Elevated view showing how George Lawley & Sons packed battleship firepower onto an amphibious hull."
     },
     {
@@ -227,6 +231,7 @@
       "title": "Guiding USS LCS-102 Into Mare Island Drydock",
       "category": "restoration",
       "image": "/assets/images/hd-positioning.jpg",
+      "resolution": "1024×683",
       "desc": "Line handlers and volunteer crew positioning the ship for hull gauging and bottom preservation."
     },
     {
@@ -234,6 +239,7 @@
       "title": "Resting on Blocks in Drydock",
       "category": "restoration",
       "image": "/assets/images/drydock-wide.jpg",
+      "resolution": "1120×744",
       "desc": "Full-hull perspective in Mare Island drydock undergoing ultrasonic hull plating inspection."
     },
     {
@@ -241,6 +247,7 @@
       "title": "The Original Flag Flown on the 102",
       "category": "community",
       "image": "/assets/images/original-flag-102.jpg",
+      "resolution": "1287×744",
       "desc": "Veterans holding the framed original 48-star WWII battle ensign flown on the 102 at Okinawa."
     },
     {
@@ -248,6 +255,7 @@
       "title": "Boy Scouts During an Overnight Stay",
       "category": "community",
       "image": "/assets/images/boy-scouts-flag.jpg",
+      "resolution": "1024×683",
       "desc": "Boy Scouts rendering morning colors ceremony at the stern of USS LCS-102 during an overnight stay."
     },
     {
@@ -255,6 +263,7 @@
       "title": "Boy Scouts in Restored Sailor Bunks",
       "category": "community",
       "image": "/assets/images/boy-scouts-bunks.jpg",
+      "resolution": "1024×683",
       "desc": "Youth group participants experiencing overnight encampment in authentic WWII triple-tiered bunks."
     },
     {
@@ -262,6 +271,7 @@
       "title": "President Truman Awarding Medal of Honor to LT McCool",
       "category": "wwii",
       "image": "/assets/images/hd-truman-mccool.jpg",
+      "resolution": "2100×1500",
       "desc": "President Truman placing the Congressional Medal of Honor on LT Richard M. McCool, Captain of sister ship USS LCS(L)(3)-122."
     },
     {
@@ -269,6 +279,7 @@
       "title": "Bridge, Conning Tower & 20mm Oerlikon Deck",
       "category": "wwii",
       "image": "/assets/images/rd-finalcheck.jpg",
+      "resolution": "1024×683",
       "desc": "Close-up of the bridge and armored conning tower that stood watch on Radar Picket Station #18."
     },
     {
@@ -276,7 +287,211 @@
       "title": "Skipper Bill Mason & Gordon Stutrud at Gangplank",
       "category": "community",
       "image": "/assets/images/hd-gangplank.jpg",
+      "resolution": "1024×683",
       "desc": "Museum leadership welcoming docent-led tour visitors dockside at Mare Island Naval Base."
+    },
+    {
+      "id": "yankee-dollar-noseart",
+      "title": "Original WWII \"Yankee Dollar\" Ship Insignia",
+      "category": "wwii",
+      "image": "/assets/images/yankee-dollar-insignia.jpg",
+      "resolution": "985×1047",
+      "isLowRes": true,
+      "desc": "Authentic wartime hand-drawn insignia created by the 1945 crew of USS LCS(L)-102 featuring the Yankee Dollar emblem."
+    },
+    {
+      "id": "wwii-kamikaze-action",
+      "title": "Kamikaze Attack on Radar Picket Line (Okinawa, 1945)",
+      "category": "wwii",
+      "image": "/assets/images/wwii-kamikaze.jpg",
+      "resolution": "1277×887",
+      "desc": "Archival combat photograph of anti-aircraft tracer fire defending the Okinawa Radar Picket stations against kamikaze planes."
+    },
+    {
+      "id": "lcs86-porter-rescue",
+      "title": "LCS-86 Standing Alongside Stricken Destroyer USS William D. Porter",
+      "category": "wwii",
+      "image": "/assets/images/lcs86-alongside-porter.jpg",
+      "resolution": "1198×496",
+      "isLowRes": true,
+      "desc": "Sister gunboat LCS-86 rescuing survivors and fighting fires alongside destroyer DD-579 after a kamikaze strike off Okinawa."
+    },
+    {
+      "id": "flotilla-4-certificate",
+      "title": "LCS Flotilla 4 \"Mighty Midgets\" Occupation of Japan Certificate",
+      "category": "wwii",
+      "image": "/assets/images/hd-wwii-cert02.jpg",
+      "resolution": "640×825",
+      "isLowRes": true,
+      "desc": "Original 1945 commemorative naval certificate honoring LCS Flotilla 4 service from Okinawa to the Occupation of Japan."
+    },
+    {
+      "id": "wwii-dispatch-log",
+      "title": "Declassified WWII Naval Action Dispatch",
+      "category": "wwii",
+      "image": "/assets/images/wwii-dispatch.jpg",
+      "resolution": "640×1050",
+      "isLowRes": true,
+      "desc": "Original wartime naval communication documenting LCS gunboat operations in the Pacific Theater."
+    },
+    {
+      "id": "wwii-crew-group",
+      "title": "1945 Wartime Crew of the \"Mighty Midgets\"",
+      "category": "wwii",
+      "image": "/assets/images/wwii-crew.jpg",
+      "resolution": "929×597",
+      "isLowRes": true,
+      "desc": "Historical photograph of WWII officers and enlisted sailors mustered aboard during Pacific operations."
+    },
+    {
+      "id": "wwii-sailors-deck",
+      "title": "Wartime Shipmates on Gun Deck (1945)",
+      "category": "wwii",
+      "image": "/assets/images/hd-wwii-crew02.jpg",
+      "resolution": "705×955",
+      "isLowRes": true,
+      "desc": "Original snapshot from a crewmember's wartime photo album showing sailors off duty in the Pacific."
+    },
+    {
+      "id": "wwii-sailors-liberty",
+      "title": "WWII Crew Ashore in the Pacific",
+      "category": "wwii",
+      "image": "/assets/images/hd-wwii-crew06.jpg",
+      "resolution": "755×920",
+      "isLowRes": true,
+      "desc": "Scraped archival photograph of 1945 LCS crewmen during postwar occupation duty."
+    },
+    {
+      "id": "thailand-heavy-lift",
+      "title": "Loading LCS-102 in Thailand for 2007 Voyage Home",
+      "category": "restoration",
+      "image": "/assets/images/loading-102-thailand.jpg",
+      "resolution": "1024×683",
+      "desc": "Cradling the former HTMS Nakha (LCS-102) onto a heavy-lift transport ship in Thailand for repatriation to California."
+    },
+    {
+      "id": "transfer-ceremony-2007",
+      "title": "Official Royal Thai Navy Transfer Ceremony",
+      "category": "community",
+      "image": "/assets/images/transfer-ceremony.jpg",
+      "resolution": "1024×683",
+      "desc": "Formal handover ceremony returning the last surviving WWII Landing Craft Support ship to American veterans."
+    },
+    {
+      "id": "return-bay-2007",
+      "title": "Arrival Back in San Francisco Bay (2007)",
+      "category": "ship",
+      "image": "/assets/images/wikimedia-lcs102-return-2007.jpg",
+      "resolution": "2048×1536",
+      "desc": "Historic arrival of LCS-102 on Mare Island Strait after 61 years overseas in Japan and Thailand."
+    },
+    {
+      "id": "mare-island-4k-berth",
+      "title": "USS LCS-102 Moored at Mare Island Naval Shipyard (4K)",
+      "category": "ship",
+      "image": "/assets/images/wikimedia-lcs102-mare-island-2016.jpg",
+      "resolution": "5472×3648",
+      "desc": "Ultra-high-resolution DSLR photograph of the restored gunboat moored along the Mare Island waterfront."
+    },
+    {
+      "id": "drydock-entrance-4k",
+      "title": "Entering Historic Mare Island Drydock (4K)",
+      "category": "restoration",
+      "image": "/assets/images/hd-entrance-4k.jpg",
+      "resolution": "5472×3648",
+      "desc": "High-definition view of LCS-102 crossing the historic stone drydock sill at Mare Island."
+    },
+    {
+      "id": "tugboat-assist-4k",
+      "title": "Harbor Tug Escort in Mare Island Strait (4K)",
+      "category": "restoration",
+      "image": "/assets/images/hd-tugboat-4k.jpg",
+      "resolution": "5472×3648",
+      "desc": "Detailed 4K photograph of tugboat crews maneuvering the 387-ton warship into drydock."
+    },
+    {
+      "id": "lost-subs-memorial",
+      "title": "Lost Submarines & WWII Veterans Memorial Ceremony",
+      "category": "community",
+      "image": "/assets/images/lost-subs-ceremony.jpg",
+      "resolution": "2240×1488",
+      "desc": "Annual memorial ceremony held aboard USS LCS-102 honoring fallen WWII Pacific sailors and submariners."
+    },
+    {
+      "id": "members-reunion-banner",
+      "title": "Association Members & Volunteers Reunion",
+      "category": "community",
+      "image": "/assets/images/members-reunion.jpg",
+      "resolution": "957×388",
+      "isLowRes": true,
+      "desc": "Landing Craft Support Museum members and restoration volunteers gathered alongside the ship."
+    },
+    {
+      "id": "crew-portrait-01",
+      "title": "Volunteer Restoration Crew Member on Watch",
+      "category": "community",
+      "image": "/assets/images/crew01.jpg",
+      "resolution": "654×946",
+      "isLowRes": true,
+      "desc": "Legacy photo from lcsmuseum.org showing a dedicated museum volunteer aboard LCS-102."
+    },
+    {
+      "id": "crew-portrait-04",
+      "title": "Below-Deck Engine & Electrical Restoration",
+      "category": "restoration",
+      "image": "/assets/images/crew04.jpg",
+      "resolution": "467×668",
+      "isLowRes": true,
+      "desc": "Legacy screen-scraped photo of volunteer crew working inside the machinery compartments."
+    },
+    {
+      "id": "crew-portrait-05",
+      "title": "Shipboard Maintenance & Preservation Detail",
+      "category": "restoration",
+      "image": "/assets/images/crew05.jpg",
+      "resolution": "435×697",
+      "isLowRes": true,
+      "desc": "Legacy screen-scraped photo of hands-on preservation work aboard the 102."
+    },
+    {
+      "id": "hd-bill-gangway",
+      "title": "Skipper Bill Mason at the Boarding Gangway",
+      "category": "community",
+      "image": "/assets/images/hd-bill.jpg",
+      "resolution": "1024×683",
+      "desc": "Museum Skipper William \"Bill\" Mason welcoming visitors aboard at Mare Island."
+    },
+    {
+      "id": "hd-bow-aerial-view",
+      "title": "Aerial Bow Perspective & 3-Inch Gun Tub",
+      "category": "ship",
+      "image": "/assets/images/hd-bow-aerial.jpg",
+      "resolution": "1024×683",
+      "desc": "High angle showing the forward 3\"/50 gun mount and anchor windlass on the focsle."
+    },
+    {
+      "id": "hd-stern-aerial-view",
+      "title": "Stern Deck, Flagstaff & Smoke Generators",
+      "category": "ship",
+      "image": "/assets/images/hd-stern-aerial.jpg",
+      "resolution": "1024×683",
+      "desc": "Aerial view of the stern showing the aft 40mm mount, mooring lines, and fantail."
+    },
+    {
+      "id": "drydock-crew-party",
+      "title": "Volunteer Restoration Work Party on Deck",
+      "category": "restoration",
+      "image": "/assets/images/drydock-crew.jpg",
+      "resolution": "1120×744",
+      "desc": "Volunteers gathering during weekend work session to preserve the hull and superstructure."
+    },
+    {
+      "id": "drydock-insp02-gauging",
+      "title": "Ultrasonic Hull Gauging Inspection in Drydock",
+      "category": "restoration",
+      "image": "/assets/images/drydock-insp02.jpg",
+      "resolution": "1120×744",
+      "desc": "Marine inspectors testing steel plate thickness on the lower hull during drydock overhaul."
     }
   ]
 }
