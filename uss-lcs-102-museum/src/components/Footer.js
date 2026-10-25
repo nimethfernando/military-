@@ -42,8 +42,8 @@ export default function Footer() {
         {/* Col 1: About the Ship & Historic Register */}
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <div className="w-8 h-8 rounded bg-navy-800 border border-gold-400/80 flex items-center justify-center font-display font-bold text-gold-400 text-sm">
-              102
+            <div className="w-8 h-8 rounded-lg overflow-hidden border border-gold-400/80 bg-navy-950 flex items-center justify-center p-0.5 shadow">
+              <img src="/favicon.svg" alt="USS LCS-102" className="w-full h-full object-contain" />
             </div>
             <span className="font-display font-bold text-lg text-white tracking-wider">
               USS LCS(L)(3)-102

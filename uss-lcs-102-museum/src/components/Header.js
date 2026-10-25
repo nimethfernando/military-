@@ -55,8 +55,8 @@ export default function Header() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo / Ship Hull Badge */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded bg-gradient-to-br from-navy-800 to-navy-950 border-2 border-gold-400/80 flex items-center justify-center font-display text-2xl font-black text-gold-400 tracking-wider shadow-lg group-hover:border-gold-400 transition">
-              102
+            <div className="w-12 h-12 rounded-xl overflow-hidden border-2 border-gold-400/80 shadow-lg group-hover:border-gold-400 transition bg-navy-950 flex items-center justify-center p-0.5">
+              <img src="/favicon.svg" alt="USS LCS-102 Crest" className="w-full h-full object-contain" />
             </div>
             <div>
               <span className="block font-display text-2xl font-bold uppercase tracking-wider text-white group-hover:text-gold-400 transition">
