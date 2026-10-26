@@ -1,0 +1,5 @@
+{
+  "installCommand": "npm install --prefix uss-lcs-102-museum",
+  "buildCommand": "npm run build --prefix uss-lcs-102-museum",
+  "outputDirectory": "uss-lcs-102-museum/out"
+}
