@@ -128,18 +128,18 @@
       "viewUrl": "https://www.thinglink.com/view/scene/2151338138495091556"
     },
     "milestones": [
-      { "id": "2161138540841279141", "num": "01", "name": "Prologue: Cleared the Way", "desc": "130 ships built, ~10,000 sailors served, sole surviving vessel." },
-      { "id": "2161172103557027493", "num": "02", "name": "Built for the Beach (3\"/50 Gun)", "desc": "Forward 3\"/50 rapid-fire gun mount leading beach assaults." },
-      { "id": "2161185783258547877", "num": "03", "name": "Preparing for War (Twin 40mm)", "desc": "Twin 40mm Bofors anti-aircraft mount throwing curtains of flak." },
-      { "id": "2161192850358800037", "num": "04", "name": "All Aboard (Pilothouse)", "desc": "01 Level bridge helm and engine telegraph navigation center." },
-      { "id": "2161194161896687269", "num": "05", "name": "The Crossing (Conning Tower)", "desc": "Armored conning station overlooking the forward gun tubs." },
-      { "id": "2161195067472087717", "num": "06", "name": "Okinawa Battle (20mm Oerlikon)", "desc": "Defending Radar Picket Station #18 against kamikaze air strikes." },
-      { "id": "2161318873628934821", "num": "07", "name": "The Last of Her Kind", "desc": "Archival documentation of the 130 LCS gunboat flotilla." },
-      { "id": "2161321791543314085", "num": "08", "name": "Ship's Galley (A-111-L)", "desc": "Restored stainless galley where food was prepared under fire." },
-      { "id": "2161525456052946597", "num": "09", "name": "Crew Berthing (A-208-1L)", "desc": "Triple-tiered pipe berths for 65 enlisted sailors." },
-      { "id": "2161325987508259493", "num": "10", "name": "Mess Hall (A-208-L)", "desc": "Living memorial hall honoring fallen WWII shipmates." },
-      { "id": "2161326947584445093", "num": "11", "name": "Epilogue: The Ship", "desc": "Passageway with Commercial Iron Works bronze builder plaque." },
-      { "id": "2150994591514362724", "num": "12", "name": "Twin Diesel Engine Room", "desc": "Below-deck GM 16-278A propulsion plant and switchboards." }
+      { "id": "2161138540841279141", "num": "Prologue", "name": "Prologue: Cleared the Way", "desc": "130 ships built, ~10,000 sailors served, sole surviving vessel." },
+      { "id": "2161172103557027493", "num": "Milestone 1", "name": "Milestone 1: Built for the Beach (3\"/50 Gun)", "desc": "Forward 3\"/50 rapid-fire gun mount leading beach assaults." },
+      { "id": "2161185783258547877", "num": "Milestone 2", "name": "Milestone 2: Preparing for War (Twin 40mm)", "desc": "Twin 40mm Bofors anti-aircraft mount and crew battle station roles." },
+      { "id": "2161192850358800037", "num": "Milestone 3", "name": "Milestone 3: All Aboard (Pilothouse)", "desc": "01 Level bridge helm and engine telegraph navigation center." },
+      { "id": "2161194161896687269", "num": "Milestone 4", "name": "Milestone 4: The Crossing (Conning Tower)", "desc": "Armored conning station overlooking the forward gun tubs." },
+      { "id": "2161195067472087717", "num": "Milestone 5", "name": "Milestone 5: Okinawa Battle (20mm Oerlikon)", "desc": "Defending Radar Picket Station #18 against kamikaze air strikes." },
+      { "id": "2161318873628934821", "num": "Milestone 6", "name": "Milestone 6: The Last of Her Kind", "desc": "Archival documentation of the 130 LCS gunboat flotilla." },
+      { "id": "2161321791543314085", "num": "Milestone 7", "name": "Milestone 7: Ship's Galley (A-111-L)", "desc": "Restored stainless galley where food was prepared under fire." },
+      { "id": "2161525456052946597", "num": "Milestone 8", "name": "Milestone 8: Crew Berthing (A-208-1L)", "desc": "Triple-tiered pipe berths for 65 enlisted sailors." },
+      { "id": "2161325987508259493", "num": "Milestone 9", "name": "Milestone 9: Mess Hall (A-208-L)", "desc": "Living memorial hall honoring fallen WWII shipmates." },
+      { "id": "2161326947584445093", "num": "Milestone 10", "name": "Milestone 10: Epilogue: The Ship", "desc": "Passageway with Commercial Iron Works bronze builder plaque." },
+      { "id": "2150994591514362724", "num": "Engine Room", "name": "Bonus Station: Twin Diesel Engine Room", "desc": "Below-deck GM 16-278A propulsion plant and switchboards." }
     ]
   },
   "officers": [
