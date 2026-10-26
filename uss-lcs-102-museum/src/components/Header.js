@@ -11,8 +11,8 @@ export default function Header() {
     { href: '/virtual-tour', label: 'Virtual Museum', badge: '360°' },
     { href: '/history', label: 'WWII History' },
     { href: '/gallery', label: 'Photo Gallery' },
+    { href: '/membership', label: 'Membership' },
     { href: '/#visit', label: 'Plan Your Visit' },
-    { href: '/#community', label: 'Crew & Events' },
   ];
 
   const isActive = (href) => {

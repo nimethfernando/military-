@@ -116,7 +116,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/#membership" className="hover:text-gold-400 transition flex items-center gap-1.5">
+              <Link href="/membership" className="hover:text-gold-400 transition flex items-center gap-1.5 text-gold-400 font-semibold">
                 <span>›</span> Association Membership Application
               </Link>
             </li>

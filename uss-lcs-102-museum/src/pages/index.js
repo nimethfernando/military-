@@ -371,9 +371,17 @@ export default function Home() {
       <section id="membership" className="py-16 px-4 bg-navy-950 border-b border-white/10">
         <div className="max-w-4xl mx-auto">
           <div className="border border-white/15 rounded-xl bg-navy-900/80 p-6 md:p-10 shadow-2xl">
-            <span className="font-mono text-xs uppercase tracking-widest text-crimson-400 font-bold block mb-2">
-              Official Association Enrollment • Open to All Supporters
-            </span>
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
+              <span className="font-mono text-xs uppercase tracking-widest text-crimson-400 font-bold block">
+                Official Association Enrollment • Open to All Supporters
+              </span>
+              <Link
+                href="/membership"
+                className="text-xs font-mono font-bold uppercase text-gold-400 hover:text-white transition flex items-center gap-1 shrink-0"
+              >
+                <span>Dedicated Membership Portal &amp; Printable Slip →</span>
+              </Link>
+            </div>
             <h2 className="font-display text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-2">
               Become a Landing Craft Support Museum Member
             </h2>
